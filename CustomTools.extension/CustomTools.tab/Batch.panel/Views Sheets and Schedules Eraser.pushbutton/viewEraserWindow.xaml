@@ -1,0 +1,29 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False"
+        Title="Views, Sheets and Schedule Eraser"  Width="400" Height="250" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        HorizontalContentAlignment="Center">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="auto" MinHeight="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+    <GroupBox Header="Erase:" Grid.Row="0" Grid.ColumnSpan="1" Margin="0,0,0,0">
+        <StackPanel Margin="10">
+            <CheckBox x:Name="sheets" IsChecked="True">Sheets</CheckBox>
+            <CheckBox x:Name="schedules" IsChecked="True">Schedules</CheckBox>
+            <CheckBox x:Name="views" IsChecked="True">Views</CheckBox>
+        </StackPanel>
+    </GroupBox>
+
+        <Button Grid.Row="1" Grid.ColumnSpan="1" Content="Delete All Items" Margin="0,10,0,0" Click="viewEraser"/>
+    </Grid>
+
+</Window>

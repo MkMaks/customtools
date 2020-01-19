@@ -1,0 +1,37 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False"
+        Title="Wall Dissallow Join"  Width="400" Height="250" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        HorizontalContentAlignment="Center">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="auto" MinHeight="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+    <GroupBox Header="Join options:" Grid.Row="0" Grid.ColumnSpan="1" Margin="0,0,0,0">
+        <StackPanel Margin="10">
+            <RadioButton x:Name="disallow" GroupName="sheetoptions" IsChecked="True">Disallow Join</RadioButton>
+            <RadioButton x:Name="allow" GroupName="sheetoptions" IsChecked="False">Allow Join</RadioButton>
+        </StackPanel>
+    </GroupBox>
+
+        <GroupBox Header="Wall Ends:" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="0,0,0,0">
+        <StackPanel Margin="10">
+            <CheckBox x:Name="wallEnd0" IsChecked="True">Wall End 1</CheckBox>
+            <CheckBox x:Name="wallEnd1" IsChecked="True">Wall End 2</CheckBox>
+        </StackPanel>
+    </GroupBox>
+
+
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Disallow/Allow Wall Join" Margin="0,10,0,0" Click="viewEraser"/>
+    </Grid>
+
+</Window>

@@ -1,0 +1,18 @@
+{
+    "builtin": "False",
+    "default_enabled": "True",
+    "type": "extension",
+    "rocket_mode_compatible": "False",
+    "name": "CustomTools",
+    "description": "IronPython Scripts for Autodesk Revit",
+    "author": "David Vadkerti",
+    "author_profile": "",
+    "url": "",
+    "website": "https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)",
+    "image": "",
+    "templates": {
+        "author": "",
+        "docpath": ""
+    },
+    "dependencies": []
+}
