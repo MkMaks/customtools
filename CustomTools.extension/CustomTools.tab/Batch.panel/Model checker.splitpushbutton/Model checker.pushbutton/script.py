@@ -5,6 +5,7 @@ Revit file quality control.
 
 __title__ = 'Model\nChecker'
 __doc__ = 'Revit file quality control'
+__author__ = 'David Vadkerti'
 
 from pyrevit import revit, DB
 from pyrevit import forms
@@ -18,6 +19,8 @@ from Autodesk.Revit.UI import UIApplication
 from pyrevit.coreutils import Timer
 from custom_output import hmsTimer
 from Autodesk.Revit.DB import LinePatternElement, Family, TextNoteType, ScheduleSheetInstance, WorksetTable, TextNote, ReferencePlane
+
+from stringFormating import accents2ascii
 
 doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
@@ -517,7 +520,9 @@ for element in elcollector:
 	worksetId = element.WorksetId
 	worksetKind = str(worksetTable.GetWorkset(worksetId).Kind)
 	if worksetKind == "UserWorkset":
-		worksetName = worksetTable.GetWorkset(worksetId).Name
+		worksetNameAcc = worksetTable.GetWorkset(worksetId).Name
+        # nonaccented version for chart
+        worksetName = accents2ascii(worksetNameAcc)
 		if worksetName not in worksetNames:
 			worksetNames.append(worksetName)
 		graphWorksetsData.append(worksetName)
