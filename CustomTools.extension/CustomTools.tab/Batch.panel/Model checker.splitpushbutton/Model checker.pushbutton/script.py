@@ -21,6 +21,7 @@ from custom_output import hmsTimer
 from Autodesk.Revit.DB import LinePatternElement, Family, TextNoteType, ScheduleSheetInstance, WorksetTable, TextNote, ReferencePlane
 
 from stringFormating import accents2ascii
+from customOutput import colors, criticalWarnings
 
 doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
@@ -38,7 +39,7 @@ def dashboardRectMaker(value,description,treshold,wikiArticle):
         # mediocre button
         elif value < treshold*2:
             html_code = "<a class='dashboardLink' href='https://gfi.miraheze.org/wiki/"+wikiArticle+"' title='Mediocre - goal value "+str(int(treshold)) \
-            	+"'><p class='dashboardRectMediocre'>" + content + "<br><span class='dashboardSmall'>"+description+"</span>""</p></a>"
+                +"'><p class='dashboardRectMediocre'>" + content + "<br><span class='dashboardSmall'>"+description+"</span>""</p></a>"
             return coreutils.prepare_html_str(html_code)
         # critical button
         else:
@@ -55,46 +56,36 @@ def dashboardCenterMaker(value):
 
 # returns file name - everything in path from "\" to the end
 def nameFromPath(path):
-	try:
-		index = path.rindex("\\") + 1
-	except:
-		index = path.rindex("/") + 1		
-	return path[index:]
-
-# printing file name
-name = doc.PathName
-try:
-	print(nameFromPath(name))
-except:
-	print(name)
-
+    try:
+        index = path.rindex("\\") + 1
+    except:
+        index = path.rindex("/") + 1        
+    return path[index:]
 
 output = script.get_output()
 
+# printing file name and heading
+name = doc.PathName
+if len(name) == 0:
+    name = "Not saved file"
+try:
+    printedName = nameFromPath(name)
+except:
+    printedName = name
+output.print_md("# MODEL CHECKER")
+output.print_md("## " + printedName)
+
 # first JS to avoid error in IE output window when at first run
 try:
-	chartOuputError = output.make_doughnut_chart()
-	chartOuputError.data.labels = []
-	set_E = chartOuputError.data.new_dataset('Not Standard')
-	set_E.data = []
-	set_E.backgroundColor = ["#fff"]
-	chartOuputError.set_height(1)
-	chartOuputError.draw()
+    chartOuputError = output.make_doughnut_chart()
+    chartOuputError.data.labels = []
+    set_E = chartOuputError.data.new_dataset('Not Standard')
+    set_E.data = []
+    set_E.backgroundColor = ["#fff"]
+    chartOuputError.set_height(1)
+    chartOuputError.draw()
 except:
-	pass
-# graph colors
-
-colors = 10*["#fff0e6","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb",
-            "#4d4d4d","#000000","#fff0f2","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#fff0e6","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#fff0e6","#e97800","#a6c844",
-            "#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",]
-
+    pass
 
 # sheets
 sheets_id_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets) \
@@ -212,17 +203,15 @@ allWarningsCount = len(allWarnings_collector)
 
 
 # critical warnings
-criticalWarnings = ['Elements have duplicate "Type Mark" values','There are identical instances in the same place',
-    'Room Tag is outside of its Room','Multiple Rooms are in the same enclosed region','One element is completely inside another']
 criticalWarningCount = 0
 for criticalWarning in allWarnings_collector:
     description = criticalWarning.GetDescriptionText()
     # for warning type heading
     try:
-	    descLen = description.index(".")
-	# Few warnings have mistakenly no dot in the end.
+        descLen = description.index(".")
+    # Few warnings have mistakenly no dot in the end.
     except:
-		descLen = len(description)
+        descLen = len(description)
     descHeading = description[:descLen]
     if descHeading in criticalWarnings:
         criticalWarningCount += 1
@@ -343,9 +332,9 @@ for textnote in textNoteType_collector:
 textNote_collector = FilteredElementCollector(doc).OfClass(TextNote).ToElements()
 capsCount = 0
 for textN in textNote_collector:
-	capsStatus = textN.GetFormattedText().GetAllCapsStatus()
-	if str(capsStatus) != "None":
-		capsCount +=1
+    capsStatus = textN.GetFormattedText().GetAllCapsStatus()
+    if str(capsStatus) != "None":
+        capsCount +=1
 
 
 # dashboard
@@ -426,8 +415,8 @@ modelGroupTypeCount = FilteredElementCollector(doc).OfCategory(BuiltInCategory.O
 refPlaneCollector = FilteredElementCollector(doc).OfClass(ReferencePlane).ToElements()
 noNameRefPCount = 0
 for refPlane in refPlaneCollector:
-	if refPlane.Name == "Reference Plane":
-		noNameRefPCount += 1
+    if refPlane.Name == "Reference Plane":
+        noNameRefPCount += 1
 
 # Element Count
 elementCount = FilteredElementCollector(doc).WhereElementIsNotElementType().GetElementCount()
@@ -459,11 +448,11 @@ graphCatData = []
 elements = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()
 # categories we dont want to see since they are mostly not user created
 catBanlist = ['Shared Site','Project Information','Structural Load Cases','Sun Path','Color Fill Schema','HVAC Zones','HVAC Load Schedules','Building Type Settings',
-	'Space Type Settings','Survey Point','Project Base Point','Electrical Demand Factor Definitions','Electrical Load Classifications','Panel Schedule Templates - Branch Panel',
-	'Panel Schedule Templates - Data Panel','Panel Schedule Templates - Switchboard','Electrical Load Classification Parameter Element','Automatic Sketch Dimensions',]
+    'Space Type Settings','Survey Point','Project Base Point','Electrical Demand Factor Definitions','Electrical Load Classifications','Panel Schedule Templates - Branch Panel',
+    'Panel Schedule Templates - Data Panel','Panel Schedule Templates - Switchboard','Electrical Load Classification Parameter Element','Automatic Sketch Dimensions',]
 for i in elements:
     try:
-    	category = i.Category.Name
+        category = i.Category.Name
         # filtering DWGs, categories from banlist
         # filtering categories with "<" and ")" since it makes errors in chart.js output and we dont need them
         if category[-4:] != ".dwg" and category[-4:] != ".DWG" and category[0] != "<" and category[-1] != ")" and category not in catBanlist:
@@ -517,15 +506,15 @@ graphWorksetsData = []
 elcollector = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()
 worksetTable = doc.GetWorksetTable()
 for element in elcollector:
-	worksetId = element.WorksetId
-	worksetKind = str(worksetTable.GetWorkset(worksetId).Kind)
-	if worksetKind == "UserWorkset":
-		worksetNameAcc = worksetTable.GetWorkset(worksetId).Name
+    worksetId = element.WorksetId
+    worksetKind = str(worksetTable.GetWorkset(worksetId).Kind)
+    if worksetKind == "UserWorkset":
+        worksetNameAcc = worksetTable.GetWorkset(worksetId).Name
         # nonaccented version for chart
         worksetName = accents2ascii(worksetNameAcc)
-		if worksetName not in worksetNames:
-			worksetNames.append(worksetName)
-		graphWorksetsData.append(worksetName)
+        if worksetName not in worksetNames:
+            worksetNames.append(worksetName)
+        graphWorksetsData.append(worksetName)
 # print worksetNames
 # sorting results in chart legend
 worksetNames.sort()
@@ -536,23 +525,23 @@ for i in worksetNames:
 
 # Worksets OUTPUT print chart only when file is workshared
 if len(worksetNames) > 0:
-	chartWorksets = output.make_doughnut_chart()
-	chartWorksets.options.title = {'display': True, 'text':'Element Count by Workset', 'fontSize': 18, 'fontColor': '#000', 'fontStyle': 'bold'}
-	chartWorksets.data.labels = worksetNames
-	set_a = chartWorksets.data.new_dataset('Not Standard')
-	set_a.data = worksetsSet
+    chartWorksets = output.make_doughnut_chart()
+    chartWorksets.options.title = {'display': True, 'text':'Element Count by Workset', 'fontSize': 18, 'fontColor': '#000', 'fontStyle': 'bold'}
+    chartWorksets.data.labels = worksetNames
+    set_a = chartWorksets.data.new_dataset('Not Standard')
+    set_a.data = worksetsSet
 
-	set_a.backgroundColor = colors
+    set_a.backgroundColor = colors
 
-	worksetsCount = len(worksetNames)
-	if worksetsCount < 15:
-	    chartWorksets.set_height(100)
-	elif worksetsCount < 30:
-	    chartWorksets.set_height(160)
-	else:
-	    chartWorksets.set_height(200)
+    worksetsCount = len(worksetNames)
+    if worksetsCount < 15:
+        chartWorksets.set_height(100)
+    elif worksetsCount < 30:
+        chartWorksets.set_height(160)
+    else:
+        chartWorksets.set_height(200)
 
-	chartWorksets.draw()
+    chartWorksets.draw()
 
 # divider
 print("\n\n\n\n")

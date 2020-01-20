@@ -158,9 +158,10 @@ if options:
                 total_value = calc_param_total(element_set, selected_option.name)
                 # print('Celková hodnota parametru {} je:\n\n'.format(selected_option.name))
                 if type_name == "SPOLU":
-                	strongTag = "***"
+                    strongTag1 = "<span style='color:darkorange'>**"
+                    strongTag2 = "**</span>"  
                 else:
-                	strongTag = ""
+                    strongTag1 = strongTag2 = ""
                 #     if selected_option.type in formatter_funcs.keys():
                 #         newScheduleLine = " \n| "+type_name+" | "+formatter_funcs[selected_option.type](total_value)+" |"
                 #     else:
@@ -168,9 +169,23 @@ if options:
                 #     md_schedule += newScheduleLine
                 # else:
                 if selected_option.type in formatter_funcs.keys():
-                    newScheduleLine = " \n| "+ strongTag + type_name + strongTag +" | "+ strongTag +formatter_funcs[selected_option.type](total_value) + strongTag +" |"
+                    newScheduleLine = " \n| "+ strongTag1 + type_name + strongTag2 +" | "+ strongTag1 +formatter_funcs[selected_option.type](total_value) + strongTag2 +" |"
                 else:
-                    newScheduleLine = " \n| "+ strongTag + type_name + strongTag +" | "+ strongTag +str(total_value) + strongTag +" |"
+                    newScheduleLine = " \n| "+ strongTag1 + type_name + strongTag2 +" | "+ strongTag1 +str(total_value) + strongTag2 +" |"
                 md_schedule += newScheduleLine
             # print md_schedule
             output.print_md(md_schedule)
+
+# change to proper schedule
+# data = [['结构', '结构', '结构结构', 80],
+#         ['结构', '结构', '结构', 45],
+#         ['row3', 'data', 'data', 45],
+#         ['结构结构', 'data', '结构', 45]]
+
+# # formats contains formatting strings for each column
+# # last_line_style contains css styling code for the last line
+# output.print_table(table_data=data,
+#                    title="Example Table",
+#                    columns=["Row Name", "Column 1", "Column 2", "Percentage"],
+#                    formats=['', '', '', '{}%'],
+#                    last_line_style='color:red;')

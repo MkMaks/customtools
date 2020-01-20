@@ -12,6 +12,7 @@ from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
 from custom_output import hmsTimer
+from customOutput import criticalWarnings
 
 # from __future__ import division
 
@@ -37,8 +38,8 @@ cacheWarningType = ""
 # for graph
 graphHeadings = []
 graphWarnData = []
-criticalWarnings = ['Elements have duplicate "Type Mark" values','There are identical instances in the same place',
-    'Room Tag is outside of its Room','Multiple Rooms are in the same enclosed region','One element is completely inside another']
+# criticalWarnings = ['Elements have duplicate "Type Mark" values','There are identical instances in the same place',
+#     'Room Tag is outside of its Room','Multiple Rooms are in the same enclosed region','One element is completely inside another']
 for warning in allWarnings:
     elementsList=warning.GetFailingElements()
     description=warning.GetDescriptionText()

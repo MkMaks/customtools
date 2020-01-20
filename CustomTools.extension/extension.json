@@ -16,10 +16,3 @@
     },
     "dependencies": []
 }
-
-// pyRevit_config.ini
-// [CustomTools.extension]
-// disabled = False
-// private_repo = True
-// username = "GFIusers"
-// password = "g<LVnd9bLvrJ-ftG"
