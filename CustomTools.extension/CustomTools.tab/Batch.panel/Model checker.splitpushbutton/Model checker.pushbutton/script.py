@@ -509,7 +509,6 @@ chartCategories.draw()
 # divider
 print("\n\n\n\n")
 
-
 # elements by workset graph
 worksetIds = []
 worksetNames = []
