@@ -28,21 +28,21 @@ def linkMaker(a,title):
 
 print("CustomTools is extension for pyRevit Add-In")
 
-releasedVersion = "0.5_200115"
+releasedVersion = "0.5_200121"
 print(text_highligter("version " + releasedVersion))
 
 # new version checker
-try:
-	currentVersionFile = open("L:\REVIT\Dynamo\PyrevitExtensions\CustomToolsCurrentVersion.txt","r")
-	currentVersionList = (currentVersionFile.readlines())
-	currentVersion = str(currentVersionList)[2:-2]
-	if currentVersion == releasedVersion:
-		print("Your CustomTools extension IS up to date.")
-	else:
-		print("Your CustomTools extension IS NOT up to date.\n"+ 
-			linkMaker("http://dynamohelp.atwebpages.com/support_files/CustomTools.extension_"+currentVersion+".7z", "DOWNLOAD NEW "+ currentVersion))
-except:
-	pass
+# try:
+# 	currentVersionFile = open("L:\REVIT\Dynamo\PyrevitExtensions\CustomToolsCurrentVersion.txt","r")
+# 	currentVersionList = (currentVersionFile.readlines())
+# 	currentVersion = str(currentVersionList)[2:-2]
+# 	if currentVersion == releasedVersion:
+# 		print("Your CustomTools extension IS up to date.")
+# 	else:
+# 		print("Your CustomTools extension IS NOT up to date.\n"+ 
+# 			linkMaker("http://dynamohelp.atwebpages.com/support_files/CustomTools.extension_"+currentVersion+".7z", "DOWNLOAD NEW "+ currentVersion))
+# except:
+# 	pass
 
 #prints clickable email address
 print("\nFor support contact "+ mailto("vadkerti@gfi.sk"))
