@@ -1,5 +1,5 @@
 {
-    "builtin": "False",
+    "builtin": "True",
     "default_enabled": "True",
     "type": "extension",
     "rocket_mode_compatible": "False",
