@@ -31,6 +31,10 @@ print("CustomTools is extension for pyRevit Add-In")
 releasedVersion = "0.5_200121"
 print(text_highligter("version " + releasedVersion))
 
+# git uploader
+print(linkMaker("http://dynamohelp.atwebpages.com/support_files/CustomToolsUpdater.7z","Download update script"))
+
+# deprecated
 # new version checker
 # try:
 # 	currentVersionFile = open("L:\REVIT\Dynamo\PyrevitExtensions\CustomToolsCurrentVersion.txt","r")
