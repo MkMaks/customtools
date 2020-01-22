@@ -314,7 +314,10 @@ familyCount = families.GetElementCount()
 
 # tresholds
 familiesTres = 500
-inPlaceFamilyTres = familyCount*0.2
+if familyCount < 500:
+    inPlaceFamilyTres = familyCount*0.2
+else:
+    inPlaceFamilyTres = 500*0.2
 notParamFamiliesTres = familyCount*0.3
 textnoteWFtres = 0
 textnoteCaps = 0
