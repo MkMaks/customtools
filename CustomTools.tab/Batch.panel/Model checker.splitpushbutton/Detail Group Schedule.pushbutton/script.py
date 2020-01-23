@@ -1,9 +1,6 @@
 # -*- coding: UTF-8 -*-
-"""Detail Group Schedule.
-Lists all Detail Groups with links to Owner Views.
-"""
-
 __title__ = 'Detail Group\nschedule'
+__author__ = 'David Vadkerti'
 __doc__ = 'Lists all Detail Groups with links to Owner Views.'
 
 from pyrevit import revit, DB

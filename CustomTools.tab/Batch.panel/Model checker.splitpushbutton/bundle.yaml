@@ -9,5 +9,6 @@ layout:
   - NotPlacedViewsSchedule
   - OwnerSheet
   - 2DelementsPerView
+  - SharedParametersSchedule
   - ---
   - Import Report

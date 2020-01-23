@@ -28,7 +28,7 @@ def linkMaker(a,title):
 
 print("CustomTools is extension for pyRevit Add-In")
 
-releasedVersion = "0.5_200121"
+releasedVersion = "0.5_200123"
 print(text_highligter("version " + releasedVersion))
 
 # git uploader
