@@ -30,7 +30,7 @@ def hooksLogger(log_string):
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
   try:
-     f = open("L:\\customToolslogs\\"+ file_name + ".txt", "a")
+     f = open("L:\\customToolslogs\\"+ file_name + ".log", "a")
      f.write(datestamp + separator + log_string + separator + user_name + "\n")
      f.close()
   except:
