@@ -13,7 +13,7 @@ if famSize > 1048576:
    res = forms.alert("POZOR!\n\n"
                     "Family by mala mať veľkosť pod 1 MB.\n"
                      "Pred naloadovaním si vždy skontroluj veľkosť súboru.\n\n"
-                     "Nie Family príliš detailne vymodelovaná?",
+                     "Nie je Family príliš detailne vymodelovaná?",
                      title="Load Family",
                      footer="CustomTools Hooks",
                      options=["Zrušiť",
