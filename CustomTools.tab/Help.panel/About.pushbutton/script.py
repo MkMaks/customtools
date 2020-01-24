@@ -28,8 +28,9 @@ def linkMaker(a,title):
 
 print("CustomTools is extension for pyRevit Add-In")
 
-releasedVersion = "0.5_200123"
-print(text_highligter("version " + releasedVersion))
+releasedVersion = "0.5"
+snapshot = "200124"
+print(text_highligter("version " + releasedVersion) + text_highligter("snapshot " + snapshot))
 
 # git uploader
 print("Prefered installation method is using scheduled powershell script.")
