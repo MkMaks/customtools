@@ -10,6 +10,7 @@ from pyrevit import output, forms
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from Autodesk.Revit.DB import View
+from customOutput import colors
 
 from stringFormating import accents2ascii
 
@@ -20,18 +21,6 @@ output = script.get_output()
 def findDetailItems(Lines,selected_option):
     output.print_md("# "+ selected_option.upper() +" PER VIEW SCHEDULE")
     md_schedule = "| Number | View Name | View ID | Number of Elements \n| ----------- | ----------- | ----------- | ----------- |"
-
-    # graph colors
-    colors = ["#fff0e6","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb",
-                "#4d4d4d","#000000","#fff0f2","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#e97800","#a6c844",
-                "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-                "#fff0e6","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#fff0e6","#e97800","#a6c844",
-                "#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#9988bb","#4d4d4d","#e97800","#a6c844",
-                "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-                "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-                "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-                "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-                "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",]
 
     viewNames = []
     viewNamesAcc = []
@@ -66,30 +55,34 @@ def findDetailItems(Lines,selected_option):
 
     output.print_md(md_schedule)
 
+    # for i in viewNames:
+    #     print i
+
     # chart
-    chartWorksets = output.make_doughnut_chart()
-    chartWorksets.options.title = {'display': True, 'text': selected_option +' per View', 'fontSize': 18, 'fontColor': '#000', 'fontStyle': 'bold'}
-    chartWorksets.data.labels = viewNames
-    set_a = chartWorksets.data.new_dataset('Not Standard')
-    set_a.data = lineCountSet
+    try:
+        chartWorksets = output.make_doughnut_chart()
+        chartWorksets.options.title = {'display': True, 'text': selected_option +' per View', 'fontSize': 18, 'fontColor': '#000', 'fontStyle': 'bold'}
+        chartWorksets.data.labels = viewNames
+        set_a = chartWorksets.data.new_dataset('Not Standard')
+        set_a.data = lineCountSet
 
-    set_a.backgroundColor = colors
+        set_a.backgroundColor = colors
 
-    worksetsCount = len(viewNames)
-    if worksetsCount < 50:
-        chartWorksets.set_height(180)
-    elif worksetsCount < 100:
-        chartWorksets.set_height(250)
-    elif worksetsCount < 300:
-        chartWorksets.set_height(500)
-    elif worksetsCount < 500:
-        chartWorksets.set_height(800)
-    elif worksetsCount < 1000:
-        chartWorksets.set_height(1000)
-    else:
-        chartWorksets.set_height(2000)
+        # chart size
+        viewCount = len(viewNames)
+        viewCountChar = len(str(viewNames))
+        legendSize = viewCount*5 + viewCountChar
+        print legendSize
+        if legendSize < 1500:
+            chartWorksets.set_height(180)
+        elif legendSize < 10000:
+            chartWorksets.set_height(legendSize/8)
+        else:
+            chartWorksets.set_height(legendSize/12)
 
-    chartWorksets.draw()
+        chartWorksets.draw()
+    except:
+        print("There was not allowed character in the data. Creation of graph was skipped. Scoll up for the schedule.")
 
 selected_option = \
     forms.CommandSwitchWindow.show(
