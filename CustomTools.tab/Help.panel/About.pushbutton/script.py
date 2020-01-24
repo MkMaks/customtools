@@ -32,7 +32,8 @@ releasedVersion = "0.5_200123"
 print(text_highligter("version " + releasedVersion))
 
 # git uploader
-print(linkMaker("http://dynamohelp.atwebpages.com/support_files/CustomToolsUpdater.7z","Download update script"))
+print(linkMaker("http://dynamohelp.atwebpages.com/support_files/CustomToolsUpdater.7z","Download update script") + " to manual install")
+print("Prefered installation methoc is using scheduled powershell script.")
 
 # deprecated
 # new version checker
