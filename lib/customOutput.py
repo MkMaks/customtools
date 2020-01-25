@@ -18,6 +18,8 @@ criticalWarnings = ['Elements have duplicate "Type Mark" values','There are iden
     'Room is not in a properly enclosed region', 'Room separation line is slightly off axis and may cause inaccuracies',
     'Area is not in a properly enclosed region']
 
+
+# formating time in seconts to HHMMSS format
 def hmsTimer(timerSeconds):
     # for treating formating of pyrevit timer function
     from math import floor
@@ -33,6 +35,5 @@ def hmsTimer(timerSeconds):
         minutes =  int(floor(seconds%60))
         seconds = seconds%60
         hms = str(hours)+" h "+str(minutes)+" min "+str(seconds)+" seconds"
-
     claim = "Transaction took "+hms
     return claim
