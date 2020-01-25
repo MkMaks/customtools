@@ -35,7 +35,7 @@ print(text_highligter("version " + releasedVersion) + text_highligter("snapshot 
 # git uploader
 print("Prefered installation method is using scheduled powershell script.")
 print("You can update manually. Scripts are saved here:")
-print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension\\updater")
+print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension")
 
 # deprecated
 # new version checker
