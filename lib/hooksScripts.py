@@ -35,3 +35,7 @@ def hooksLogger(log_string):
      f.close()
   except:
          pass
+
+# version of CustomTools
+releasedVersion = "0.5"
+snapshot = "200124"
