@@ -11,8 +11,7 @@ __doc__ = 'Lists Warnings related to architecural elements in the active model i
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
-from custom_output import hmsTimer
-from customOutput import criticalWarnings
+from customOutput import criticalWarnings, hmsTimer
 
 # from __future__ import division
 
