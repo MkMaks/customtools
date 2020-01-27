@@ -54,4 +54,4 @@ def versionLogger(releasedVersion,snapshot):
 
 # version of CustomTools
 releasedVersion = "0.5"
-snapshot = "200124"
+snapshot = "200127"
