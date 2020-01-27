@@ -55,9 +55,6 @@ def findDetailItems(Lines,selected_option):
 
     output.print_md(md_schedule)
 
-    # for i in viewNames:
-    #     print i
-
     # chart
     try:
         chartWorksets = output.make_doughnut_chart()
@@ -72,7 +69,7 @@ def findDetailItems(Lines,selected_option):
         viewCount = len(viewNames)
         viewCountChar = len(str(viewNames))
         legendSize = viewCount*5 + viewCountChar
-        print legendSize
+        # print legendSize
         if legendSize < 1500:
             chartWorksets.set_height(180)
         elif legendSize < 10000:
@@ -82,7 +79,7 @@ def findDetailItems(Lines,selected_option):
 
         chartWorksets.draw()
     except:
-        print("There was not allowed character in the data. Creation of graph was skipped. Scoll up for the schedule.")
+        print("There was not allowed character in the data. Creation of graph was skipped. Scroll up for the schedule.")
 
 selected_option = \
     forms.CommandSwitchWindow.show(
