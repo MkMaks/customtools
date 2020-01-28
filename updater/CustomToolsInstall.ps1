@@ -10,3 +10,12 @@ $fullPath = "$($firstPath)$($env:UserName)$($secondPath)"
 
 #setting CSS file
 pyrevit configs outputcss $fullPath
+
+# SETTING AUTO UPDATES THROUGH CMD IN STARTUP FOLDER
+#constructing file path since %APPDATA% is not working
+$PathStartup = "C:\Users\$env:UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+
+#constructing file path
+$PathUpdaterLink = "C:\Users\$($env:UserName)\AppData\Roaming\pyRevit\Extensions\CustomTools.extension\updater\CustomToolsUpdater.cmd"
+
+Copy-Item -Path $PathUpdaterLink -Destination $PathStartup
