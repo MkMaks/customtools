@@ -35,7 +35,7 @@ else:
       uiapp = UIApplication(doc.Application)
       uiapp.PostCommand(Command_ID)
   elif res  == "Viac info o Linkovaní CAD súborov":
-      url = 'https://gfi.miraheze.org/wiki/Linknutie_DWG_s%C3%BAboru_do_Revitu'
+      url = 'https://gfi.miraheze.org/wiki/Linknutie_DWG_s%C3%BAboru_do_Revitu#HLAVN.C3.89_Z.C3.81SADY'
       script.open_url(url)
   else:
       pass

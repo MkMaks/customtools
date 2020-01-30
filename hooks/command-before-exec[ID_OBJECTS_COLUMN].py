@@ -22,7 +22,7 @@ elif res  == "Zrušiť":
    EXEC_PARAMS.event_args.Cancel = True
 elif res  == "Viac info o Architectural Columns":
    EXEC_PARAMS.event_args.Cancel = True
-   url = 'https://gfi.miraheze.org/wiki/Postupy,_ktorým_je_potrebné_sa_vyhnúť_-_Revit'
+   url = 'https://gfi.miraheze.org/wiki/Postupy,_ktor%C3%BDm_je_potrebn%C3%A9_sa_vyhn%C3%BA%C5%A5_-_Revit#St.C4.BApy'
    script.open_url(url)
 else:
    EXEC_PARAMS.event_args.Cancel = True
