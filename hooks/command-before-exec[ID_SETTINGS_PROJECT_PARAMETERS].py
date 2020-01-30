@@ -27,11 +27,11 @@ def dialogBox():
 
 # try to find config file for people who dont want to see the hook
 try:
-	configFile = open("C:\\PyrevitExtensions\\CustomTools\\hooksConfig.txt","r")
-	configSettingsList = (currentVersionFile.readlines())
-	configSettings = str(currentVersionList)[2:-2]
-	# if content not equal to zero show the dialog box
-	if configSettings == "0":
+	configFile = open("C:\\pyRevitExtensions\\CustomTools\\hooksConfig.txt","r")
+	# first item of file content
+	configSetting = (configFile.readlines())[0]
+	# if first item of file content not equal to zero show the dialog box
+	if configSetting == "0":
 		pass
 	else:
 		dialogBox()
