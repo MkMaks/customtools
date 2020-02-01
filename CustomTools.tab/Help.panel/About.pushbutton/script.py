@@ -34,9 +34,9 @@ print("CustomTools is extension for pyRevit Add-In")
 print(text_highligter("version " + releasedVersion) + text_highligter("snapshot " + snapshot))
 
 # git uploader
-print("Prefered installation method is using scheduled powershell script.")
-print("You can update manually. Scripts are saved here:")
-print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension")
+print("\nCustomTools checks for updates on system startup.")
+print("For manual update run manual update file and click Reload button.")
+print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension\\ManualUpdate.lnk")
 
 # deprecated
 # new version checker
@@ -55,3 +55,8 @@ print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension")
 #prints clickable email address
 print("\nFor support contact "+ mailto("vadkerti@gfi.sk"))
 print("For help visit " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)","help page") + "on GFI wiki")
+
+print("\nFor description of hooks functions and logging visit " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_Hooks","CustomTools Hooks article") + "on GFI wiki")
+print(linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Bitbucket git repository"))
+
+
