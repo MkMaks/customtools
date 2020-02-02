@@ -175,9 +175,12 @@ sheetsTres = 500
 scheduleTres = 500
 schedulesNotOnSheetTres = scheduleCount*0.3
 
-htmlRow1 = (dashboardRectMaker(viewCount,"Views",viewTres,wikiArticle) + dashboardRectMaker(copiedView,"Copied Views",copiedViewTres,wikiArticle) + dashboardRectMaker(sheetCount,"Sheets",sheetsTres,wikiArticle)
- + dashboardRectMaker(scheduleCount,"Schedules",scheduleTres,wikiArticle) + dashboardRectMaker(viewsNotOnSheet,"Views not on Sheet",viewNotOnSheetTres,wikiArticle) 
- + dashboardRectMaker(scheduleNotOnSheet,"Schedules not on Sheet",schedulesNotOnSheetTres,wikiArticle))
+htmlRow1 = (dashboardRectMaker(viewCount,"Views",viewTres,wikiArticle+"#Views")
+	 + dashboardRectMaker(copiedView,"Copied Views",copiedViewTres,wikiArticle+"#Views")
+	 + dashboardRectMaker(sheetCount,"Sheets",sheetsTres,wikiArticle)
+	 + dashboardRectMaker(scheduleCount,"Schedules",scheduleTres,wikiArticle)
+	 + dashboardRectMaker(viewsNotOnSheet,"Views not on Sheet",viewNotOnSheetTres,wikiArticle) 
+	 + dashboardRectMaker(scheduleNotOnSheet,"Schedules not on Sheet",schedulesNotOnSheetTres,wikiArticle))
 dashboardCenterMaker(htmlRow1)
 
 # CHART VIEWS OUTPUT
@@ -264,13 +267,15 @@ rampTres = 0
 archTres = 0
 
 # dashboard row 2
-htmlRow2 = (dashboardRectMaker(allWarningsCount,"Warnings",warningsTres,"Revit Warnings") + dashboardRectMaker(criticalWarningCount,"Critical Warnings",criticalWarningsTres,"Revit Warnings")
-    + dashboardRectMaker(materialCount,"Materials",materialsTres,wikiArticle) + dashboardRectMaker(linePatternCount,"Line Patterns",linePatternsTres,"Linknutie DWG súboru do Revitu")
-    + dashboardRectMaker(importedDwg,"Imported DWGs",importedDwgTres,"Kurz Revitu 2017 - Mierne pokročilí - 02-03C -Vkladanie (linkovanie) DWG a RVT súborov")
-    + dashboardRectMaker(linkedDwg,"Linked DWGs",linkedDwgTres,"Linknutie DWG súboru do Revitu")
-    + dashboardRectMaker(dwgNotCurrentView,"DWGs in 3D",dwgNotCurrentViewTres,wikiArticle)
-    + dashboardRectMaker(ramp_collector,"Ramps",rampTres,wikiArticle)
-    + dashboardRectMaker(archColumn_collector,"Architecural Columns",archTres,wikiArticle))
+htmlRow2 = (dashboardRectMaker(allWarningsCount,"Warnings",warningsTres,"Revit_Warnings")
+	+ dashboardRectMaker(criticalWarningCount,"Critical Warnings",criticalWarningsTres,"Revit_Warnings")
+    + dashboardRectMaker(materialCount,"Materials",materialsTres,wikiArticle+"#Linkovanie_nevyčistených_DWG")
+    + dashboardRectMaker(linePatternCount,"Line Patterns",linePatternsTres,wikiArticle+"#Linkovanie_nevyčistených_DWG")
+    + dashboardRectMaker(importedDwg,"Imported DWGs",importedDwgTres,wikiArticle+"#Importovanie_DWG")
+    + dashboardRectMaker(linkedDwg,"Linked DWGs",linkedDwgTres,wikiArticle+"#DWG_súbory")
+    + dashboardRectMaker(dwgNotCurrentView,"DWGs in 3D",dwgNotCurrentViewTres,wikiArticle+"#Linkovanie_DWG_v_3D")
+    + dashboardRectMaker(ramp_collector,"Ramps",rampTres,wikiArticle+"#Rampy")
+    + dashboardRectMaker(archColumn_collector,"Architecural Columns",archTres,wikiArticle+"#Stĺpy"))
 dashboardCenterMaker(htmlRow2)
 
 
@@ -343,10 +348,11 @@ for textN in textNote_collector:
 # dashboard
 # htmlRow3 = (dashboardRectMaker(familyCount,"Families",familiesTres) + dashboardRectMaker(inPlaceFamilyCount,"In Place Families",inPlaceFamilyTres) 
 #     + dashboardRectMaker(NotParamFamiliesCount,"Families are not parametric",notParamFamiliesTres))
-htmlRow3 = (dashboardRectMaker(familyCount,"Families",familiesTres,wikiArticle) + dashboardRectMaker(inPlaceFamilyCount,"In Place Families",inPlaceFamilyTres,wikiArticle)
-        + dashboardRectMaker(NotParamFamiliesCount,"Families not parametric",notParamFamiliesTres,wikiArticle)
-        + dashboardRectMaker(textnoteWFcount,"Text - Width Factor changed",textnoteWFtres,"Problémy s textom pri exporte z Revitu do DWG")
-        + dashboardRectMaker(capsCount,"Text - AllCaps",textnoteCaps,"Problémy s textom pri exporte z Revitu do DWG"))
+htmlRow3 = (dashboardRectMaker(familyCount,"Families",familiesTres,wikiArticle+"#Loadable_Families")
+		+ dashboardRectMaker(inPlaceFamilyCount,"In Place Families",inPlaceFamilyTres,wikiArticle+"#In-place_Families")
+        + dashboardRectMaker(NotParamFamiliesCount,"Families not parametric",notParamFamiliesTres,wikiArticle+"#Loadable_Families")
+        + dashboardRectMaker(textnoteWFcount,"Text - Width Factor changed",textnoteWFtres,wikiArticle+"#Width_Factor")
+        + dashboardRectMaker(capsCount,"Text - AllCaps",textnoteCaps,wikiArticle+"#AllCaps_pri_editácii_Textu"))
 dashboardCenterMaker(htmlRow3)
 
 # CHART INPLACE FAMILIES OUTPUT
@@ -436,9 +442,12 @@ noNameRefPTres = 0
 elementsTres = 1000000
 
 # dashboard
-htmlRow4 = (dashboardRectMaker(detailGroupTypeCount,"Detail Group Types",detailGroupTypeTres,wikiArticle) + dashboardRectMaker(detailGroupCount,"Detail Groups",detailGroupTres,wikiArticle) 
-    + dashboardRectMaker(modelGroupTypeCount,"Model Group Types",modelGroupTypeTres,wikiArticle)+dashboardRectMaker(modelGroupCount,"Model Groups",modelGroupTres,wikiArticle) 
-    + dashboardRectMaker(noNameRefPCount,"NoName Ref Planes",noNameRefPTres,wikiArticle)+ dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
+htmlRow4 = (dashboardRectMaker(detailGroupTypeCount,"Detail Group Types",detailGroupTypeTres,wikiArticle)
+    + dashboardRectMaker(detailGroupCount,"Detail Groups",detailGroupTres,wikiArticle) 
+    + dashboardRectMaker(modelGroupTypeCount,"Model Group Types",modelGroupTypeTres,wikiArticle)
+    +dashboardRectMaker(modelGroupCount,"Model Groups",modelGroupTres,wikiArticle) 
+    + dashboardRectMaker(noNameRefPCount,"NoName Ref Planes",noNameRefPTres,wikiArticle+"#Reference Planes")
+    + dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
 dashboardCenterMaker(htmlRow4)
 
 
