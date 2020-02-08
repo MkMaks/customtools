@@ -1,5 +1,4 @@
 # CustomTools
-#### SK
 ## Extension pre pyRevit
 CustomTools je Add-in pre Revit tvorený podľa požiadaviek užívateľov Revitu v GFI. Nevyhnutným prepodkladom na použitie je inštalácia Add-inu [pyRevit](https://www.notion.so/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0)). 
 
@@ -12,9 +11,9 @@ Popis funkcií a návod na inštaláciu nájdete v helpe na [GFI wiki](https://g
 * Reloadnite pyRevit (pyRevit tab>Reload).
 * CustomTools kontroluje aktualizácie pri štarte systému.
 
-<br>
+<hr>
 
-#### EN
+###### EN
 ## Extension pre pyRevit
 CustomTools is Add-in for Revit created according to requests of Revitu users in GFI. Before installing of the extension you need to install [pyRevit](https://www.notion.so/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0)) Add-in. 
 
