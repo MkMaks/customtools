@@ -4,7 +4,7 @@
     "type": "extension",
     "rocket_mode_compatible": "False",
     "name": "CustomTools",
-    "description": "IronPython Scripts for Autodesk Revit",
+    "description": "CustomTools project",
     "author": "David Vadkerti",
     "author_profile": "",
     "url": "https://bitbucket.org/davidvadkerti/customtools.git",
