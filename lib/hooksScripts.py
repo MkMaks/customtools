@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# version of CustomTools
+releasedVersion = "0.5"
+snapshot = "200210"
+
 # logging to server
 def hooksLogger(log_string):
   from datetime import datetime
@@ -51,7 +56,3 @@ def versionLogger(releasedVersion,snapshot):
      f.close()
   except:
          pass
-
-# version of CustomTools
-releasedVersion = "0.5"
-snapshot = "200129"
