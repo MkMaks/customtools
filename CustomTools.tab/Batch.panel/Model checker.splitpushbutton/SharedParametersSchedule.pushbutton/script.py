@@ -15,9 +15,11 @@ output = script.get_output()
 
 output.print_md("# SHARED PARAMETERS SCHEDULE")
 
-def parseSharedParamFile(filePath,encodingType):
-	scheduleData = []
-	f = io.open(filePath, mode="r", encoding=encodingType)
+# md_schedule = "| Number | View Name | View ID | Author | View Type |\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
+scheduleData = []
+filePath = "L:\\REVIT\\Kniznica_REVIT\\4_Parametre\\GFI-shared-parametre.txt"
+try:
+	f = io.open(filePath, mode="r", encoding="utf-16")
 	# f = open("L:\\REVIT\\Kniznica_REVIT\\4_Parametre\\forCustomTools\\GFI-shared-parametre.txt", "rU", encoding="utf-8")
 
 	groupDict = {}
@@ -45,9 +47,15 @@ def parseSharedParamFile(filePath,encodingType):
 	        paramGroupName = groupDict.get(paramGroupNo)
 	        paramDescription = paramPartList[7][:200]
 	        paramList = [paramName, paramDataType, paramGroupName, paramDescription]
+	        # paramList = [paramName, paramDataType, paramGroupName]
 
 	        scheduleData.append(paramList)
+	        # print "\t".join(paramList)
 
+	    # countLines += 1
+	# print(groupDict)
+
+	   
 	output.print_table(table_data=scheduleData,
 	                   title = filePath,
 	                   columns=["Name", "Data Type", "Group", "Description"],
@@ -56,13 +64,5 @@ def parseSharedParamFile(filePath,encodingType):
 	# for timing------
 	endtime = timer.get_time()
 	print(hmsTimer(endtime))
-
-
-filePath = "L:\\REVIT\\Kniznica_REVIT\\4_Parametre\\GFI-shared-parametre.txt"
-try:
-	parseSharedParamFile(filePath,"utf-16")
 except:
-	try:
-		parseSharedParamFile(filePath,"utf-8")
-	except:
-    	print("Source file should be saved with unicode UTF-16 encoding.")
+    print("Source file should be saved with unicode (UTF-16) encoding.")
