@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 __title__ = 'Shared Parameter Schedule'
 __author__ = 'David Vadkerti'
-__doc__ = 'Lists all Shared Parameters from text config file'
+__doc__ = 'Lists all Shared Parameters from text config file.'
 
 from pyrevit import script
 from pyrevit import output

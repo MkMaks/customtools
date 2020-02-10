@@ -13,7 +13,7 @@ pyRevit: repository at https://github.com/eirannejad/pyRevit
 
 """
 
-__title__ = 'DWG\nschedule'
+__title__ = 'DWG schedule'
 __author__ = 'original author Frederic Beaupere, redesigned by David Vadkerti'
 __credits__ = 'http://eirannejad.github.io/pyRevit/credits/'
 __doc__ = 'Lists all linked and imported DWG instances in schedule'\

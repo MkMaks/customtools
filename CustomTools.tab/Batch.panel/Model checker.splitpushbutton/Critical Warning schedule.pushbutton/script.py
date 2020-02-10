@@ -5,7 +5,7 @@ Lists most Warnings related to architecural elements in the active model in Sche
 
 """
 
-__title__ = 'Critical Warning\nschedule'
+__title__ = 'Critical Warning schedule'
 __doc__ = 'Lists Warnings related to architecural elements in the active model in Schedule with clickable Element Ids, Category of elements and Warning descritpions.'
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory

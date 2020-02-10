@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-__title__ = '2D Elements\nper View'
+__title__ = '2D Elements per View'
 __author__ = 'David Vadkerti'
 __doc__ = 'Lists all Elements of selected Type per View'
 
