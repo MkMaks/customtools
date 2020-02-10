@@ -2,7 +2,6 @@
 from pyrevit import script, coreutils
 from hooksScripts import releasedVersion, snapshot
 
-
 __context__ = 'zero-doc'
 
 # highlights text using html string with css
@@ -28,9 +27,6 @@ def linkMaker(a,title):
 		return coreutils.prepare_html_str(html_code)
 
 print("CustomTools is extension for pyRevit Add-In")
-
-# releasedVersion = "0.5"
-# snapshot = "200124"
 print(text_highligter("version " + releasedVersion) + text_highligter("snapshot " + snapshot))
 
 # git uploader
@@ -38,25 +34,9 @@ print("\nCustomTools checks for updates on system startup.")
 print("For manual update run manual update file and click Reload button.")
 print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension\\ManualUpdate.lnk")
 
-# deprecated
-# new version checker
-# try:
-# 	currentVersionFile = open("L:\REVIT\Dynamo\PyrevitExtensions\CustomToolsCurrentVersion.txt","r")
-# 	currentVersionList = (currentVersionFile.readlines())
-# 	currentVersion = str(currentVersionList)[2:-2]
-# 	if currentVersion == releasedVersion:
-# 		print("Your CustomTools extension IS up to date.")
-# 	else:
-# 		print("Your CustomTools extension IS NOT up to date.\n"+ 
-# 			linkMaker("http://dynamohelp.atwebpages.com/support_files/CustomTools.extension_"+currentVersion+".7z", "DOWNLOAD NEW "+ currentVersion))
-# except:
-# 	pass
-
 #prints clickable email address
 print("\nFor support contact "+ mailto("vadkerti@gfi.sk"))
 print("For help visit " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)","help page") + "on GFI wiki")
 
 print("\nFor description of hooks functions and logging visit " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_Hooks","CustomTools Hooks article") + "on GFI wiki")
 print(linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Bitbucket git repository"))
-
-
