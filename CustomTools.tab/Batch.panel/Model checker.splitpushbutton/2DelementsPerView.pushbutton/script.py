@@ -20,7 +20,7 @@ output = script.get_output()
 
 def findDetailItems(Lines,selected_option):
     output.print_md("# "+ selected_option.upper() +" PER VIEW SCHEDULE")
-    md_schedule = "| Number | View Name | View ID | Number of Elements \n| ----------- | ----------- | ----------- | ----------- |"
+    scheduleData = []
 
     viewNames = []
     viewNamesAcc = []
@@ -50,10 +50,15 @@ def findDetailItems(Lines,selected_option):
         lineCount=graphViewsData.count(i)   
         lineCountSet.append(lineCount)
         count += 1
-        newScheduleLine = " \n| "+str(count)+" | "+viewNamesAcc[count-1]+" | "+output.linkify(viewIds[count-1])+" | "+ str(lineCountSet[count-1]) +" |"
-        md_schedule += newScheduleLine
+        paramList = [viewNamesAcc[count-1], output.linkify(viewIds[count-1]), str(lineCountSet[count-1])]
+        scheduleData.append(paramList)
 
-    output.print_md(md_schedule)
+  	sortedScheduleData = sorted(scheduleData, reverse=True, key=lambda x: int(x[2]))
+
+    output.print_table(table_data=sortedScheduleData,
+                           title = selected_option.upper(),
+                           columns=["View Name", "View ID", "Number of Elements"],
+                           formats=['', '', ''])
 
     # chart
     try:
