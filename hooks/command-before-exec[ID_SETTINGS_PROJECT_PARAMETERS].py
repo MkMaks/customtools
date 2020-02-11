@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
+from hooksScripts import hookTurnOff
 
 # showing of dialog box with warning
 def dialogBox():
@@ -26,15 +27,4 @@ def dialogBox():
 		EXEC_PARAMS.event_args.Cancel = True
 
 # try to find config file for people who dont want to see the hook
-try:
-	configFile = open("C:\\pyRevitExtensions\\CustomTools\\hooksConfig.txt","r")
-	# first item of file content
-	configSetting = (configFile.readlines())[0]
-	# if first item of file content not equal to zero show the dialog box
-	if configSetting == "0":
-		pass
-	else:
-		dialogBox()
-# if file not found show the dialog box
-except:
-	dialogBox()
+hookTurnOff(dialogBox,0)

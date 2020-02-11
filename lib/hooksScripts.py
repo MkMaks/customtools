@@ -56,3 +56,17 @@ def versionLogger(releasedVersion,snapshot):
      f.close()
   except:
          pass
+
+# read number from config file, if not zero run function that show f.e. dialog box
+def hookTurnOff(func, index):
+  try:
+    configFile = open("C:\\pyRevitExtensions\\CustomTools\\hooksConfig.txt","r")
+    # first or other item of file content
+    configSetting = (configFile.readline())[index]
+    # if first item of file content not equal to zero show the dialog box
+    if configSetting == "0":
+      pass
+    else:
+      func()
+  except:
+    func()
