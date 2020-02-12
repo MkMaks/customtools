@@ -61,7 +61,7 @@ for view in views:
             view_id = view.Id
             # viewType = view.GetType().Name
             view_creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,view_id).Creator 
-            newScheduleLine = " \n| "+str(count)+" | "+viewName+" | "+output.linkify(view_id)+" | " + str(view) + " | "+ viewType + " |"
+            newScheduleLine = " \n| "+str(count)+" | "+viewName+" | "+output.linkify(view_id)+" | " + str(view_creator) + " | "+ viewType + " |"
             md_schedule += newScheduleLine
 
 # print md_schedule
