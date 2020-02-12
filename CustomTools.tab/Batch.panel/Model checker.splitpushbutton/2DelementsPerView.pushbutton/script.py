@@ -55,10 +55,14 @@ def findDetailItems(Lines,selected_option):
 
   	sortedScheduleData = sorted(scheduleData, reverse=True, key=lambda x: int(x[2]))
 
-    output.print_table(table_data=sortedScheduleData,
-                           title = selected_option.upper(),
-                           columns=["View Name", "View ID", "Number of Elements"],
-                           formats=['', '', ''])
+    # print schedule if there are more than zero rows
+    try:
+        output.print_table(table_data=sortedScheduleData,
+                               title = selected_option.upper(),
+                               columns=["View Name", "View ID", "Number of Elements"],
+                               formats=['', '', ''])
+    except:
+        print("There are no " + selected_option + " in this model")
 
     # chart
     try:
