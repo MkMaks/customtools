@@ -13,20 +13,27 @@ doc = __revit__.ActiveUIDocument.Document
 uidoc = UIDocument(doc)
 
 output = script.get_output()
-
 output.print_md("# LIST OF OPENED VIEWS")
-md_schedule = "| Number | View Name | View Id |\n| ----------- | ----------- | ----------- |"  
 
 openUIviews = uidoc.GetOpenUIViews()
 
 count = 0
+scheduleData = []
+allViewIds = []
 for uiview in openUIviews:
     count += 1
     view_id = uiview.ViewId
     viewName = doc.GetElement(view_id).Name
-    newScheduleLine = " \n| "+str(count)+" | "+viewName+" | "+output.linkify(view_id)+" |"
-    md_schedule += newScheduleLine
+    paramList = [str(count), viewName, output.linkify(view_id)]
+    scheduleData.append(paramList)
+    allViewIds.append(view_id)
 
-output.print_md(md_schedule)
+# show button to open all elements at once - cant open list using linify
+# print output.linkify(allViewIds, title="all elements")
+
+output.print_table(table_data=scheduleData,
+                   columns=["Number", "View Name", "View Id"],
+                   formats=['', '', ''])
+
 print("\nSave this html file on your drive.")
 print("Use Import Report tool for reopening views.")
