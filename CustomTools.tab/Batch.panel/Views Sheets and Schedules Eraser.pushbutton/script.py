@@ -77,8 +77,9 @@ class viewEraserWindow(forms.WPFWindow):
         uiapp = UIApplication(doc.Application)
         uiapp.PostCommand(Command_ID)
 
-        # for timing------
-        endtime = timer.get_time()
-        print(hmsTimer(endtime))
-        # --------------
 viewEraserWindow('viewEraserWindow.xaml').ShowDialog()
+
+# for timing------
+endtime = timer.get_time()
+print(hmsTimer(endtime))
+# --------------
