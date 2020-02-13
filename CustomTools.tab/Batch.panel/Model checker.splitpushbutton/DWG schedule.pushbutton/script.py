@@ -49,7 +49,7 @@ def listdwgs(current_view_only=False,):
             dwgInst["IMPORTED DWGs"].append(dwg)
 
     for link_mode in dwgInst:
-        md_schedule = "| Number | DWG name |  DWG id | Owner View | View Only | Author |\n| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |"
+        md_schedule = "| Number | DWG name |  DWG id | Owner View Name | Current View Only | Author |\n| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |"
         output.print_md("##{}".format(link_mode))
         count = 0
         for dwg in dwgInst[link_mode]:
