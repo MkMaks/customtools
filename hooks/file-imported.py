@@ -24,9 +24,10 @@ else:
                              "OK, potrebujem DWG v 3D",
                              "Viac info o Linkovaní CAD súborov"])
   if res  == "OK, potrebujem DWG v 3D":
-      # logging to server
-      from hooksScripts import hooksLogger
-      hooksLogger("Link DWG in 3D")
+      pass
+      # logging to server - cannot access active document
+      # from hooksScripts import hooksLogger
+      # hooksLogger("Link DWG in 3D")
   elif res  == "Zrušiť":
       #run command UNDO
       from Autodesk.Revit.UI import UIApplication, RevitCommandId, PostableCommand

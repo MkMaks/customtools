@@ -201,7 +201,10 @@ def get_commit_points():
     #     for i, x in enumerate(docrevs)
     #     ])
 
+    # try to sort by sequence number
+    # sorted_cpoints = sorted(commit_points, key=lambda x: int(x.SequenceNumber))
     sorted_cpoints = sorted(commit_points, key=lambda x: x.idx)
+    
     mlogger.debug(sorted_cpoints)
     return sorted_cpoints
 

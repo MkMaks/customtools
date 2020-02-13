@@ -23,7 +23,7 @@ try:
                                  "Viac info o Families"])
       if res  == "Naloadovať":
          pass
-         # logging to server
+         # logging to server - cannot access active document
          # from hooksScripts import hooksLogger
          # hooksLogger("Family loading over 1 MB")
       elif res  == "Zrušiť":
