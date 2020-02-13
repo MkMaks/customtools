@@ -16,7 +16,7 @@ __title__ = 'Manage\nRevisions'
 __author__ = 'Ehsan Iran-Nejad, minor customization tweaks by David Vadkerti'
 __helpurl__ = '{{docpath}}po0lCldSGmk'
 __beta__ = True
-__docs__ = "BETA TOOL!!!\nManage revisions and packages. Tool does not show revisions with Numerical Numbering."
+__doc__ = "BETA TOOL - Manage revisions and packages. Tool does not show revisions with Numerical Numbering."
 
 logger = script.get_logger()
 
