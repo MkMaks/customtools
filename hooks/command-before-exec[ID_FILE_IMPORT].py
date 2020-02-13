@@ -3,6 +3,8 @@
 from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
 
+doc = __revit__.ActiveUIDocument.Document
+
 res = forms.alert("POZOR!\n\n"
                  "Importovať CAD súbory by si mal len výnimočne.\n"
                   "Nikdy neimportuj CAD priamo do modelu, ale do čistého RVT súboru.\n\n"
@@ -16,7 +18,7 @@ if res  == "Importovať":
    EXEC_PARAMS.event_args.Cancel = False
    # logging to server
    from hooksScripts import hooksLogger
-   hooksLogger("CAD file import")
+   hooksLogger("CAD file import", doc)
 
 elif res  == "Zrušiť":
    EXEC_PARAMS.event_args.Cancel = True

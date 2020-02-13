@@ -3,6 +3,8 @@
 from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
 
+doc = __revit__.ActiveUIDocument.Document
+
 res = forms.alert("POZOR!\n\n"
                   "Všetky nosné stĺpy by mali byť vymodelované ako Structural a nie ako Architectural Column.\n"
                   "- Architectural Columns sa nezobrazia v statickom modeli.\n"
@@ -16,7 +18,7 @@ if res  == "Vytvoriť aj napriek tomu Architectural Column":
    EXEC_PARAMS.event_args.Cancel = False
    # logging to server
    from hooksScripts import hooksLogger
-   hooksLogger("Architecural Column")
+   hooksLogger("Architecural Column", doc)
 
 elif res  == "Zrušiť":
    EXEC_PARAMS.event_args.Cancel = True

@@ -8,6 +8,8 @@ from Autodesk.Revit.DB.Document import GetElement
 import os.path as op
 from pyrevit import script
 
+doc = __revit__.ActiveUIDocument.Document
+
 cadLinkId = __eventargs__.ImportedInstanceId
 doc = __eventargs__.Document
 cadLinkElement = doc.GetElement(cadLinkId)
@@ -26,8 +28,8 @@ else:
   if res  == "OK, potrebujem DWG v 3D":
       pass
       # logging to server - cannot access active document
-      # from hooksScripts import hooksLogger
-      # hooksLogger("Link DWG in 3D")
+      from hooksScripts import hooksLogger
+      hooksLogger("Link DWG in 3D", doc)
   elif res  == "Zrušiť":
       #run command UNDO
       from Autodesk.Revit.UI import UIApplication, RevitCommandId, PostableCommand

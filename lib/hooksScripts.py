@@ -5,14 +5,12 @@ releasedVersion = "0.5"
 snapshot = "200212"
 
 # logging to server
-def hooksLogger(log_string):
+def hooksLogger(log_string, doc):
   from datetime import datetime
   from pyrevit import revit
-  from Autodesk.Revit.UI import UIApplication
-
-  doc = __revit__.ActiveUIDocument.Document
-  uiapp = UIApplication(doc.Application)
-
+  
+  # doc = __revit__.ActiveUIDocument.Document
+  
   user_name = doc.Application.Username
   def path2fileName(file_path,divider):
       # file_path_split = file_path.split("\\")
@@ -24,7 +22,8 @@ def hooksLogger(log_string):
 
   # workshared file
   try:
-     central_path = revit.query.get_central_path(doc=revit.doc)
+     central_path = revit.query.get_central_path(doc)
+     # central_path = revit.query.get_central_path(doc=revit.doc)
      file_name = path2fileName(central_path,"/")
   # non workshared file
   except:

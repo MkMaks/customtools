@@ -2,6 +2,8 @@
 from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
 
+doc = __revit__.ActiveUIDocument.Document
+
 res = forms.alert("POZOR!\n\n"
                   "In Place Families by mali byť použité len vo výnimočných prípadoch, "
                   "keďže majú oproti Loadable Families veľa nevýhod: \n"
@@ -19,7 +21,7 @@ if res  == "Vytvoriť":
    EXEC_PARAMS.event_args.Cancel = False
    # logging to server
    from hooksScripts import hooksLogger
-   hooksLogger("Inplace Component")
+   hooksLogger("Inplace Component", doc)
 
 elif res  == "Zrušiť":
    EXEC_PARAMS.event_args.Cancel = True

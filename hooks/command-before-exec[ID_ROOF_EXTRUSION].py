@@ -3,6 +3,8 @@
 from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
 
+doc = __revit__.ActiveUIDocument.Document
+
 res = forms.alert("POZOR!\n\n"
                   "Roof By Extrusion by sa mali používať len výnimočne.\n"
                   "Ak potrebuješ spraviť strechu v spáde, použi Floor a nastav spád.\n"
@@ -16,7 +18,7 @@ if res  == "Vytvoriť Roof by Extrusion":
    EXEC_PARAMS.event_args.Cancel = False
    # logging to server
    from hooksScripts import hooksLogger
-   hooksLogger("Roof by Extrusion")
+   hooksLogger("Roof by Extrusion", doc)
 elif res  == "Zrušiť":
    EXEC_PARAMS.event_args.Cancel = True
 elif res  == "Viac info o Roof by Extrusion":

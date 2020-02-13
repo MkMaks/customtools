@@ -4,6 +4,8 @@ from pyrevit import forms, script
 
 import os.path as op
 
+doc = __revit__.ActiveUIDocument.Document
+
 # if family is saved
 try:
    fam_path = __eventargs__.FamilyPath
@@ -24,8 +26,8 @@ try:
       if res  == "Naloadovať":
          pass
          # logging to server - cannot access active document
-         # from hooksScripts import hooksLogger
-         # hooksLogger("Family loading over 1 MB")
+         from hooksScripts import hooksLogger
+         hooksLogger("Family loading over 1 MB", doc)
       elif res  == "Zrušiť":
          EXEC_PARAMS.event_args.Cancel()
       elif res  == "Viac info o Families":
