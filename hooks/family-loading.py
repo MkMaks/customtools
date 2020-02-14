@@ -4,7 +4,7 @@ from pyrevit import forms, script
 
 import os.path as op
 
-doc = __revit__.ActiveUIDocument.Document
+doc = __eventargs__.Document
 
 # if family is saved
 try:

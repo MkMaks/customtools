@@ -8,8 +8,6 @@ from Autodesk.Revit.DB.Document import GetElement
 import os.path as op
 from pyrevit import script
 
-doc = __revit__.ActiveUIDocument.Document
-
 cadLinkId = __eventargs__.ImportedInstanceId
 doc = __eventargs__.Document
 cadLinkElement = doc.GetElement(cadLinkId)
@@ -19,7 +17,8 @@ if twoD:
   pass
 else:
   res = forms.alert("POZOR!\n\n"
-                    "Linkuješ CAD súbor do 3D!",
+                    "Nezašrktol si možnosť 'Current View Only'.\n"
+                    "Tým pádom linkuješ CAD súbor do 3D!",
                     title="Link CAD file in 3D",
                     footer="CustomTools Hooks",
                     options=["Zrušiť",
