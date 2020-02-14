@@ -8,8 +8,8 @@ doc = __revit__.ActiveUIDocument.Document
 
 def dialogBox():
   res = forms.alert("POZOR!\n\n"
-                    "CAD súbory môžu poškodiť revitový model\n"
-                    "Si si istý, že si spravil všetko podľa návodu nižšie?",
+                    "CAD súbory môžu poškodiť revitový model.\n"
+                    "Spravil si všetko podľa návodu nižšie?",
                     title="Link CAD file",
                     footer="CustomTools Hooks",
                     options=["Link CAD",
