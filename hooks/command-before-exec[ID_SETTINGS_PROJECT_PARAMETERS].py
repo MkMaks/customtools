@@ -8,7 +8,9 @@ doc = __revit__.ActiveUIDocument.Document
 # showing of dialog box with warning
 def dialogBox():
 	res = forms.alert("POZOR!\n\n"
-		            "Pri vytváraní nového Shared Parametru si najskôr pozrite, či už podobný parameter nie je vytvorený. Nepoužívajte diakritiku.",
+		            "Pri vytváraní nového Shared Parametru si najskôr pozrite, či už podobný parameter nie je vytvorený. Nepoužívajte diakritiku.\n\n"
+		            "- Použite funkciu 'Shared Parameter Schedule'.\n"
+		            "- Nepoužívajte diakritiku.",
 					title="Project Parameters",
 					footer="CustomTools Hooks",
 	                options=["Zobraziť zoznam Shared Parametrov na Wiki",
