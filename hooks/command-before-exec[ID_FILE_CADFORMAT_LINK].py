@@ -4,10 +4,12 @@ from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
 from hooksScripts import hookTurnOff
 
+doc = __revit__.ActiveUIDocument.Document
+
 def dialogBox():
   res = forms.alert("POZOR!\n\n"
-                    "CAD súbory môžu poškodiť revitový model\n"
-                    "Si si istý, že si spravil všetko správne?",
+                    "CAD súbory môžu poškodiť revitový model.\n"
+                    "Spravil si všetko podľa návodu nižšie?",
                     title="Link CAD file",
                     footer="CustomTools Hooks",
                     options=["Link CAD",
@@ -17,7 +19,7 @@ def dialogBox():
       EXEC_PARAMS.event_args.Cancel = False
       # logging to server
       from hooksScripts import hooksLogger
-      hooksLogger("Link CAD file")
+      hooksLogger("Link CAD file",doc)
   elif res  == "Zrušiť":
       EXEC_PARAMS.event_args.Cancel = True
   elif res  == "Viac info o Linkovaní CAD súborov":

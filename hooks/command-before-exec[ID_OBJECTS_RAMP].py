@@ -2,6 +2,8 @@
 from pyrevit import EXEC_PARAMS
 from pyrevit import forms, script
 
+doc = __revit__.ActiveUIDocument.Document
+
 # img = 'https://traviswhitecommunications.com/wp-content/uploads/2012/09/dont-do-it.jpg'
 # script.open_url(img)
 
@@ -29,7 +31,7 @@ if res  == "Aj napriek tomu vytvoriť rampu":
    EXEC_PARAMS.event_args.Cancel = False
    # logging to server
    from hooksScripts import hooksLogger
-   hooksLogger("Ramp")
+   hooksLogger("Ramp", doc)
 
 elif res  == "Zrušiť":
    EXEC_PARAMS.event_args.Cancel = True

@@ -17,7 +17,8 @@ if twoD:
   pass
 else:
   res = forms.alert("POZOR!\n\n"
-                    "Linkuješ CAD súbor do 3D!",
+                    "Nezašrktol si možnosť 'Current View Only'.\n"
+                    "Tým pádom linkuješ CAD súbor do 3D!",
                     title="Link CAD file in 3D",
                     footer="CustomTools Hooks",
                     options=["Zrušiť",
@@ -26,8 +27,8 @@ else:
   if res  == "OK, potrebujem DWG v 3D":
       pass
       # logging to server - cannot access active document
-      # from hooksScripts import hooksLogger
-      # hooksLogger("Link DWG in 3D")
+      from hooksScripts import hooksLogger
+      hooksLogger("Link DWG in 3D", doc)
   elif res  == "Zrušiť":
       #run command UNDO
       from Autodesk.Revit.UI import UIApplication, RevitCommandId, PostableCommand
