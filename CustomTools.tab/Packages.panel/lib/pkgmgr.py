@@ -161,7 +161,7 @@ def get_commit_points():
             dockpkgs.append(
                 DocPkg(param_name=project_param.name,
                        pkg_idx=int(pkg_idx),
-                       pkg_name=pkg_name)
+                       pkg_name=pkg_name,)
                 )
         elif 'docpkg' in project_param.name.lower():
             mlogger.warning('Package parameter "%s" is not formatted '
@@ -183,14 +183,15 @@ def get_commit_points():
     for i, x in enumerate(docrevs):
         if str(x.NumberType) == 'Alphanumeric':
             docrevsFiltered.append(x)
+    sortedDocrevsFiltered = sorted(docrevsFiltered, key=lambda x: x.SequenceNumber)
 
-    docrevsFiltered.sort()
+    # docrevsFiltered.sort()
     commit_points.extend([
         CommitPoint(cptype=CommitPointTypes.Revision,
                     target=x.Id.IntegerValue,
                     idx=last_docpkg_idx + i + 1,
                     name=x.SequenceNumber)
-        for i, x in enumerate(docrevsFiltered)
+        for i, x in enumerate(sortedDocrevsFiltered)
         ])
 
     # commit_points.extend([

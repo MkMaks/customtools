@@ -16,7 +16,7 @@ __title__ = 'Manage\nRevisions'
 __author__ = 'Ehsan Iran-Nejad, minor customization tweaks by David Vadkerti'
 __helpurl__ = '{{docpath}}po0lCldSGmk'
 __beta__ = True
-__doc__ = "BETA TOOL - Manage revisions and packages. Tool does not show revisions with Numerical Numbering."
+__doc__ = "BETA TOOL - Manage revisions and packages. Tool does not show revisions with Numeric Numbering."
 
 logger = script.get_logger()
 
@@ -150,7 +150,8 @@ class SheetItem(object):
 
     @staticmethod
     def build_commit_sort_param(commit_point):
-        return 'sort_{}{}'.format(commit_point.cptype, commit_point.idx)
+        # return 'sort_{}{}'.format(commit_point.cptype, commit_point.idx)
+        return 'sort_{}{}'.format(commit_point.cptype, commit_point.name)
 
     def get_order(self, param_name):
         return self._csheet.revit_sheet.LookupParameter(param_name).AsInteger()
