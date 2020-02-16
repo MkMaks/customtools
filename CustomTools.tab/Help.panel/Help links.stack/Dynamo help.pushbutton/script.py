@@ -1,9 +1,9 @@
-"""Opens the dynamo help website."""
+"""Opens the GFI wiki dynamo help article."""
 from pyrevit import script
 
 
 __context__ = 'zero-doc'
 
 
-url = 'http://dynamohelp.atwebpages.com'
+url = 'https://gfi.miraheze.org/wiki/Zoznam_Dynamo_skriptov'
 script.open_url(url)
