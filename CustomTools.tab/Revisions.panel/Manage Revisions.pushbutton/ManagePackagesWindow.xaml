@@ -181,13 +181,6 @@
                     </WrapPanel>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Help" DockPanel.Dock="Bottom" >
-                <StackPanel Margin="5,10,5,5">
-                    <WrapPanel Margin="0,0,0,5">
-                        <TextBlock Text="V tabuľke sú zobrazené Sheety a Sequence number revízií. Revízie je možné po po jednom pridávať a odoberať. Funkcia zobrazí len revízie radené ako Alphanumerical - nepracuje s Numeric revisions. Sheety je možné filtrovať. Kliknutím na hlavičku stĺpcov je možné údaje zoradiť"/>
-                    </WrapPanel>
-                </StackPanel>
-            </GroupBox>
             <StackPanel>
                 <Button x:Name="updatesheets_b"
                         Content="Update Sheets"
