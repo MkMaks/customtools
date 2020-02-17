@@ -29,10 +29,10 @@ def linkMaker(a,title):
 print("CustomTools is extension for pyRevit Add-In")
 print(text_highligter("version " + releasedVersion) + text_highligter("snapshot " + snapshot))
 
-# git updater
-print("\nCustomTools checks for updates on system startup.")
-print("For manual update run manual update file and click Reload button.")
-print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension\\ManualUpdate.lnk")
+# git updater - DEPRECATED
+# print("\nCustomTools checks for updates on system startup.")
+# print("For manual update run manual update file and click Reload button.")
+# print("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension\\ManualUpdate.lnk")
 # print(linkMaker("%APPDATA%\\pyRevit\\Extensions\\CustomTools.extension\\ManualUpdate.lnk","Update Now!"))
 
 #prints clickable email address
