@@ -10,5 +10,6 @@ layout:
   - OwnerSheet
   - 2DelementsPerView
   - SharedParametersSchedule
+  - AllCapsFinder
   - ---
   - Import Report
