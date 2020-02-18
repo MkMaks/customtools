@@ -1,21 +1,18 @@
 pyrevit extend ui CustomTools https://bitbucket.org/davidvadkerti/customtools.git
+#Write-Output "CustomTools has been installed successfuly."
+
 pyrevit configs logs none
 pyrevit configs colordocs enable
-
-#constructing CSS file path since %APPDATA% is not working
-$firstPath = "C:\Users\"
-$secondPath = "\AppData\Roaming\pyRevit\Extensions\CustomTools.extension\outputstylesCustom.css"
-$fullPath = "$($firstPath)$($env:UserName)$($secondPath)"
-#Write-Output "$($fullPath)" > new.txt
+#Write-Output "CustomTools has been set successfully."
 
 #setting CSS file
-pyrevit configs outputcss $fullPath
+pyrevit configs outputcss  "$env:APPDATA\pyRevit\Extensions\CustomTools.extension\outputstylesCustom.css"
+#Write-Output "CSS has been set successfully."
 
 # SETTING AUTO UPDATES THROUGH CMD IN STARTUP FOLDER
-#constructing file path since %APPDATA% is not working
-$PathStartup = "C:\Users\$env:UserName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+$PathStartup = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 
 #constructing file path
-$PathUpdaterLink = "C:\Users\$($env:UserName)\AppData\Roaming\pyRevit\Extensions\CustomTools.extension\updater\CustomToolsUpdater.cmd"
+$PathUpdaterLink = "$env:APPDATA\pyRevit\Extensions\CustomTools.extension\updater\CustomToolsUpdater.cmd"
 
 Copy-Item -Path $PathUpdaterLink -Destination $PathStartup
