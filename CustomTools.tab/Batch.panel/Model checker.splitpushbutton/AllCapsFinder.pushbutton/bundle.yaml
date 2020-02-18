@@ -1,4 +1,4 @@
 title: AllCaps finder
 author: David Vadkerti
-tooltip: Finds all TextNotes shere AllCaps is used.
+tooltip: Finds all TextNotes where revit AllCaps function is used.
 highlight: new

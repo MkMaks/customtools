@@ -22,11 +22,14 @@ def showAllCapsSchedule():
             if str(capsStatus) != "None":
                 capsCount +=1
                 textNoteId =  textNote.Id
-                paramList = [capsCount, output.linkify(textNoteId)]
+                viewId = textNote.OwnerViewId
+                viewName = doc.GetElement(viewId).Name
+                paramList = [viewName, output.linkify(textNoteId)]
                 scheduleData.append(paramList)
-        output.print_table(table_data=scheduleData,
+        sortedScheduleData = sorted(scheduleData, key=lambda x: x[0])
+        output.print_table(table_data=sortedScheduleData,
                            title = "",
-                           columns=["Number", "Text Note ID"],
+                           columns=["View Name", "Text Note ID"],
                            formats=['', ''])
     # no All Caps
     except:
