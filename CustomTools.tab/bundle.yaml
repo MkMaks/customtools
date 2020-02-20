@@ -1,6 +1,7 @@
 layout:
   - Batch
   - Tools
+  - Line Color
   - Text
   - Revisions
   - Links

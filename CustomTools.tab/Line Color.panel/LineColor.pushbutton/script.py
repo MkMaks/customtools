@@ -26,7 +26,7 @@ try:
         for i in couples:
             rgbValueList.append(int(i,16))
 
-        with revit.Transaction('Match Graphics Overrides'):
+        with revit.Transaction('Line Color'):
             src_style = DB.OverrideGraphicSettings()
             # constructing RGB value from list
             color = DB.Color(rgbValueList[0],rgbValueList[1],rgbValueList[2])
