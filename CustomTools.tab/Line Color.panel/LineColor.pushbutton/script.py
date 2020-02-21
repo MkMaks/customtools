@@ -12,10 +12,12 @@ selection = revit.get_selection()
 
 # my_config = script.get_config()
 
+# try to implement Color dialog from revit
 # try:
 #     if len(selection)>0:
-#         colorPickerDialog = ColorSelectionDialog().Show()
-#         color = ColorSelectionDialog().SelectedColor
+#         colorPickerDialog = ColorSelectionDialog()
+#         colorPickerDialog. Show()
+#         color = colorPickerDialog.SelectedColor
 #         print color
 #         with revit.Transaction('Line Color'):
 #             src_style = DB.OverrideGraphicSettings()
@@ -33,7 +35,6 @@ selection = revit.get_selection()
 #     pass
 
 
-# try to implement Color dialog from revit
 try:
     if len(selection)>0:
         colorPickerData = forms.select_swatch(
