@@ -1,4 +1,0 @@
-title: Get ID Of Element In Linked File
-author: David Vadkerti
-tooltip: Gets ID of element in a Revit link and copies it to the clipboard. You can use 'Select Elements by IDs' function to select element if link is opened directly.
-highlight: new
