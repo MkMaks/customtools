@@ -2,7 +2,11 @@
 Gets ID of element in a Revit link and copies it to the clipboard. You can use 'Select Elements by IDs' function to select element if link is opened directly.
 """
 
-__title__ = 'Get ID Of Element In Linked File'
+__title__ = 'ID Of Element\nIn Linked File'
+__author__ = 'David Vadkerti'
+__doc__ = 'Gets ID of element in a Revit link and copies it to the clipboard.' \
+          'You can use "Select Elements by IDs" function to select element if link is opened directly.'
+__highlight__ = 'new'
 
 from pyrevit import script
 
@@ -21,4 +25,4 @@ def selectElemInLink():
 id = selectElemInLink()
 #Copy id to clipboard
 script.clipboard_copy(str(id))
-TaskDialog.Show("Id",str(id))
+TaskDialog.Show("Element Id","Element Id" + str(id)+ " was copied to clipboard.")

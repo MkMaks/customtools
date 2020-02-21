@@ -1,6 +1,7 @@
 #pylint: disable=E0401,C0111,W0613,C0103
 from pyrevit import revit, DB
 from pyrevit import forms, script
+from Autodesk.Revit.UI import ColorSelectionDialog
 
 __title__ = "Line Color"
 __doc__ = 'Quicker override Projection Line Color of Elements.'
@@ -11,6 +12,28 @@ selection = revit.get_selection()
 
 # my_config = script.get_config()
 
+# try:
+#     if len(selection)>0:
+#         colorPickerDialog = ColorSelectionDialog().Show()
+#         color = ColorSelectionDialog().SelectedColor
+#         print color
+#         with revit.Transaction('Line Color'):
+#             src_style = DB.OverrideGraphicSettings()
+#             print src_style
+#             # constructing RGB value from list
+#             # color = DB.Color(rgbValueList[0],rgbValueList[1],rgbValueList[2])
+#             src_style.SetProjectionLineColor(color)
+#             for element in selection:
+#                 revit.active_view.SetElementOverrides(element.Id, src_style)
+#                 print element
+#                 print src_style
+#     else:
+#         forms.alert('You must select at least one element.', exitscript=True)
+# except:
+#     pass
+
+
+# try to implement Color dialog from revit
 try:
     if len(selection)>0:
         colorPickerData = forms.select_swatch(
