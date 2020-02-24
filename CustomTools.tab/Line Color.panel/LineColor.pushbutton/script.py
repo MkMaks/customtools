@@ -12,48 +12,15 @@ selection = revit.get_selection()
 
 # my_config = script.get_config()
 
-# try to implement Color dialog from revit
-# try:
-#     if len(selection)>0:
-#         colorPickerDialog = ColorSelectionDialog()
-#         colorPickerDialog. Show()
-#         color = colorPickerDialog.SelectedColor
-#         print color
-#         with revit.Transaction('Line Color'):
-#             src_style = DB.OverrideGraphicSettings()
-#             print src_style
-#             # constructing RGB value from list
-#             # color = DB.Color(rgbValueList[0],rgbValueList[1],rgbValueList[2])
-#             src_style.SetProjectionLineColor(color)
-#             for element in selection:
-#                 revit.active_view.SetElementOverrides(element.Id, src_style)
-#                 print element
-#                 print src_style
-#     else:
-#         forms.alert('You must select at least one element.', exitscript=True)
-# except:
-#     pass
-
-
 try:
     if len(selection)>0:
-        colorPickerData = forms.select_swatch(
-            title='Pick color',
-            button_name='Override Graphics in View'
-            )
-
-        # RGB values from hexadecimal numbers
-        colorPairs = []
-        colorDataStriped = str(colorPickerData)[1:]
-        couples = [colorDataStriped[i:i+2] for i in range(0, len(colorDataStriped), 2)]
-        rgbValueList = []
-        for i in couples:
-            rgbValueList.append(int(i,16))
-
+        # Color dialog from revit
+        colorPickerDialog = ColorSelectionDialog()
+        colorPickerDialog. Show()
+        color = colorPickerDialog.SelectedColor
         with revit.Transaction('Line Color'):
             src_style = DB.OverrideGraphicSettings()
             # constructing RGB value from list
-            color = DB.Color(rgbValueList[0],rgbValueList[1],rgbValueList[2])
             src_style.SetProjectionLineColor(color)
             for element in selection:
                 revit.active_view.SetElementOverrides(element.Id, src_style)
