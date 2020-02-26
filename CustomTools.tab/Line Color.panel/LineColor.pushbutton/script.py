@@ -6,7 +6,6 @@ from Autodesk.Revit.UI import ColorSelectionDialog
 __title__ = "Line Color"
 __doc__ = 'Quicker override Projection Line Color of Elements.'
 __author__ = "David Vadkerti"
-__highlight__ = "new"
 
 selection = revit.get_selection()
 
