@@ -4,6 +4,7 @@ __author__ = 'David Vadkerti'
 __credits__ = 'http://eirannejad.github.io/pyRevit/credits/'
 __doc__ = 'Lists all opened views in schedule for easier searching.'\
           'Save HTML file and use Import Report tool for reopening views.'
+__help_url__ = 'https://youtu.be/1lANcq6WONI'
 
 from Autodesk.Revit.UI import UIDocument
 from Autodesk.Revit.DB.Document import GetElement

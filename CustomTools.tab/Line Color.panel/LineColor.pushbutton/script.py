@@ -1,4 +1,3 @@
-#pylint: disable=E0401,C0111,W0613,C0103
 from pyrevit import revit, DB
 from pyrevit import forms, script
 from Autodesk.Revit.UI import ColorSelectionDialog

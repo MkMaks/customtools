@@ -6,6 +6,7 @@ __title__ = 'ID Of Element\nIn Linked File'
 __author__ = 'David Vadkerti'
 __doc__ = 'Gets ID of element in a Revit link and copies it to the clipboard.' \
           'You can use "Select Elements by IDs" function to select element if link is opened directly.'
+__help_url__ = 'https://youtu.be/fG-dg7D8U8M'
 
 from pyrevit import script
 
