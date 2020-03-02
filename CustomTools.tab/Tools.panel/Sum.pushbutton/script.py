@@ -16,7 +16,7 @@ __doc__ = 'Sums up the values of selected parameter on selected elements. ' \
           'Double or Integer values are included.'
 
 __title__ = 'Sum\nParameters'
-__help_url__ = 'https://www.youtube.com/watch?v=aWg-rj8k0Ts'
+__helpurl__ = 'https://youtu.be/aWg-rj8k0Ts'
 
 
 selection = revit.get_selection()

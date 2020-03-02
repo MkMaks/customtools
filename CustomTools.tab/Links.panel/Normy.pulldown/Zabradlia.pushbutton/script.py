@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __title__ = 'Zábradlia'
-"""STN 74 3305 Ochranné zábradlia"""
+__doc__ = 'STN 74 3305 Ochranné zábradlia'
 from pyrevit import script
 
 

@@ -1,4 +1,4 @@
 title: Wall Disallow Join
-doc: Changes Wall ends to Disallow join or Allow join of all selected Walls.
+tooltip: Changes Wall ends to Disallow join or Allow join of all selected Walls.
 context: Walls
 help_url: https://youtu.be/GUoFDXKbKgk

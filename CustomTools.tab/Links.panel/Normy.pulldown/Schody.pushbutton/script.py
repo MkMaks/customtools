@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __title__ = 'Schody'
-_doc__ = """STN 73 4130 Schodiska a sikme rampy"""
+__doc__ = """STN 73 4130 Schodiska a sikme rampy"""
 
 from pyrevit import script
 
