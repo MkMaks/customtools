@@ -3,6 +3,7 @@ __title__ = 'Open Selected Views'
 __doc__ = """To save time for rendering each view, this button opens all selected views in one click
 Context: Some views should be selected in Project browser - imported from apex-project"""
 __context__ = 'Selection'
+__helpurl__ = 'https://youtu.be/NcI07ocIrS0'
 
 try:
     from pyrevit.versionmgr import PYREVIT_VERSION

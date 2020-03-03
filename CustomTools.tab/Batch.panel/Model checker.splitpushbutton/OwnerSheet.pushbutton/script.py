@@ -1,6 +1,7 @@
-'''
-Creates schedule with links to owner sheets for active view.
-'''
+# -*- coding: UTF-8 -*-
+__author__ = 'David Vadkerti'
+__doc__ = 'Creates schedule with links to owner sheets for active view.'
+__helpurl__ = 'https://youtu.be/bdR_gaLdbW0'
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Viewport
 from pyrevit import revit, DB, coreutils, forms, script

@@ -7,6 +7,7 @@ __title__= "Set Revision\nOn Sheets"
 __doc__ = 'Select a revision from the list of revisions and '\
           'this script set that revision on all sheets in the '\
           'model as an additional revision.'
+__helpurl__ = 'https://youtu.be/FBCpXeknZJA?t=57'
 
 
 revisions = forms.select_revisions(button_name='Select Revision',

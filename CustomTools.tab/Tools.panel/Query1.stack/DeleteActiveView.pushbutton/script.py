@@ -1,7 +1,8 @@
 # -*- coding: UTF-8 -*-
-'''
-deletes active view
-'''
+__author__ = 'David Vadkerti'
+__doc__ = 'Deletes active view'
+__helpurl__ = 'https://youtu.be/LN7cHIQ2fTE'
+
 
 from Autodesk.Revit.DB import Transaction, Viewport, ElementId
 from pyrevit import revit, DB, coreutils, forms

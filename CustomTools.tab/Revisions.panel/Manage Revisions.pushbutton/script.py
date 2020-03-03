@@ -14,7 +14,7 @@ from pkgcommits import CommitPointTypes, CommitTypes, Commit
 
 __title__ = 'Manage\nRevisions'
 __author__ = 'Ehsan Iran-Nejad, minor customization tweaks by David Vadkerti'
-__helpurl__ = '{{docpath}}po0lCldSGmk'
+__helpurl__ = 'https://youtu.be/FBCpXeknZJA'
 __beta__ = True
 __doc__ = "BETA TOOL - Manage revisions and packages. Tool does not show revisions with Numeric Numbering."
 
