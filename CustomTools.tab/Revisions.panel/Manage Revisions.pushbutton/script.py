@@ -150,7 +150,6 @@ class SheetItem(object):
 
     @staticmethod
     def build_commit_sort_param(commit_point):
-        # return 'sort_{}{}'.format(commit_point.cptype, commit_point.idx)
         return 'sort_{}{}'.format(commit_point.cptype, commit_point.name)
 
     def get_order(self, param_name):
@@ -187,7 +186,8 @@ class ManagePackagesWindow(forms.WPFWindow):
 
         # prepare default privates
         self._last_filter_len = 0
-
+        self.column_header_template = \
+            self.sheets_dg.Resources['ColumnHeaderTemplate']
         # prepare wpf resources
         self.dt_template = None
         self.package_column_cell_style = \
@@ -196,12 +196,6 @@ class ManagePackagesWindow(forms.WPFWindow):
             self.sheets_dg.Resources['RevisionCellStyle']
         self.committype_template = \
             self.Resources["CommitTypeListItemControlTemplate"]
-        # added
-        self.revision_column_header_style = \
-            self.sheets_dg.Resources['ColumnHeaderRotateStyle']
-
-        # added
-
         self._read_resources()
 
         # grab commit points
@@ -243,12 +237,14 @@ class ManagePackagesWindow(forms.WPFWindow):
             param = SheetItem.build_commit_param(commit_point)
             sort_param = SheetItem.build_commit_sort_param(commit_point)
             commit_column = Windows.Controls.DataGridTemplateColumn()
-            commit_column.Header = commit_point.name
-            # commit_column.Header = commit_point.name.replace(" ","\n")
-            commit_column.HeaderStyle = self.revision_column_header_style
+            commit_column.Header = commit_point
+            # commit_column.Header = commit_point.name
+            # commit_column.HeaderStyle = self.revision_column_header_style
+            commit_column.HeaderTemplate = self.column_header_template
             commit_column.CanUserSort = True
-            # commit_column.MinWidth = 50
-
+            # disable resize on revision columns
+            if commit_point.cptype == CommitPointTypes.Revision:
+                commit_column.CanUserResize = False
             commit_column.SortMemberPath = sort_param
             # commit_column.SortDirection = \
             #     ComponentModel.ListSortDirection.Descending

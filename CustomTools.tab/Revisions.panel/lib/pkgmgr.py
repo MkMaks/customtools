@@ -3,6 +3,7 @@
 import re
 from collections import namedtuple
 
+from pyrevit import coreutils
 from pyrevit.coreutils import logger
 from pyrevit import revit, DB
 
@@ -161,7 +162,7 @@ def get_commit_points():
             dockpkgs.append(
                 DocPkg(param_name=project_param.name,
                        pkg_idx=int(pkg_idx),
-                       pkg_name=pkg_name,)
+                       pkg_name=pkg_name)
                 )
         elif 'docpkg' in project_param.name.lower():
             mlogger.warning('Package parameter "%s" is not formatted '
@@ -174,7 +175,10 @@ def get_commit_points():
             CommitPoint(cptype=CommitPointTypes.Package,
                         target=docpkg.param_name,
                         idx=idx,
-                        name=docpkg.pkg_name))
+                        name=docpkg.pkg_name,
+                        desc='Bound to "{}" Project Parameter'.format(
+                            docpkg.param_name
+                            )))
     # grab revisions
     # added sequence number instead of x.Description
     # filtering just alphanumerical revisions
@@ -183,29 +187,36 @@ def get_commit_points():
     for i, x in enumerate(docrevs):
         if str(x.NumberType) == 'Alphanumeric':
             docrevsFiltered.append(x)
+    none_numtype = coreutils.get_enum_none(DB.RevisionNumberType)
     sortedDocrevsFiltered = sorted(docrevsFiltered, key=lambda x: x.SequenceNumber)
 
     # docrevsFiltered.sort()
-    commit_points.extend([
-        CommitPoint(cptype=CommitPointTypes.Revision,
-                    target=x.Id.IntegerValue,
-                    idx=last_docpkg_idx + i + 1,
-                    name=x.SequenceNumber)
-        for i, x in enumerate(sortedDocrevsFiltered)
-        ])
-
     # commit_points.extend([
     #     CommitPoint(cptype=CommitPointTypes.Revision,
     #                 target=x.Id.IntegerValue,
     #                 idx=last_docpkg_idx + i + 1,
     #                 name=x.SequenceNumber)
-    #     for i, x in enumerate(docrevs)
+    #     for i, x in enumerate(sortedDocrevsFiltered)
     #     ])
+
+    commit_points.extend([
+        CommitPoint(cptype=CommitPointTypes.Revision,
+                    target=x.Id.IntegerValue,
+                    idx=last_docpkg_idx + i + 1,
+                    name='{}'.format(x.SequenceNumber),
+                    desc='{}{} (Sequence #{})'.format(
+                        '{} - '.format(x.RevisionNumber)
+                        if hasattr(x, 'RevisionNumber')
+                        and x.NumberType != none_numtype
+                        else '',
+                        x.Description,
+                        x.SequenceNumber))
+        for i, x in enumerate(sortedDocrevsFiltered)
+        ])
 
     # try to sort by sequence number
     # sorted_cpoints = sorted(commit_points, key=lambda x: int(x.SequenceNumber))
     sorted_cpoints = sorted(commit_points, key=lambda x: x.idx)
-    
     mlogger.debug(sorted_cpoints)
     return sorted_cpoints
 
