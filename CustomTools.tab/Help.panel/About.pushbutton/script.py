@@ -37,7 +37,13 @@ print(text_highligter("version " + releasedVersion) + text_highligter("snapshot 
 
 #prints clickable email address
 print("\nFor support contact "+ mailto("vadkerti@gfi.sk"))
-print("For help visit " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)","help page") + "on GFI wiki")
+print("\n- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)","Help page")+" - GFI wiki")
+print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_Hooks","CustomTools Hooks article")+" - GFI wiki")
+print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Git repository")+" - Bitbucket repo")
+print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/issues","Issue tracker"))
+print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags","Download installer"))
 
-print("\nFor description of hooks functions and logging visit " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_Hooks","CustomTools Hooks article") + "on GFI wiki")
-print(linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Bitbucket git repository"))
+
+
+
+
