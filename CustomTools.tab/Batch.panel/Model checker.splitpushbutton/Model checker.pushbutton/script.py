@@ -34,7 +34,8 @@ def dashboardRectMaker(value,description,treshold,wikiArticle):
         content = str(value)
         # normal button
         if value <= treshold:
-            html_code = "<a class='dashboardLink' title='OK - maximum value "+str(int(treshold))+"'><p class='dashboardRectNormal'>"+content+"<br><span class='dashboardSmall'>"+description+"</span>""</p>"
+            html_code = "<a class='dashboardLink' title='OK - maximum value "+str(int(treshold)) \
+            +"'><p class='dashboardRectNormal'>"+content+"<br><span class='dashboardSmall'>"+description+"</span>""</p></a>"
             return coreutils.prepare_html_str(html_code)
         # mediocre button
         elif value < treshold*2:
@@ -179,25 +180,25 @@ htmlRow1 = (dashboardRectMaker(viewCount,"Views",viewTres,wikiArticle+"#Views")
 	 + dashboardRectMaker(copiedView,"Copied Views",copiedViewTres,wikiArticle+"#Views")
 	 + dashboardRectMaker(sheetCount,"Sheets",sheetsTres,wikiArticle)
 	 + dashboardRectMaker(scheduleCount,"Schedules",scheduleTres,wikiArticle)
-	 + dashboardRectMaker(viewsNotOnSheet,"Views not on Sheet",viewNotOnSheetTres,wikiArticle) 
-	 + dashboardRectMaker(scheduleNotOnSheet,"Schedules not on Sheet",schedulesNotOnSheetTres,wikiArticle))
+	 + dashboardRectMaker(viewsNotOnSheet,"Views <br>not on Sheet",viewNotOnSheetTres,wikiArticle) 
+	 + dashboardRectMaker(scheduleNotOnSheet,"Schedules <br>not on Sheet",schedulesNotOnSheetTres,wikiArticle))
 dashboardCenterMaker(htmlRow1)
 
 # CHART VIEWS OUTPUT
-output = script.get_output()
+# output = script.get_output()
 
 badColor = "#e97800"
 goodColor = "#a6c844"
 
-chartCopiedViews = output.make_doughnut_chart()
-chartCopiedViews.data.labels = ["Views with name ending 'Copy #' or starts with 'Section'","Other Views"]
-set_a = chartCopiedViews.data.new_dataset('Not Standard')
-set_a.data = [copiedView,viewCount-copiedView]
+# chartCopiedViews = output.make_doughnut_chart()
+# chartCopiedViews.data.labels = ["Views with name ending 'Copy #' or starts with 'Section'","Other Views"]
+# set_a = chartCopiedViews.data.new_dataset('Not Standard')
+# set_a.data = [copiedView,viewCount-copiedView]
 
-set_a.backgroundColor = [badColor,goodColor]
-chartCopiedViews.set_height(80)
+# set_a.backgroundColor = [badColor,goodColor]
+# chartCopiedViews.set_height(80)
 
-chartCopiedViews.draw()
+# chartCopiedViews.draw()
 
 # warnings
 allWarnings_collector = doc.GetWarnings()
@@ -249,12 +250,6 @@ for dwg in dwg_collector:
 dwgCount = len(dwg_collector)
 linkedDwg = (dwgCount-importedDwg)
 
-# Ramps
-ramp_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Ramps).WhereElementIsNotElementType().GetElementCount()
-
-# Architecural columns
-archColumn_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Columns).WhereElementIsNotElementType().GetElementCount()
-
 # tresholds
 warningsTres = 500
 criticalWarningsTres = 0
@@ -263,34 +258,30 @@ linePatternsTres = 100
 importedDwgTres = 0
 linkedDwgTres = viewCount/2
 dwgNotCurrentViewTres = 0
-rampTres = 0
-archTres = 0
 
 # dashboard row 2
 htmlRow2 = (dashboardRectMaker(allWarningsCount,"Warnings",warningsTres,"Revit_Warnings")
-	+ dashboardRectMaker(criticalWarningCount,"Critical Warnings",criticalWarningsTres,"Revit_Warnings")
+	+ dashboardRectMaker(criticalWarningCount,"Critical <br>Warnings",criticalWarningsTres,"Revit_Warnings")
     + dashboardRectMaker(materialCount,"Materials",materialsTres,wikiArticle+"#Linkovanie_nevyčistených_DWG")
     + dashboardRectMaker(linePatternCount,"Line Patterns",linePatternsTres,wikiArticle+"#Linkovanie_nevyčistených_DWG")
     + dashboardRectMaker(importedDwg,"Imported DWGs",importedDwgTres,wikiArticle+"#Importovanie_DWG")
     + dashboardRectMaker(linkedDwg,"Linked DWGs",linkedDwgTres,wikiArticle+"#DWG_súbory")
-    + dashboardRectMaker(dwgNotCurrentView,"DWGs in 3D",dwgNotCurrentViewTres,wikiArticle+"#Linkovanie_DWG_v_3D")
-    + dashboardRectMaker(ramp_collector,"Ramps",rampTres,wikiArticle+"#Rampy")
-    + dashboardRectMaker(archColumn_collector,"Architecural Columns",archTres,wikiArticle+"#Stĺpy"))
+    + dashboardRectMaker(dwgNotCurrentView,"DWGs in 3D",dwgNotCurrentViewTres,wikiArticle+"#Linkovanie_DWG_v_3D"))
 dashboardCenterMaker(htmlRow2)
 
 
 # CHART INPORTED DWGS OUTPUT
-output = script.get_output()
+# output = script.get_output()
 
-chartImportedDWGs = output.make_doughnut_chart()
-chartImportedDWGs.data.labels = ["imported DWG instances","linked DWG instances"]
-set_a = chartImportedDWGs.data.new_dataset('Not Standard')
-set_a.data = [importedDwg,dwgCount-importedDwg]
+# chartImportedDWGs = output.make_doughnut_chart()
+# chartImportedDWGs.data.labels = ["imported DWG instances","linked DWG instances"]
+# set_a = chartImportedDWGs.data.new_dataset('Not Standard')
+# set_a.data = [importedDwg,dwgCount-importedDwg]
 
-set_a.backgroundColor = [badColor,goodColor]
-chartImportedDWGs.set_height(80)
+# set_a.backgroundColor = [badColor,goodColor]
+# chartImportedDWGs.set_height(80)
 
-chartImportedDWGs.draw()
+# chartImportedDWGs.draw()
 
 
 # families
@@ -326,7 +317,8 @@ else:
 notParamFamiliesTres = familyCount*0.3
 textnoteWFtres = 0
 textnoteCaps = 0
-
+rampTres = 0
+archTres = 0
 
 # Text notes width factor != 1
 textNoteType_collector = FilteredElementCollector(doc).OfClass(TextNoteType).ToElements()
@@ -344,42 +336,47 @@ for textN in textNote_collector:
     if str(capsStatus) != "None":
         capsCount +=1
 
+# Ramps
+ramp_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Ramps).WhereElementIsNotElementType().GetElementCount()
 
-# dashboard
-# htmlRow3 = (dashboardRectMaker(familyCount,"Families",familiesTres) + dashboardRectMaker(inPlaceFamilyCount,"In Place Families",inPlaceFamilyTres) 
-#     + dashboardRectMaker(NotParamFamiliesCount,"Families are not parametric",notParamFamiliesTres))
+# Architecural columns
+archColumn_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Columns).WhereElementIsNotElementType().GetElementCount()
+
+# dashboard row3
 htmlRow3 = (dashboardRectMaker(familyCount,"Families",familiesTres,wikiArticle+"#Loadable_Families")
-		+ dashboardRectMaker(inPlaceFamilyCount,"In Place Families",inPlaceFamilyTres,wikiArticle+"#In-place_Families")
-        + dashboardRectMaker(NotParamFamiliesCount,"Families not parametric",notParamFamiliesTres,wikiArticle+"#Loadable_Families")
-        + dashboardRectMaker(textnoteWFcount,"Text - Width Factor changed",textnoteWFtres,wikiArticle+"#Width_Factor")
-        + dashboardRectMaker(capsCount,"Text - AllCaps",textnoteCaps,wikiArticle+"#AllCaps_pri_editácii_Textu"))
+		+ dashboardRectMaker(inPlaceFamilyCount,"In Place <br>Families",inPlaceFamilyTres,wikiArticle+"#In-place_Families")
+        + dashboardRectMaker(NotParamFamiliesCount,"Families <br>not parametric",notParamFamiliesTres,wikiArticle+"#Loadable_Families")
+        + dashboardRectMaker(textnoteWFcount,"Text - Width <br>Factor changed",textnoteWFtres,wikiArticle+"#Width_Factor")
+        + dashboardRectMaker(capsCount,"Text - AllCaps",textnoteCaps,wikiArticle+"#AllCaps_pri_editácii_Textu")
+        + dashboardRectMaker(ramp_collector,"Ramps",rampTres,wikiArticle+"#Rampy")
+        + dashboardRectMaker(archColumn_collector,"Architecural <br>Columns",archTres,wikiArticle+"#Stĺpy"))
 dashboardCenterMaker(htmlRow3)
 
 # CHART INPLACE FAMILIES OUTPUT
-output = script.get_output()
+# output = script.get_output()
 
-chartInPlaceFam = output.make_doughnut_chart()
-chartInPlaceFam.data.labels = ["In Place Families","Loadable Families"]
-set_a = chartInPlaceFam.data.new_dataset('Not Standard')
-set_a.data = [inPlaceFamilyCount,familyCount-inPlaceFamilyCount]
+# chartInPlaceFam = output.make_doughnut_chart()
+# chartInPlaceFam.data.labels = ["In Place Families","Loadable Families"]
+# set_a = chartInPlaceFam.data.new_dataset('Not Standard')
+# set_a.data = [inPlaceFamilyCount,familyCount-inPlaceFamilyCount]
 
-set_a.backgroundColor = [badColor,goodColor]
-chartInPlaceFam.set_height(80)
+# set_a.backgroundColor = [badColor,goodColor]
+# chartInPlaceFam.set_height(80)
 
-chartInPlaceFam.draw()
+# chartInPlaceFam.draw()
 
-# CHART PARAMETRIC FAMILIES OUTPUT
-output = script.get_output()
+# # CHART PARAMETRIC FAMILIES OUTPUT
+# output = script.get_output()
 
-chartParamFam = output.make_doughnut_chart()
-chartParamFam.data.labels = ["not parametric Families","Families with at least one dimensional parameter"]
-set_a = chartParamFam.data.new_dataset('Not Standard')
-set_a.data = [NotParamFamiliesCount,familyCount-NotParamFamiliesCount]
+# chartParamFam = output.make_doughnut_chart()
+# chartParamFam.data.labels = ["not parametric Families","Families with at least one dimensional parameter"]
+# set_a = chartParamFam.data.new_dataset('Not Standard')
+# set_a.data = [NotParamFamiliesCount,familyCount-NotParamFamiliesCount]
 
-set_a.backgroundColor = [badColor,goodColor]
-chartParamFam.set_height(80)
+# set_a.backgroundColor = [badColor,goodColor]
+# chartParamFam.set_height(80)
 
-chartParamFam.draw()
+# chartParamFam.draw()
 
 # detail groups
 detailGroupCount = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().GetElementCount()
@@ -442,11 +439,11 @@ noNameRefPTres = 0
 elementsTres = 1000000
 
 # dashboard
-htmlRow4 = (dashboardRectMaker(detailGroupTypeCount,"Detail Group Types",detailGroupTypeTres,wikiArticle)
+htmlRow4 = (dashboardRectMaker(detailGroupTypeCount,"Detail Group <br>Types",detailGroupTypeTres,wikiArticle)
     + dashboardRectMaker(detailGroupCount,"Detail Groups",detailGroupTres,wikiArticle) 
-    + dashboardRectMaker(modelGroupTypeCount,"Model Group Types",modelGroupTypeTres,wikiArticle)
+    + dashboardRectMaker(modelGroupTypeCount,"Model Group <br>Types",modelGroupTypeTres,wikiArticle)
     +dashboardRectMaker(modelGroupCount,"Model Groups",modelGroupTres,wikiArticle) 
-    + dashboardRectMaker(noNameRefPCount,"NoName Ref Planes",noNameRefPTres,wikiArticle+"#Reference Planes")
+    + dashboardRectMaker(noNameRefPCount,"NoName <br>Reference Planes",noNameRefPTres,wikiArticle+"#Reference Planes")
     + dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
 dashboardCenterMaker(htmlRow4)
 
