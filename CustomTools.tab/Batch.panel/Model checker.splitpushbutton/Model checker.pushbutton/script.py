@@ -6,6 +6,8 @@ Revit file quality control.
 __title__ = 'Model\nChecker'
 __doc__ = 'Revit file quality control'
 __author__ = 'David Vadkerti'
+__highlight__= 'updated'
+
 
 from pyrevit import revit, DB
 from pyrevit import forms
@@ -14,7 +16,7 @@ from pyrevit import output
 import os.path as op
 import math
 
-from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
+from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, ImportInstance
 from Autodesk.Revit.UI import UIApplication
 from pyrevit.coreutils import Timer
 from custom_output import hmsTimer
@@ -234,7 +236,9 @@ linePatternCount = FilteredElementCollector(doc).OfClass(LinePatternElement).Get
 # DWGs
 # Change to this?
 # dwg_collector = FilteredElementCollector(doc).OfClass(DB.ImportInstance).WhereElementIsNotElementType().ToElements()
-dwg_collector = DB.FilteredElementCollector(revit.doc).OfClass(DB.ImportInstance).WhereElementIsNotElementType().ToElements()
+# dwg_collector = DB.FilteredElementCollector(revit.doc).OfClass(DB.ImportInstance).WhereElementIsNotElementType().ToElements()
+dwg_collector = FilteredElementCollector(doc).OfClass(ImportInstance).WhereElementIsNotElementType().ToElements()
+
 importedDwg = 0
 dwgNotCurrentView = 0
 for dwg in dwg_collector:
@@ -584,6 +588,87 @@ else:
 
 chartFCategories.draw()
 
+# LOGGING FOR ANALYTICS
+from datetime import datetime
+# tabulator between data to easy import to excel schedule
+separator = "\t"
+
+datestamp = str(datetime.now())
+table_header = ("fileName" + separator
+    + "datestamp" + separator
+    + "viewCount" + separator
+    + "copiedView" + separator
+    + "sheetCount" + separator
+    + "scheduleCount" + separator
+    + "viewsNotOnSheet" + separator
+    + "scheduleNotOnSheet" + separator
+    + "allWarningsCount" + separator
+    + "criticalWarningCount" + separator
+    + "materialCount" + separator
+    + "linePatternCount" + separator
+    + "importedDwg" + separator
+    + "linkedDwg" + separator
+    + "dwgNotCurrentView" + separator
+    + "familyCount" + separator
+    + "inPlaceFamilyCount" + separator
+    + "NotParamFamiliesCount" + separator
+    + "textnoteWFcount" + separator
+    + "capsCount" + separator
+    + "ramp_collector" + separator
+    + "archColumn_collector" + separator
+    + "detailGroupTypeCount" + separator
+    + "detailGroupCount " + separator
+    + "modelGroupTypeCount" + separator
+    + "modelGroupCount" + separator
+    + "noNameRefPCount" + separator
+    + "elementCount" + separator)
+
+table_content = (printedName + separator
+    + datestamp[0:16] + separator
+    + str(viewCount) + separator
+    + str(copiedView) + separator
+    + str(sheetCount) + separator
+    + str(scheduleCount) + separator
+    + str(viewsNotOnSheet) + separator
+    + str(scheduleNotOnSheet) + separator
+    + str(allWarningsCount) + separator
+    + str(criticalWarningCount) + separator
+    + str(materialCount) + separator
+    + str(linePatternCount) + separator
+    + str(importedDwg) + separator
+    + str(linkedDwg) + separator
+    + str(dwgNotCurrentView) + separator
+    + str(familyCount) + separator
+    + str(inPlaceFamilyCount) + separator
+    + str(NotParamFamiliesCount) + separator
+    + str(textnoteWFcount) + separator
+    + str(capsCount) + separator
+    + str(ramp_collector) + separator
+    + str(archColumn_collector) + separator
+    + str(detailGroupTypeCount) + separator
+    + str(detailGroupCount ) + separator
+    + str(modelGroupTypeCount) + separator
+    + str(modelGroupCount) + separator
+    + str(noNameRefPCount) + separator
+    + str(elementCount) + separator)
+
+# if file exists
+try:
+    log_location = "L:\\customToolslogs\\model_checker\\model_checker_"
+    log_file_name = log_location + printedName
+    try:    
+        # check wether file exists
+        f = open(log_file_name + ".log", "r")
+        # appending the file
+        f = open(log_file_name + ".log", "a")
+        f.write(table_content + "\n")
+    # if file does not exist
+    except:
+        f = open(log_file_name + ".log", "a")
+        f.write( table_header+ "\n" + table_content + "\n")
+    f.close()
+except:
+    pass
 
 # for timing------
 endtime = timer.get_time()
