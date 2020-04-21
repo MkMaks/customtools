@@ -7,6 +7,7 @@ __title__ = 'Model\nChecker'
 __doc__ = 'Revit file quality control'
 __author__ = 'David Vadkerti'
 __highlight__= 'updated'
+__helpurl__ = 'https://youtu.be/bqSPJiZfHjM'
 
 
 from pyrevit import revit, DB
