@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 __title__ = 'Výška a označenie\nprierazov'
 __doc__ = """Sets distance of Sill Height of Windows from Project zero to parameter "SH prierazu".
 Sets Level number to parameter "Poschodie" to Windows and Generic Models
@@ -7,6 +8,8 @@ Sets Level elevation to parameter "ref od 0" to Windows.
 Sets Mark to Windows and Generic Models in xxx format f.e. 001
 
 Only Windows and Generic Models with Type Comments == "stavebne upravy" are processed."""
+
+__helpurl__ = "https://youtu.be/2LBi9p3gPiY"
 
 # for timing------
 from pyrevit.coreutils import Timer

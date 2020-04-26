@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 __title__ = 'Same place'
 __doc__ = """Check whether elements aren't on the same place ± tolerance and selects those which are redundant.
-Element is considered as redundant if at least one of its coordinates differs more than set tolerance."""
+Element is considered redundant if at least one of its coordinates differs more than set tolerance."""
+__helpurl__ = "https://youtu.be/iTW9NoQGErE"
 
 from pyrevit import revit, DB, forms
 from Autodesk.Revit.DB import ElementId, Transaction
