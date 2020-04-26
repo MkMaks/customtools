@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 __title__ = 'Same place'
 __doc__ = """Check whether elements aren't on the same place ± tolerance and selects those which are redundant.
-Element is considered as redundant if at least one of its coordinates differs more than set tolerance.
-
-You can change system families in Groups for running the scripts as Groups are valid elements."""
+Element is considered as redundant if at least one of its coordinates differs more than set tolerance."""
 
 from pyrevit import revit, DB, forms
 from Autodesk.Revit.DB import ElementId, Transaction
@@ -18,8 +16,7 @@ element_collector = revit.get_selection()
 doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
 
-locList = []
-redundantList = []
+
 
 # /////// UI WINDOW /////////
 class getToleranceWindow(forms.WPFWindow):
@@ -66,6 +63,13 @@ class getToleranceWindow(forms.WPFWindow):
 			returnedList.append(float(i))
 		return returnedList
 
+	# purging duplicates from list
+	def uniqueItems(mylist):
+		new_set = set(mylist)
+		return list(new_set)
+
+	locList = []
+	redundantList = []
 
 	# getting coordinates for each of selected elements
 	t = Transaction(doc, "Same Place")
@@ -84,6 +88,7 @@ class getToleranceWindow(forms.WPFWindow):
 				if redundant == 1:
 					redundantList.append(element.Id)
 			locList.append(locPointlist)
+
 		except:
 			# for system families there is need to make groups
 			elid = []
@@ -108,6 +113,7 @@ class getToleranceWindow(forms.WPFWindow):
 
 
 	# output window
+	redundantList = uniqueItems(redundantList)
 	redundantCount = len(redundantList)
 	if redundantCount > 0:
 		# selecting elements
