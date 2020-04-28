@@ -294,6 +294,7 @@ table_header = ("fileName" + separator
     + "noNameRefPCount" + separator
     + "elementCount" + separator)
 
+# datestamp - date + hours + minutes
 table_content = (printedName + separator
     + datestamp[0:16] + separator
     + str(viewCount) + separator
@@ -327,22 +328,19 @@ table_content = (printedName + separator
 def model_checker_logger(printedName):
     # One log file per revit file
     # if file exists
-    try:
-        log_location = "L:\\customToolslogs\\model_checker\\RBP_model_checker_"
-        log_file_name = log_location + printedName
-        try:    
-            # check wether file exists
-            f = open(log_file_name + ".log", "r")
-            # appending the file
-            f = open(log_file_name + ".log", "a")
-            f.write(table_content + "\n")
-        # if file does not exist
-        except:
-            f = open(log_file_name + ".log", "a")
-            f.write( table_header+ "\n" + table_content + "\n")
-        f.close()
+    log_location = "L:\\customToolslogs\\model_checker\\model_checker_"
+    log_file_name = log_location + printedName
+    try:    
+        # check wether file exists
+        f = open(log_file_name + ".log", "r")
+        # appending the file
+        f = open(log_file_name + ".log", "a")
+        f.write(table_content + "\n")
+    # if file does not exist
     except:
-        pass
+        f = open(log_file_name + ".log", "a")
+        f.write( table_header+ "\n" + table_content + "\n")
+    f.close()
 
 # One log file per revit file
 model_checker_logger(printedName)

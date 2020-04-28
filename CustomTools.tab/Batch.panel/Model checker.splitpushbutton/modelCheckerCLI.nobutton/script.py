@@ -1,23 +1,4 @@
 # -*- coding: UTF-8 -*-
-# import clr
-# import System
-# clr.AddReference("System.Core")
-# clr.ImportExtensions(System.Linq)
-
-# clr.AddReference("RevitAPI")
-# clr.AddReference("RevitAPIUI")
-# from Autodesk.Revit.DB import *
-
-# import revit_script_util
-# from revit_script_util import Output
-
-# sessionId = revit_script_util.GetSessionId()
-# uiapp = revit_script_util.GetUIApplication()
-# app = uiapp.Application
-# doc = revit_script_util.GetScriptDocument()
-# # revitFilePath = revit_script_util.GetRevitFilePath()
-
-
 import os.path as op
 import math
 from datetime import datetime
