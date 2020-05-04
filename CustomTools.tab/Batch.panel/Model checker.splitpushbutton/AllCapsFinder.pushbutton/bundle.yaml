@@ -1,4 +1,3 @@
 title: AllCaps finder
 author: David Vadkerti
 tooltip: Finds all TextNotes where revit AllCaps function is used.
-highlight: new
