@@ -39,7 +39,7 @@ if res:
 
     count = 0
     md_schedule = "| Number | Detail Group Name | Detail Group id | Owner View | View Type|\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
-    cacheView = ""
+    cacheGroupName = ""
     for group in groups:
         try:
             if hasattr(group, "OwnerViewId"):
@@ -50,12 +50,12 @@ if res:
                 viewName = view.Name
                 viewType = str(view.ViewType)
                 count += 1
-                if cacheView == viewName:
+                if cacheGroupName == groupName:
                     md_schedule += newScheduleLine(count,groupName,groupId,viewName,viewType)
                 else:
-                    blankLine = " \n| **" +viewName.upper()+"**"
+                    blankLine = " \n| **" +groupName.upper()+"**"
                     md_schedule += blankLine + newScheduleLine(count,groupName,groupId,viewName,viewType)
-                cacheView = viewName
+                cacheGroupName = groupName
             else:
                 print None 
         except:
