@@ -2,6 +2,7 @@
 __title__ = 'Detail Group\nschedule'
 __author__ = 'David Vadkerti'
 __doc__ = 'Lists all Detail Groups with links to Owner Views.'
+__highlight__= 'updated'
 
 from pyrevit import revit, DB
 from pyrevit import script
@@ -24,84 +25,57 @@ if sheets_collector > 30:
                   ok=False, yes=True, no=True)
 else:
     res = True
-# if res:
-def showGroupSchedule(sortBy):
-    timer = Timer()
+if res:
+    def showGroupSchedule(sortBy):
+        timer = Timer()
 
-    output = script.get_output()
-    output.print_md("# DETAIL GROUP SCHEDULE")
+        output = script.get_output()
+        output.print_md("# DETAIL GROUP SCHEDULE")
 
-    collector = FilteredElementCollector(doc)
-    groups = collector.OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().ToElements()
+        collector = FilteredElementCollector(doc)
+        groups = collector.OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().ToElements()
 
-    def newScheduleLine(count,groupName,groupId,viewName,viewType):
-                return " \n| "+str(count)+" | "+groupName+" | "+output.linkify([groupId])+" | "+viewName+" | "+viewType+" |"   
+        def newScheduleLine(count,groupName,groupId,viewName,viewType):
+                    return " \n| "+str(count)+" | "+groupName+" | "+output.linkify([groupId])+" | "+viewName+" | "+viewType+" |"   
 
 
-    count = 0
-    md_schedule = "| Number | Detail Group Name | Detail Group id | Owner View | View Type|\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
-    cacheGroupName = ""
-    # for group in groups:
-    #     try:
-    #         if hasattr(group, "OwnerViewId"):
-    #             groupName = group.Name
-    #             groupId = group.Id
-    #             view = doc.GetElement(group.OwnerViewId)
-    #             # view = group.Document.GetElement(group.OwnerViewId)
-    #             viewName = view.Name
-    #             viewType = str(view.ViewType)
-    #             count += 1
-    #             if cacheGroupName == groupName:
-    #                 md_schedule += newScheduleLine(count,groupName,groupId,viewName,viewType)
-    #             else:
-    #                 blankLine = " \n| **" +groupName.upper()+"**"
-    #                 md_schedule += blankLine + newScheduleLine(count,groupName,groupId,viewName,viewType)
-    #             cacheGroupName = groupName
-    #         else:
-    #             print None 
-    #     except:
-    #         pass
-    scheduleData = []
-    for group in groups:
-        try:
-            if hasattr(group, "OwnerViewId"):
-                groupName = group.Name
-                groupId = group.Id
-                view = doc.GetElement(group.OwnerViewId)
-                viewName = view.Name
-                viewType = str(view.ViewType)
-                count += 1
-                # if cacheGroupName == groupName:
-                #     md_schedule += newScheduleLine(count,groupName,groupId,viewName,viewType)
-                # else:
-                #     blankLine = " \n| **" +groupName.upper()+"**"
-                #     md_schedule += blankLine + newScheduleLine(count,groupName,groupId,viewName,viewType)
-                # cacheGroupName = groupName
-            else:
-                print None 
-        except:
-            pass
+        count = 0
+        md_schedule = "| Number | Detail Group Name | Detail Group id | Owner View | View Type|\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
+        scheduleData = []
+        for group in groups:
+            try:
+                if hasattr(group, "OwnerViewId"):
+                    groupName = group.Name
+                    groupId = group.Id
+                    view = doc.GetElement(group.OwnerViewId)
+                    viewName = view.Name
+                    viewType = str(view.ViewType)
+                    count += 1
+                else:
+                    print None 
+            except:
+                pass
 
-        paramList = [groupName, output.linkify([groupId]), viewName, viewType]
-        scheduleData.append(paramList)
+            paramList = [groupName, output.linkify([groupId]), viewName, viewType]
+            scheduleData.append(paramList)
 
-    # sort by parameter name
-    if sortBy == "Detail Group Name":
-        sortedScheduleData = sorted(scheduleData, key=lambda x: x[0])
-    # sort by parameter group
-    elif sortBy == "View Name":
-        sortedScheduleData = sorted(scheduleData, key=lambda x: x[2])
-    else:
-        sortedScheduleData = scheduleData
-    # output.print_md(md_schedule)
-    output.print_table(table_data=sortedScheduleData,
-                       title = "Sorted by " + sortBy,
-                       columns=["Detail Group Name", " Detail Group id", "Owner View", "View Type"],
-                       formats=['', '', '', ''])
+        # sort by parameter name
+        if sortBy == "Detail Group Name":
+            sortedScheduleData = sorted(scheduleData, key=lambda x: x[0].lower())
+        # sort by parameter group
+        elif sortBy == "View Name":
+            sortedScheduleData = sorted(scheduleData, key=lambda x: x[2].lower())
+        else:
+            sortedScheduleData = scheduleData
+        # output.print_md(md_schedule)
+        output.print_table(table_data=sortedScheduleData,
+                           title = "Sorted by " + sortBy,
+                           columns=["Detail Group Name", " Detail Group id", "Owner View", "View Type"],
+                           formats=['', '', '', ''])
 
-    # for timing------
-    endtime = timer.get_time()
-    print(hmsTimer(endtime))
+        # for timing------
+        endtime = timer.get_time()
+        print(hmsTimer(endtime))
 
 
 
