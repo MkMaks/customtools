@@ -24,7 +24,8 @@ if sheets_collector > 30:
                   ok=False, yes=True, no=True)
 else:
     res = True
-if res:
+# if res:
+def showGroupSchedule(sortBy):
     timer = Timer()
 
     output = script.get_output()
@@ -40,31 +41,78 @@ if res:
     count = 0
     md_schedule = "| Number | Detail Group Name | Detail Group id | Owner View | View Type|\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
     cacheGroupName = ""
+    # for group in groups:
+    #     try:
+    #         if hasattr(group, "OwnerViewId"):
+    #             groupName = group.Name
+    #             groupId = group.Id
+    #             view = doc.GetElement(group.OwnerViewId)
+    #             # view = group.Document.GetElement(group.OwnerViewId)
+    #             viewName = view.Name
+    #             viewType = str(view.ViewType)
+    #             count += 1
+    #             if cacheGroupName == groupName:
+    #                 md_schedule += newScheduleLine(count,groupName,groupId,viewName,viewType)
+    #             else:
+    #                 blankLine = " \n| **" +groupName.upper()+"**"
+    #                 md_schedule += blankLine + newScheduleLine(count,groupName,groupId,viewName,viewType)
+    #             cacheGroupName = groupName
+    #         else:
+    #             print None 
+    #     except:
+    #         pass
+    scheduleData = []
     for group in groups:
         try:
             if hasattr(group, "OwnerViewId"):
                 groupName = group.Name
                 groupId = group.Id
                 view = doc.GetElement(group.OwnerViewId)
-                # view = group.Document.GetElement(group.OwnerViewId)
                 viewName = view.Name
                 viewType = str(view.ViewType)
                 count += 1
-                if cacheGroupName == groupName:
-                    md_schedule += newScheduleLine(count,groupName,groupId,viewName,viewType)
-                else:
-                    blankLine = " \n| **" +groupName.upper()+"**"
-                    md_schedule += blankLine + newScheduleLine(count,groupName,groupId,viewName,viewType)
-                cacheGroupName = groupName
+                # if cacheGroupName == groupName:
+                #     md_schedule += newScheduleLine(count,groupName,groupId,viewName,viewType)
+                # else:
+                #     blankLine = " \n| **" +groupName.upper()+"**"
+                #     md_schedule += blankLine + newScheduleLine(count,groupName,groupId,viewName,viewType)
+                # cacheGroupName = groupName
             else:
                 print None 
         except:
             pass
 
-    # print md_schedule
-    output.print_md(md_schedule)
-    # print dwgInst
+        paramList = [groupName, output.linkify([groupId]), viewName, viewType]
+        scheduleData.append(paramList)
+
+    # sort by parameter name
+    if sortBy == "Detail Group Name":
+        sortedScheduleData = sorted(scheduleData, key=lambda x: x[0])
+    # sort by parameter group
+    elif sortBy == "View Name":
+        sortedScheduleData = sorted(scheduleData, key=lambda x: x[2])
+    else:
+        sortedScheduleData = scheduleData
+    # output.print_md(md_schedule)
+    output.print_table(table_data=sortedScheduleData,
+                       title = "Sorted by " + sortBy,
+                       columns=["Detail Group Name", " Detail Group id", "Owner View", "View Type"],
+                       formats=['', '', '', ''])
 
     # for timing------
     endtime = timer.get_time()
     print(hmsTimer(endtime))
+
+
+
+
+selected_option = \
+    forms.CommandSwitchWindow.show(
+        ['Detail Group Name',
+         'View Name',
+         "Time"],
+        message='Sort by:'
+        )
+
+if selected_option:
+    showGroupSchedule(selected_option)
