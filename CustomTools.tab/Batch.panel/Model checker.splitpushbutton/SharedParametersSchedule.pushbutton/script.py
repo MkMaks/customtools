@@ -50,10 +50,10 @@ def showParamSchedule(sortByParamName):
 
         # sort by parameter name
         if sortByParamName == "Parameter Name":
-        	sortedScheduleData = sorted(scheduleData, key=lambda x: x[0])
+        	sortedScheduleData = sorted(scheduleData, key=lambda x: x[0].lower())
         # sort by parameter group
         elif sortByParamName == "Group Name":
-           	sortedScheduleData = sorted(scheduleData, key=lambda x: x[2])
+           	sortedScheduleData = sorted(scheduleData, key=lambda x: x[2].lower())
         else:
         	sortedScheduleData = scheduleData
         # sortedScheduleData = sorted(scheduleData, key=lambda x: x[index])

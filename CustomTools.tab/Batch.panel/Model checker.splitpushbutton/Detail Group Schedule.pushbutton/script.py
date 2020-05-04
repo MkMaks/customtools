@@ -16,10 +16,12 @@ doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
 
 # detailGroupCount = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().GetElementCount()
-sheets_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets) \
+view_count = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Views) \
 .WhereElementIsNotElementType().GetElementCount()
+
+groups_count = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().GetElementCount()
 # dialogue box only when 1 minute or longer
-if sheets_collector > 30:
+if view_count*groups_count > 500000:
     res = forms.alert("Táto operácia môže bežať dlhšie.\n\n"
                   "Prajete si pokračovať?",
                   ok=False, yes=True, no=True)
@@ -32,15 +34,8 @@ if res:
         output = script.get_output()
         output.print_md("# DETAIL GROUP SCHEDULE")
 
-        collector = FilteredElementCollector(doc)
-        groups = collector.OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().ToElements()
+        groups = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().ToElements()
 
-        def newScheduleLine(count,groupName,groupId,viewName,viewType):
-                    return " \n| "+str(count)+" | "+groupName+" | "+output.linkify([groupId])+" | "+viewName+" | "+viewType+" |"   
-
-
-        count = 0
-        md_schedule = "| Number | Detail Group Name | Detail Group id | Owner View | View Type|\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
         scheduleData = []
         for group in groups:
             try:
@@ -50,7 +45,6 @@ if res:
                     view = doc.GetElement(group.OwnerViewId)
                     viewName = view.Name
                     viewType = str(view.ViewType)
-                    count += 1
                 else:
                     print None 
             except:
@@ -77,16 +71,13 @@ if res:
         endtime = timer.get_time()
         print(hmsTimer(endtime))
 
+    selected_option = \
+        forms.CommandSwitchWindow.show(
+            ['Detail Group Name',
+             'View Name',
+             "Time"],
+            message='Sort by:'
+            )
 
-
-
-selected_option = \
-    forms.CommandSwitchWindow.show(
-        ['Detail Group Name',
-         'View Name',
-         "Time"],
-        message='Sort by:'
-        )
-
-if selected_option:
-    showGroupSchedule(selected_option)
+    if selected_option:
+        showGroupSchedule(selected_option)
