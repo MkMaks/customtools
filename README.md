@@ -5,10 +5,12 @@ CustomTools je Add-in pre Revit tvorený podľa požiadaviek užívateľov Revit
 ## Help
 Popis funkcií a návod na inštaláciu nájdete v helpe na [GFI wiki](https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)). Popis každého nástroja sa zobrazí pri podržaní kurzora myši nad jeho ikonou. Ak je na konci tooltipu značka F1, po stlačení klávesy F1 sa otvorí videonávod na [youtube](https://www.youtube.com/channel/UC-2clftP15_4WdFUmyVWCkQ/featured).
 ## Inštalácia
-* Skontrolujte, či máte nainštalovanú najnovšiu verziu [pyRevitu](https://github.com/eirannejad/pyRevit/releases). Ak nie, odinštalujte si ju.
+* Zatvorte Revit.
+* Ak máte nainštalovaný pyRevit, odinštalujte si ho.
+* Stiahnite a nainštalujte si [pyRevit CLI](https://github.com/eirannejad/pyRevit/releases) (nie pyRevit).
 * Stiahnite si aktuálnu verziu [CustomTools](https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags)
- * Spustite inštaláciu CustomTools. Preferovaná je inštalácia pomocou súboru **pyRevit&CustomToolsInstall**. Inštalačný súbor *CustomToolsInstal* použite len ak už máte pyRevit nainštalovaný.
-* Reloadnite pyRevit (pyRevit tab>Reload).
+* Spustite inštaláciu CustomTools. Preferovaná je inštalácia pomocou súboru **pyRevit&CustomToolsInstall**. Inštalačný súbor *CustomToolsInstall* použite len ak už máte pyRevit nainštalovaný a chcete opraviť preinštalovať len CustomTools (len pri takejto inštalácii je možné mať otvorený Revit).
+* Ak ste mali otvorený Revit reloadnite pyRevit (pyRevit tab>Reload).
 * CustomTools kontroluje aktualizácie pri štarte systému. Ak je dostupná aktualizácia, automaticky sa nainštaluje.
 
 ---
@@ -18,8 +20,10 @@ CustomTools is Add-in for Autodesk Revit created according to requests of Revit 
 ## Help
 Brief description of added features is available as tooltips. You need to hold your cursor on selected button to show the tooltip. If there is F1 sign in the tooltip you can pres F1 button on your keyboard to access video manual on [youtube](https://www.youtube.com/channel/UC-2clftP15_4WdFUmyVWCkQ/featured).
 ## Installation
-* Check whether you have the latest version of [pyRevit](https://github.com/eirannejad/pyRevit/releases). If not uninstall the old version.
+* Close all instances of Revit.
+* If you have pyRevit installed uninstall it.
+* Download and instal [pyRevit CLI](https://github.com/eirannejad/pyRevit/releases) (not pyRevit).
 * Download the latest version of [CustomTools](https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags).
-* Install the extension. Preferred way is to run file **pyRevit&CustomToolsInstall**. Run file *CustomToolsInstal* only if pyRevit is allready installed on your machine.
-* Reload pyRevit (pyRevit tab>Reload).
+* Install the extension. Preferred way is to run file **pyRevit&CustomToolsInstall**. Run file *CustomToolsInstall* only if pyRevit is allready installed on your machine and you want to repair just CustomTools installation (in this case Revit can be running).
+* If Revit was running during installation reload pyRevit now(pyRevit tab>Reload).
 * CustomTools checks for updates on system startup. If there is update available it will be automatically installed.
