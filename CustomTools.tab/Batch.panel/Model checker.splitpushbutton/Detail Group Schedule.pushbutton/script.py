@@ -39,14 +39,14 @@ if res:
         scheduleData = []
         for group in groups:
             try:
-                if hasattr(group, "OwnerViewId"):
-                    groupName = group.Name
-                    groupId = group.Id
-                    view = doc.GetElement(group.OwnerViewId)
-                    viewName = view.Name
-                    viewType = str(view.ViewType)
-                else:
-                    print None 
+                # if hasattr(group, "OwnerViewId"):
+                groupName = group.Name
+                groupId = group.Id
+                view = doc.GetElement(group.OwnerViewId)
+                viewName = view.Name
+                viewType = str(view.ViewType)
+                # else:
+                #     print None 
             except:
                 pass
 
