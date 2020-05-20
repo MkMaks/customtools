@@ -67,6 +67,7 @@ def nameFromPath(path):
     return path[index:]
 
 output = script.get_output()
+output.set_height(1000)
 
 # printing file name and heading
 name = doc.PathName
