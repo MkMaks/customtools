@@ -12,8 +12,12 @@ cadLinkId = __eventargs__.ImportedInstanceId
 doc = __eventargs__.Document
 cadLinkElement = doc.GetElement(cadLinkId)
 twoD = cadLinkElement.ViewSpecific
+docName = doc.PathName
+fileExtension = docName[-3:]
 
-if twoD:
+# if ViewSpecific od not revit project
+# because imports in revit families doesn't have Viewspecific Yes Value
+if twoD or fileExtension!="rvt":
   pass
 else:
   res = forms.alert("POZOR!\n\n"
