@@ -6,7 +6,7 @@ res = forms.alert("Chceš uložiť zoznam otvorených Views?",
                   options=["Uložiť",
                            "Neuložiť",
                            "Zistiť viac"],
-                  title="In Place Family",
+                  title="Save List Of Opened Views",
                   footer="CustomTools Hooks")
 if res  == "Uložiť":
     # opened views
