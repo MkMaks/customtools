@@ -1,8 +1,10 @@
-# print("log files are here:")
-# print("L:\\customToolslogs")
+# -*- coding: utf-8 -*- 
 
-import subprocess
-# subprocess.Popen(r'explorer /select,"L:\customToolslogs\"')
-subprocess.Popen(r'explorer /select,"L:\customToolslogs\doNotErase-pointer"')
+# import subprocess
+# subprocess.Popen(r'explorer /select,"L:\customToolslogs\doNotErase-pointer"')
+from pyrevit import script
 
+output = script.get_output()
 
+url = 'L:\\customToolslogs\\'
+output.open_page(url)
