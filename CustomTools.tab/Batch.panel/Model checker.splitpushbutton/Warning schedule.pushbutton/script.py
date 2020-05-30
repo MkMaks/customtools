@@ -6,7 +6,7 @@ Lists most Warnings related to architecural elements in the active model in Sche
 """
 
 __title__ = 'All Warnings\nschedule'
-__doc__ = 'Lists Warnings related to architecural elements in the active model in Schedule with clickable Element Ids, Category of elements and Warning descritpions.'
+__doc__ = 'Lists Warnings related to architecural elements in the active model in Schedule with clickable Element Ids, Category of elements and Warning descriptions.'
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from pyrevit import revit, DB, coreutils, script, output, forms
