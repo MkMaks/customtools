@@ -10,8 +10,9 @@ doc = EXEC_PARAMS.event_args.Document
 uidoc = UIDocument(doc)
 docName = doc.PathName
 fileExtension = docName[-3:]
+openUIviews = uidoc.GetOpenUIViews()
 
-if fileExtension == "rvt":
+if fileExtension == "rvt" and len(openUIviews)>1:
     res = forms.alert("Chceš uložiť zoznam otvorených Views?",
                       options=["Uložiť",
                                "Neuložiť",
@@ -22,8 +23,6 @@ if fileExtension == "rvt":
         # opened views
         output = script.get_output()
         output.print_md("## List of Views for file: " + docName)
-
-        openUIviews = uidoc.GetOpenUIViews()
 
         count = 0
         scheduleData = []
