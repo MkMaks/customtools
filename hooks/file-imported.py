@@ -15,7 +15,7 @@ twoD = cadLinkElement.ViewSpecific
 docName = doc.PathName
 fileExtension = docName[-3:]
 
-# if ViewSpecific od not revit project
+# if ViewSpecific or not revit project
 # because imports in revit families doesn't have Viewspecific Yes Value
 if twoD or fileExtension!="rvt":
   pass
