@@ -1,0 +1,1 @@
+dir -n > zoznamVykresov.csv

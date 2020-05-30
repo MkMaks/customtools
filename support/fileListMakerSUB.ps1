@@ -1,0 +1,1 @@
+Get-ChildItem -File -Recurse | Select-Object FullName > list.txt
