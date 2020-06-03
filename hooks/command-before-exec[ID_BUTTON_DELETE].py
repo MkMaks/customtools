@@ -5,8 +5,9 @@ from pyrevit import forms, script, revit
 
 doc = __revit__.ActiveUIDocument.Document
 selection = revit.get_selection()
+from hooksScripts import hookTurnOff
 
-def alertWindow(viewNames):
+def dialogBox(viewNames):
     res = forms.alert("POZOR!\n\n"
     	              "Chceš naozaj vymazať tieto Views?\n"
                       + str(viewNames)[1:-1],
@@ -23,7 +24,7 @@ def alertWindow(viewNames):
     else:
     	EXEC_PARAMS.event_args.Cancel = True
 
-# treating just Views and Schedules
+# treating just Views, Schedules and Sheets
 viewNames = []
 for element in selection:
     try:
@@ -40,6 +41,9 @@ for element in selection:
     except:
         pass
 
+
 # If there is at least one View or Schedule in selection show alert window
 if len(viewNames) > 0:
-    alertWindow(viewNames)
+    # try to find config file for people who dont want to see the hook
+    hookTurnOff(dialogBox, viewNames, 11)
+    # dialogBox(viewNames)

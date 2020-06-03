@@ -2,7 +2,7 @@
 
 # version of CustomTools
 releasedVersion = "0.6"
-snapshot = "200530"
+snapshot = "200603"
 
 # logging to server
 def hooksLogger(log_string, doc):
@@ -57,15 +57,16 @@ def versionLogger(releasedVersion,snapshot):
          pass
 
 # read number from config file, if not zero run function that show f.e. dialog box
-def hookTurnOff(func, index):
+def hookTurnOff(func, number, *args, **kwargs):
   try:
     configFile = open("C:\\pyRevitExtensions\\CustomTools\\hooksConfig.txt","r")
     # first or other item of file content
+    index = number - 1
     configSetting = (configFile.readline())[index]
     # if first item of file content not equal to zero show the dialog box
     if configSetting == "0":
       pass
     else:
-      func()
+      func(*args, **kwargs)
   except:
-    func()
+    func(*args, **kwargs)
