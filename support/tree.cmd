@@ -1,2 +1,4 @@
 PowerShell -Command "Set-ExecutionPolicy Unrestricted" >> "%TEMP%\StartupLog.txt" 2>&1
-PowerShell Get-ChildItem -File -Recurse | Select-Object FullName > list.txt
+
+PowerShell tree /a /f> tree.txt
+PowerShell #Write-Output "Strom bol vytvoreny."
