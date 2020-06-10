@@ -4,7 +4,6 @@ from pyrevit import forms
 
 from Autodesk.Revit.UI import UIDocument
 from Autodesk.Revit.DB.Document import GetElement
-from pyrevit import script
 from hooksScripts import hookTurnOff
 
 # showing of dialog box with warning
@@ -24,6 +23,7 @@ def dialogBox():
                         footer="CustomTools Hooks")
       if res  == "Uložiť":
           # opened views
+          from pyrevit import script
           output = script.get_output()
           output.print_md("## List of Views for file: " + docName)
 
