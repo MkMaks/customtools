@@ -18,7 +18,7 @@ def dialogBox():
   if fileExtension == "rvt" and len(openUIviews)>1:
       res = forms.alert("Chceš uložiť zoznam otvorených Views?",
                         options=["Uložiť",
-                                 "Neuložiť",
+                                 "Preskočiť",
                                  "Zistiť viac"],
                         title="Save List Of Opened Views",
                         footer="CustomTools Hooks")
@@ -45,7 +45,7 @@ def dialogBox():
           print("\nSave this html file on your drive.")
           print("Use Import Report tool for reopening views.")
 
-      elif res  == "Neuložiť":
+      elif res  == "Preskočiť":
           pass
       elif res  == "Zistiť viac":
           from pyrevit import script

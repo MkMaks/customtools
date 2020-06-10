@@ -22,3 +22,7 @@ $PathStartup = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $PathUpdaterLink = "$env:APPDATA\pyRevit\Extensions\CustomTools.extension\updater\CustomToolsUpdater.cmd"
 
 Copy-Item -Path $PathUpdaterLink -Destination $PathStartup
+
+#set telemetry logging
+pyrevit configs telemetry enable
+pyrevit configs telemetry file "L:\customToolslogs\toolsLogs"
