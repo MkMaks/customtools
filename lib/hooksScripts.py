@@ -2,7 +2,7 @@
 
 # version of CustomTools
 releasedVersion = "0.6"
-snapshot = "200610"
+snapshot = "200613"
 
 # logging to server
 def hooksLogger(log_string, doc):
@@ -34,7 +34,7 @@ def hooksLogger(log_string, doc):
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
   try:
-     f = open("L:\\customToolslogs\\"+ file_name + ".log", "a")
+     f = open("L:\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
      f.write(datestamp + separator + log_string + separator + user_name + "\n")
      f.close()
   except:
