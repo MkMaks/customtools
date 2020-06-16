@@ -26,3 +26,4 @@ Copy-Item -Path $PathUpdaterLink -Destination $PathStartup
 #set telemetry logging
 pyrevit configs telemetry enable
 pyrevit configs telemetry file "L:\customToolslogs\toolsLogs"
+pyrevit configs telemetry utc no
