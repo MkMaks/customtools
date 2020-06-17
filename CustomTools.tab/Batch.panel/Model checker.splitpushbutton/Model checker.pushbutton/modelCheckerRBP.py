@@ -328,7 +328,7 @@ table_content = (printedName + separator
 def model_checker_logger(printedName):
     # One log file per revit file
     # if file exists
-    log_location = "L:\\customToolslogs\\model_checker\\model_checker_"
+    log_location = "L:\\customToolslogs\\model_checker"
     log_file_name = log_location + printedName
     try:    
         # check wether file exists
@@ -342,7 +342,7 @@ def model_checker_logger(printedName):
         f.write( table_header+ "\n" + table_content + "\n")
     f.close()
 
-# One log file per revit file
-model_checker_logger(printedName)
-# Common log file to comparing all models in batch
-model_checker_logger(datestamp[0:10])
+# One log file per revit file in separate folder
+model_checker_logger("\\fileHistory\\model_checker_"+ printedName)
+# Common log file to comparing all models in batch in separate folder
+model_checker_logger("\\currentState\\model_checker_"+ datestamp[0:10])

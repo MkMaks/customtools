@@ -656,7 +656,7 @@ table_content = (printedName + separator
 
 # if file exists
 try:
-    log_location = "L:\\customToolslogs\\model_checker\\model_checker_"
+    log_location = "L:\\customToolslogs\\model_checker\\fileHistory\\model_checker_"
     log_file_name = log_location + printedName
     try:    
         # check wether file exists
