@@ -58,13 +58,14 @@ def dashboardCenterMaker(value):
         html_code = "<div class='dashboardCenter'>"+content+"</div>"
         print(coreutils.prepare_html_str(html_code))
 
-# returns file name - everything in path from "\" to the end
-def nameFromPath(path):
-    try:
-        index = path.rindex("\\") + 1
-    except:
-        index = path.rindex("/") + 1        
-    return path[index:]
+# returns file name - everything in path from "\\" or "/" to the end
+def path2fileName(file_path,divider):
+  # file_path_split = file_path.split("\\")
+  file_path_split = file_path.split(divider)
+  file_name = file_path_split[-1]
+  # file_name = file_name[:-4]
+  # print file_name
+  return file_name
 
 output = script.get_output()
 output.set_height(1000)
@@ -73,10 +74,16 @@ output.set_height(1000)
 name = doc.PathName
 if len(name) == 0:
     name = "Not saved file"
+
+# workshared file
 try:
-    printedName = nameFromPath(name)
+    central_path = revit.query.get_central_path(doc)
+    # central_path = revit.query.get_central_path(doc=revit.doc)
+    printedName = path2fileName(central_path,"/")
+# non workshared file
 except:
-    printedName = name
+    file_path = doc.PathName
+    printedName = path2fileName(file_path,"\\")
 output.print_md("# MODEL CHECKER")
 output.print_md("## " + printedName)
 

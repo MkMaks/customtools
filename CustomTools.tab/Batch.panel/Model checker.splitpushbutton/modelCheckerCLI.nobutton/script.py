@@ -2,6 +2,7 @@
 import os.path as op
 import math
 from datetime import datetime
+from pyrevit import revit
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, ImportInstance
 # from Autodesk.Revit.UI import UIApplication
@@ -10,23 +11,29 @@ from Autodesk.Revit.DB import LinePatternElement, Family, TextNoteType, Schedule
 uidoc = __revit__.ActiveUIDocument
 doc = __revit__.ActiveUIDocument.Document
 
-# returns file name - everything in path from "\" to the end
-def nameFromPath(path):
-    try:
-        index = path.rindex("\\") + 1
-    except:
-        index = path.rindex("/") + 1        
-    return path[index:]
+# returns file name - everything in path from "\\" or "/" to the end
+def path2fileName(file_path,divider):
+  # file_path_split = file_path.split("\\")
+  file_path_split = file_path.split(divider)
+  file_name = file_path_split[-1]
+  # file_name = file_name[:-4]
+  # print file_name
+  return file_name
 
 # printing file name and heading
 name = doc.PathName
 if len(name) == 0:
     name = "Not saved file"
-try:
-    printedName = nameFromPath(name)
-except:
-    printedName = name
 
+# workshared file
+try:
+    central_path = revit.query.get_central_path(doc)
+    # central_path = revit.query.get_central_path(doc=revit.doc)
+    printedName = path2fileName(central_path,"/")
+# non workshared file
+except:
+    file_path = doc.PathName
+    printedName = path2fileName(file_path,"\\")
 
 # sheets
 sheets_id_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets) \

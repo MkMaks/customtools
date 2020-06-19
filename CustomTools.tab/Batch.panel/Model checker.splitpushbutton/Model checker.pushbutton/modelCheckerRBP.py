@@ -28,21 +28,78 @@ from Autodesk.Revit.DB import LinePatternElement, Family, TextNoteType, Schedule
 
 
 # returns file name - everything in path from "\" to the end
-def nameFromPath(path):
-    try:
-        index = path.rindex("\\") + 1
-    except:
-        index = path.rindex("/") + 1        
-    return path[index:]
+# def nameFromPath(path):
+#     try:
+#         index = path.rindex("\\") + 1
+#     except:
+#         index = path.rindex("/") + 1        
+#     return path[index:]
+
+# # printing file name and heading
+# name = doc.PathName
+# if len(name) == 0:
+#     name = "Not saved file"
+# try:
+#     printedName = nameFromPath(name)
+# except:
+#     printedName = name
+
+
+
+# returns file name - everything in path from "\\" or "/" to the end
+def path2fileName(file_path,divider):
+  # file_path_split = file_path.split("\\")
+  file_path_split = file_path.split(divider)
+  file_name = file_path_split[-1]
+  # file_name = file_name[:-4]
+  # print file_name
+  return file_name
+
+def userNamePurge(file_name):
+    def centralPathSplitter(new_file_name):
+        file_path_split = new_file_name.split("/")
+        new_file_name = file_path_split[-1]
+        return new_file_name + extension
+
+    def pathSplitter(new_file_name):
+        file_path_split = file_name.split("\\")
+        new_file_name = file_path_split[-1]
+        return new_file_name
+
+    # userName and detached purge
+    revit_user_name = "davidv"
+    file_path_split_name = file_name.split("_")
+
+    # extension extraction
+    file_path_split_ext = file_name.split(".")
+    extension = "."+file_path_split_ext[-1]
+
+    if file_path_split_name[-1] == "detached.rvt" and file_path_split_name[-2] == revit_user_name:
+        file_name_list = file_path_split_name[0:-2]
+        new_file_name = "_".join(file_name_list)
+        centralPath = centralPathSplitter(new_file_name)
+    elif file_path_split_name[-1] == "detached.rvt":
+        file_name_list = file_path_split_name[0:-1]
+        new_file_name = "_".join(file_name_list)
+        centralPath = centralPathSplitter(new_file_name)
+    elif file_path_split_name[-1] == revit_user_name + ".rvt":
+        file_name_list = file_path_split_name[0:-1]
+        new_file_name = "_".join(file_name_list)
+        centralPath = centralPathSplitter(new_file_name)
+    else:
+        file_name_list = file_path_split_name
+        new_file_name = "_".join(file_name_list)
+        centralPath = pathSplitter(new_file_name)
+
+    return centralPath
+
 
 # printing file name and heading
 name = doc.PathName
 if len(name) == 0:
     name = "Not saved file"
-try:
-    printedName = nameFromPath(name)
-except:
-    printedName = name
+# workshared file
+printedName = userNamePurge(name)
 
 
 # sheets
