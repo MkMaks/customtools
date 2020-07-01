@@ -232,7 +232,7 @@ dwg_collector = FilteredElementCollector(doc).OfClass(ImportInstance).WhereEleme
 importedDwg = 0
 dwgNotCurrentView = 0
 for dwg in dwg_collector:
-    if dwg.IsLinked == False:
+    if dwg.IsLinked != True:
         importedDwg += 1
     if dwg.ViewSpecific == False:
         dwgNotCurrentView += 1

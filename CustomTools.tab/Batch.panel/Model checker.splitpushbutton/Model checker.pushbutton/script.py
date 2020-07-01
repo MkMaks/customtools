@@ -250,7 +250,7 @@ dwg_collector = FilteredElementCollector(doc).OfClass(ImportInstance).WhereEleme
 importedDwg = 0
 dwgNotCurrentView = 0
 for dwg in dwg_collector:
-    if dwg.IsLinked == False:
+    if dwg.IsLinked != True:
         importedDwg += 1
     if dwg.ViewSpecific == False:
         dwgNotCurrentView += 1
@@ -474,9 +474,10 @@ catBanlist = ['Shared Site','Project Information','Structural Load Cases','Sun P
 for i in elements:
     try:
         category = i.Category.Name
-        # filtering DWGs, categories from banlist
+        # filtering DWGs and DXFs, categories from banlist
         # filtering categories with "<" and ")" since it makes errors in chart.js output and we dont need them
-        if category[-4:] != ".dwg" and category[-4:] != ".DWG" and category[0] != "<" and category[-1] != ")" and category not in catBanlist:
+        if category[-4:-2] != ".d" and category[-4:-2] != ".D" and category[0] != "<" and category[-1] != ")" and category not in catBanlist:
+            # category = accents2ascii(category)
             if category not in graphCatHeadings:
                 graphCatHeadings.append(category)
             graphCatData.append(category)
