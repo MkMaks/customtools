@@ -61,18 +61,20 @@ def listdwgs(current_view_only=False,):
                 DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,
                                                               dwg.Id).Creator  
             # is DWG linked in Current View Only? returns boolean 
-            dwg2D = dwg.ViewSpecific
-            if dwg2D:
-                dwg2Dstring = "Yes"
-            else:
-                dwg2Dstring = "NO!"
+            try:
+                dwg2D = dwg.ViewSpecific
+                if dwg2D:
+                    dwg2Dstring = "Yes"
+                else:
+                    dwg2Dstring = "NO!"
+            except:
+                dwg2D="No data"
             count += 1
             if current_view_only \
                     and revit.active_view.Id != dwg.OwnerViewId:
                 continue
             newScheduleLine = " \n| "+str(count)+" | "+dwg_name+" | "+output.linkify(dwg_id)+" | "+dwg_workset+" | "+dwg2Dstring+" | "+dwg_instance_creator+" |"
             md_schedule += newScheduleLine
-
         # print md_schedule
         output.print_md(md_schedule)
         # print dwgInst
