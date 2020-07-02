@@ -28,7 +28,7 @@ doc = __revit__.ActiveUIDocument.Document
 
 
 # dialog
-dialog = forms.alert("Chceš naoaj prepísať všetky prierazy?",
+dialog = forms.alert("Chceš naozaj prepísať všetky prierazy?",
                   ok=False, yes=True, no=True)
 if dialog:
     # /////// COLLECTORS /////////
