@@ -1,7 +1,14 @@
 # -*- coding: utf-8 -*-
 
 __title__ = 'Create Short\nRoom Numbers'
-__doc__ = """Writes everything agter last delimiter in parameter Room Number to custom Shared Parameter Room Number short."""
+__doc__ = """Writes everything after last delimiter in parameter Room Number to custom Shared Parameter Room Number short.
+
+f.e.:
+Room Number: 201-03-001a
+Room Number short: 001a
+"""
+__author__ = 'David Vadkerti'
+__highlight__= 'new'
 
 
 # for timing------
@@ -14,7 +21,8 @@ timer = Timer()
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, \
                 Transaction, Document
 from pyrevit import revit, DB
-from pyrevit import script
+# from pyrevit import script
+# output = script.get_output()
 
 doc = __revit__.ActiveUIDocument.Document
 
@@ -23,8 +31,6 @@ doc = __revit__.ActiveUIDocument.Document
 room_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Rooms) \
     .WhereElementIsNotElementType() \
     .ToElements()
-
-# output = script.get_output()
 
 # /////// UI WINDOW /////////
 class getDelimiterWindow(forms.WPFWindow):

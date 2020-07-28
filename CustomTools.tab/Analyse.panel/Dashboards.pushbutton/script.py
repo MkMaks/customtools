@@ -6,7 +6,6 @@ __doc__ = '''Power BI Dashboards for analysing RVT model quality, CustomTools Ho
 You need to install Power BI Desktop application first.'''
 __author__ = 'David Vadkerti'
 __helpurl__ = 'https://gfi.miraheze.org/wiki/Power_BI'
-__highlight__= 'new'
 __context__ = 'zero-doc'
 
 # import subprocess
