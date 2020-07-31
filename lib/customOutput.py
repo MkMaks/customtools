@@ -22,7 +22,8 @@ criticalWarnings = ['Elements have duplicate "Type Mark" values',
     'Room is not in a properly enclosed region',
     'Room separation line is slightly off axis and may cause inaccuracies',
     'Area is not in a properly enclosed region',
-    "Rectangular opening doesn't cut its host",]
+    "Rectangular opening doesn't cut its host",
+    'Elements have duplicate "Number" values',]
 
 
 # formating time in seconts to HHMMSS format
