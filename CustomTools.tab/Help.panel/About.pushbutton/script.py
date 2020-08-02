@@ -39,7 +39,7 @@ print(text_highligter("version " + releasedVersion) + text_highligter("snapshot 
 print("\nFor support contact "+ mailto("vadkerti@gfi.sk"))
 print("\n- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_(Extension_pre_pyRevit)","Help page")+" - GFI wiki")
 print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools_Hooks","CustomTools Hooks article")+" - GFI wiki")
-print("- " + linkMaker("https://www.youtube.com/watch?v=aWg-rj8k0Ts&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2&index=1","CustomTools Youtube channel")+" - video user manual")
+print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2&index=1","CustomTools Youtube channel")+" - video user manual")
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Git repository")+" - Bitbucket repo")
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/issues","Issue tracker"))
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags","Download installer"))
