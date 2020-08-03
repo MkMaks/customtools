@@ -1,17 +1,17 @@
 '''
 Deletes all Views, Sheets and Schedules in Project and runs Purge Unused afterwards
 '''
-# for timing------
-from pyrevit.coreutils import Timer
-from pyrevit import forms
-from custom_output import hmsTimer
-timer = Timer()
-# ----------------
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Transaction
 from pyrevit import revit, DB
+from pyrevit import forms
+from pyrevit.coreutils import Timer
+from custom_output import hmsTimer
 
 __title__ = 'Views, Sheets &\nSchedule Eraser'
+__doc__ = """Deletes all Views, Sheets and Schedules in Project and runs Purge Unused afterwards"""
+__author__ = 'David Vadkerti'
+__highlight__= 'updated'
 
 
 class viewEraserWindow(forms.WPFWindow):
@@ -24,10 +24,14 @@ class viewEraserWindow(forms.WPFWindow):
         sheetsCB= self.sheets.IsChecked
         schedulesCB= self.schedules.IsChecked
         viewsCB= self.views.IsChecked
+        purgeCB= self.purge.IsChecked
 
         doc = __revit__.ActiveUIDocument.Document
         curview = revit.active_view
 
+        # for timing------
+        timer = Timer()
+        # ----------------
 
         t = Transaction(doc, "Deleting all views, sheets and schedules")
         t.Start()
@@ -69,17 +73,19 @@ class viewEraserWindow(forms.WPFWindow):
                 
         t.Commit()
 
-        #run command Purge Unused
-        from Autodesk.Revit.UI import UIApplication, RevitCommandId, PostableCommand
+        # for timing------
+        endtime = timer.get_time()
+        print(hmsTimer(endtime))
+        # --------------
 
-        Command_ID=RevitCommandId.LookupPostableCommandId(PostableCommand.PurgeUnused)
-        #Command_ID=RevitCommandId.LookupCommandId("ID_PURGE_UNUSED")
-        uiapp = UIApplication(doc.Application)
-        uiapp.PostCommand(Command_ID)
+        if purgeCB == True:
+            #run command Purge Unused
+            from Autodesk.Revit.UI import UIApplication, RevitCommandId, PostableCommand
+
+            Command_ID=RevitCommandId.LookupPostableCommandId(PostableCommand.PurgeUnused)
+            #Command_ID=RevitCommandId.LookupCommandId("ID_PURGE_UNUSED")
+            uiapp = UIApplication(doc.Application)
+            uiapp.PostCommand(Command_ID)
 
 viewEraserWindow('viewEraserWindow.xaml').ShowDialog()
 
-# for timing------
-endtime = timer.get_time()
-print(hmsTimer(endtime))
-# --------------

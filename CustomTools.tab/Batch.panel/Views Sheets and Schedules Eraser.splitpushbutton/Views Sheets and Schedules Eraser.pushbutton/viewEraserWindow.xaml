@@ -20,6 +20,7 @@
             <CheckBox x:Name="sheets" IsChecked="True">Sheets</CheckBox>
             <CheckBox x:Name="schedules" IsChecked="True">Schedules</CheckBox>
             <CheckBox x:Name="views" IsChecked="True">Views</CheckBox>
+            <CheckBox x:Name="purge" IsChecked="True">Run Purge Unused</CheckBox>
         </StackPanel>
     </GroupBox>
 

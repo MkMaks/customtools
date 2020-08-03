@@ -10,17 +10,12 @@ Room Number short: 001a
 __author__ = 'David Vadkerti'
 __highlight__= 'new'
 
-
-# for timing------
-from pyrevit.coreutils import Timer
-from pyrevit import coreutils, forms
-from custom_output import hmsTimer
-timer = Timer()
-# ----------------
-
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, \
                 Transaction, Document
 from pyrevit import revit, DB
+from pyrevit.coreutils import Timer
+from pyrevit import coreutils, forms
+from custom_output import hmsTimer
 # from pyrevit import script
 # output = script.get_output()
 
@@ -40,6 +35,10 @@ class getDelimiterWindow(forms.WPFWindow):
     def process_text(self, sender, args):
         self.Close()
         delimiter =  str(self.sheets_tb.Text)
+
+        # for timing------
+        timer = Timer()
+        # ----------------
 
         t = Transaction(doc, "Create Short Room Numbers")
         t.Start()
