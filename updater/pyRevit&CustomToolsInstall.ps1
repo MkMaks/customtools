@@ -1,6 +1,6 @@
 #installing pyRevit
-pyrevit clone master base
-pyrevit attach master latest --installed 
+pyrevit clone basepublic
+pyrevit attach basepublic latest --installed 
 
 
 #installing CustomTools extension
