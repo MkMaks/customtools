@@ -12,7 +12,7 @@ __context__ = 'zero-doc'
 # print("L:\\customToolslogs")
 
 import subprocess
-subprocess.Popen(r'explorer /select,"L:\_customToolsReports\Skypark\doNotErase-pointer"')
+subprocess.Popen(r'explorer /select,"L:\_customToolsReports\doNotErase-pointer"')
 
 print("Drag and drop interactive HTML file saved from pyRevit script output into this window.")
 print("Makes element links active.")
