@@ -46,6 +46,8 @@ output.set_height(700)
 
 output.print_md("# NOVINKY - REVIT")
 
+print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_Sheetov_podľa_Excelu","Automatické_vytvorenie_Sheetov_podľa_Excelovskej tabuľky")+" - čiastočná automatizácia tvorby knihy bytov")
+
 output.print_md("## CustomTools")
 print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
 print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools", "CustomTools")+" - článok na wiki")
