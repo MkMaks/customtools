@@ -29,6 +29,7 @@ criticalWarnings = ['Elements have duplicate "Type Mark" values',
 # formating time in seconts to HHMMSS format
 def hmsTimer(timerSeconds):
     # for treating formating of pyrevit timer function
+    from math import floor
     seconds = round(timerSeconds,2)
     if seconds<60:
         hms = str(seconds)+" seconds"
