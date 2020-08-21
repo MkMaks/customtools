@@ -6,7 +6,7 @@
 __title__ = 'Not Placed Views schedule'
 __author__ = 'David Vadkerti'
 __doc__ = 'Lists all Views not placed on Sheet'
-__highlight__= 'updated'
+
 
 # import clr
 # from collections import defaultdict

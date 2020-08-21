@@ -2,7 +2,7 @@
 __title__ = 'Detail Group\nschedule'
 __author__ = 'David Vadkerti'
 __doc__ = 'Lists all Detail Groups with links to Owner Views.'
-__highlight__= 'updated'
+
 
 from pyrevit import revit, DB
 from pyrevit import script

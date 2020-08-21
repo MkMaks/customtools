@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 __title__ = 'Create Short\nRoom Numbers'
-__doc__ = """Writes everything after last delimiter in parameter Room Number to custom Shared Parameter Room Number short.
+__doc__ = """Writes everything after last delimiter to parameter Room Number to custom Shared Parameter 'Room Number short'. You need to add parameter manually.
 
 f.e.:
 Room Number: 201.03.001a
 Room Number short: 001a
 """
 __author__ = 'David Vadkerti'
-__highlight__= 'new'
+# __highlight__= 'new'
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, \
                 Transaction, Document
