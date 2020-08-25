@@ -8,7 +8,13 @@ filePath = doc.PathName
 
 # getting central file name for log name
 central_path = revit.query.get_central_path(doc)
-lastBackslash_C = central_path.rindex("/")
+try:
+    # for rvt server
+    lastBackslash_C = central_path.rindex("/")
+except:
+    # for other locations
+    lastBackslash_C = central_path.rindex("\\")
+
 # just the file name without the extension
 central_file_name = central_path[lastBackslash_C:][:-4]
 
