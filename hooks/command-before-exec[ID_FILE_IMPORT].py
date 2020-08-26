@@ -29,7 +29,7 @@ if fileExtension == "rvt" or fileExtension == "rte":
       EXEC_PARAMS.event_args.Cancel = True
    elif res  == "Viac info o Importovaní CAD súborov":
       EXEC_PARAMS.event_args.Cancel = True
-      url = 'https://gfi.miraheze.org/wiki/Postupy,_ktor%C3%BDm_je_potrebn%C3%A9_sa_vyhn%C3%BA%C5%A5_-_Revit#Importovanie_DWG.'
+      url = 'https://gfi.miraheze.org/wiki/Postupy,_ktor%C3%BDm_je_potrebn%C3%A9_sa_vyhn%C3%BA%C5%A5_-_Revit#Importovanie_DWG'
       script.open_url(url)
    else:
       EXEC_PARAMS.event_args.Cancel = True
