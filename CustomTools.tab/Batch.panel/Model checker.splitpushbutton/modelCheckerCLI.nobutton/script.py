@@ -13,10 +13,10 @@ doc = __revit__.ActiveUIDocument.Document
 
 # returns file name - everything in path from "\\" or "/" to the end
 def path2fileName(file_path,divider):
-  # file_path_split = file_path.split("\\")
-  file_path_split = file_path.split(divider)
-  file_name = file_path_split[-1]
-  # file_name = file_name[:-4]
+  # file_path_split = file_path.split(divider)
+  # file_name = file_path_split[-1]
+  lastDivider = file_path.rindex(divider)+1
+  file_name = file_path[lastDivider:]
   # print file_name
   return file_name
 
@@ -28,8 +28,12 @@ if len(name) == 0:
 # workshared file
 try:
     central_path = revit.query.get_central_path(doc)
-    # central_path = revit.query.get_central_path(doc=revit.doc)
-    printedName = path2fileName(central_path,"/")
+    try:
+        # for rvt server
+        printedName = path2fileName(central_path,"/")
+    except:
+        # other locations
+        printedName = path2fileName(central_path,"\\")
 # non workshared file
 except:
     file_path = doc.PathName
