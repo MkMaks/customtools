@@ -12,7 +12,12 @@ filePath = doc.PathName
 central_path = revit.query.get_central_path(doc)
 
 # getting local file name for tmp file name
-lastBackslash_L = filePath.rindex("\\")
+try:
+    lastBackslash_L = filePath.rindex("\\")
+except:
+    # for opened as dettached file
+    lastBackslash_L = filePath.rindex("/")
+
 # just the file name without the extension
 local_file_name = filePath[lastBackslash_L:][:-4]
 
