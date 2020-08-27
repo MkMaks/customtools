@@ -72,21 +72,26 @@ output.set_height(1000)
 # printing file name and heading
 name = doc.PathName
 if len(name) == 0:
-    name = "Not saved file"
-
-# workshared file
-try:
-    central_path = revit.query.get_central_path(doc)
+    # name = "Not saved file"
+    printedName = "Not saved file"
+else:
+    # workshared file
     try:
-        # for rvt server
-        printedName = path2fileName(central_path,"/")
+        central_path = revit.query.get_central_path(doc)
+        try:
+            # for rvt server
+            printedName = path2fileName(central_path,"/")
+        except:
+            # other locations
+            printedName = path2fileName(central_path,"\\")
+    # non workshared file
     except:
-        # other locations
-        printedName = path2fileName(central_path,"\\")
-# non workshared file
-except:
-    file_path = doc.PathName
-    printedName = path2fileName(file_path,"\\")
+        file_path = doc.PathName
+        try:
+            printedName = path2fileName(file_path,"\\")
+        except:
+            # detached file
+            printedName = file_path
 output.print_md("# MODEL CHECKER")
 output.print_md("## " + printedName)
 
