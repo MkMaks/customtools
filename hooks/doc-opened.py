@@ -61,9 +61,11 @@ if fileExtension == "rvt":
         timeDelta = end_time - start_time
         # print timeDelta
 
+        user_name = doc.Application.Username
+
         # writing time to log file
         log_file = open("L:\\customToolslogs\\openingTimeLogs\\"+ central_file_name + "_Open.log", "a")
-        log_file.write(end_time_string_seconds + separator + str(timeDelta) + "\n")
+        log_file.write(end_time_string_seconds + separator + str(timeDelta)+ separator + user_name + "\n")
         log_file.close()
     except:
          pass
