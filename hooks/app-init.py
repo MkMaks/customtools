@@ -46,6 +46,7 @@ output.set_height(700)
 
 output.print_md("# NOVINKY - REVIT")
 
+print("- " + linkMaker("https://gfi.miraheze.org/wiki/Power_BI#Zdie.C4.BEan.C3.A9_dashboardy","Nové dashboardy")+" - pridané dashboardy Open&syncTimes a Revit Build")
 print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_Sheetov_podľa_Excelu","Automatické_vytvorenie_Sheetov_podľa_Excelovskej tabuľky")+" - čiastočná automatizácia tvorby knihy bytov")
 
 output.print_md("## CustomTools")
