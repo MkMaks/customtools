@@ -43,15 +43,19 @@ def hooksLogger(log_string, doc):
 # logging currentVersion and snapshot with username to server
 def versionLogger(releasedVersion,snapshot):
   from datetime import datetime
-  from pyrevit import revit
+  from pyrevit import revit, _HostApplication
   import getpass
   user_name = getpass.getuser()
   datestamp = str(datetime.now())
+
+  hostapp = _HostApplication()
+  build = hostapp.build
+
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
   try:
      f = open("L:\\customToolslogs\\versions.log", "a")
-     f.write(datestamp + separator + releasedVersion + "_" + snapshot + separator + user_name + "\n")
+     f.write(datestamp + separator + releasedVersion + "_" + snapshot + separator + user_name + separator + build + "\n")
      f.close()
   except:
          pass
