@@ -1,6 +1,8 @@
-'''
-Places selected opened View or Schedule on active Sheet.
-'''
+__doc__ = 'Places selected opened View or Schedule on active Sheet. ' \
+          'Activate sheet first.'
+__title__ = 'Place View On Sheet'
+__helpurl__ = 'https://youtu.be/_DVTvM8VVAw'
+
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Transaction, XYZ, Viewport, ScheduleSheetInstance
 from pyrevit import revit, DB, coreutils, forms
