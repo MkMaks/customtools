@@ -3,60 +3,71 @@ from hooksScripts import versionLogger, releasedVersion, snapshot
 
 versionLogger(releasedVersion,snapshot)
 
-import os
-import subprocess
-try:
-    # running CustomToolsUpdater.cmd script at:
-    # %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd
-    appdataPath = os.getenv('APPDATA')
-    updaterPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd'
-    p = subprocess.Popen([updaterPath])
-except:
-    pass
+# update at revit startup
+# import os
+# import subprocess
+# try:
+#     # running CustomToolsUpdater.cmd script at:
+#     # %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd
+#     appdataPath = os.getenv('APPDATA')
+#     updaterPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd'
+#     p = subprocess.Popen([updaterPath])
+# except:
+#     pass
 
 
 """TEASER."""
+#prints heading and links offline version of mass message
 from pyrevit import script, coreutils
-
-# highlights text using html string with css
-def text_highligter(a):
-        content = str(a)
-        html_code = "<p class='elementlink'>"+content+"</p>"
-        return coreutils.prepare_html_str(html_code)
-
-def imageViewer(html_code):
-    # sample_code = "<img src='https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg' width=50%>"
-    print(coreutils.prepare_html_str(html_code))
-
-def mailto(a):
-        content = str(a)
-        html_code = '<a href=mailto:"'+ content +'" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">'+ content +'</a>'
-        # html_code = '<a href=mailto:"'+ content +'" target="_blank">'+ content +'</a>'
-        return coreutils.prepare_html_str(html_code)
-
-# make html link tag
-def linkMaker(a,title):
-        content = str(a)
-        html_code = '<a href="'+content+'">'+ title +'</a>'
-        return coreutils.prepare_html_str(html_code)
-
-#prints heading and links
+from os import path
 output = script.get_output()
 output.set_height(700)
 
-output.print_md("# NOVINKY - REVIT")
+# server version of massmessage
+url = "L:\\_i\\CTmassMessage\\mass_message.html"
+if path.exists(url):
+    # output.open_url(url)
+    output.open_page(url)
 
-print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_architectural_floors_v_Revite","Automatické vytvorenie podláh")+" - vytvorí architectural floors podľa obrysu miestnosti. Typ zvolí podľa parametru 'Floor Finish'.")
-print("- " + linkMaker("https://gfi.miraheze.org/wiki/Power_BI#Zdie.C4.BEan.C3.A9_dashboardy","Nové dashboardy")+" - pridané dashboardy 'Open&syncTimes' a 'Revit Build'")
-print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_Sheetov_podľa_Excelu","Automatické_vytvorenie_Sheetov_podľa_Excelovskej tabuľky")+" - čiastočná automatizácia tvorby knihy bytov")
+# offline hardcoded version of massmessage
+else:
+    # highlights text using html string with css
+    def text_highligter(a):
+            content = str(a)
+            html_code = "<p class='elementlink'>"+content+"</p>"
+            return coreutils.prepare_html_str(html_code)
 
-output.print_md("## CustomTools")
-print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
-print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools", "CustomTools")+" - článok na wiki")
+    def imageViewer(html_code):
+        # sample_code = "<img src='https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg' width=50%>"
+        print(coreutils.prepare_html_str(html_code))
 
-output.print_md("## pyRevit")
-print("- " + linkMaker("https://www.youtube.com/playlist?list=PLc_1PNcpnV55VgYBfrIPrvjZjsvwki8LR","Video návod")+" - playlist na Youtube")
-print("- " + linkMaker("https://gfi.miraheze.org/wiki/PyRevit","pyRevit")+" - článok na wiki")
-print("\n\n")
+    def mailto(a):
+            content = str(a)
+            html_code = '<a href=mailto:"'+ content +'" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">'+ content +'</a>'
+            # html_code = '<a href=mailto:"'+ content +'" target="_blank">'+ content +'</a>'
+            return coreutils.prepare_html_str(html_code)
 
-imageViewer("<img src='https://images.squarespace-cdn.com/content/v1/5605a932e4b0055d57211846/1579016738840-S4HNYZPL5U05TTOGFZSR/ke17ZwdGBToddI8pDm48kGUB6bvAQyL_fjdXd3nTTDBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpy1qOPYMCUmUox1BUDmVYF_KfvPNJdunqX1yE5UASPGwIGTVuQfUTrbnSl6yicKsPc/image-asset.png?format=750w'>")
+    # make html link tag
+    def linkMaker(a,title):
+            content = str(a)
+            html_code = '<a href="'+content+'">'+ title +'</a>'
+            return coreutils.prepare_html_str(html_code)
+
+    # offline content of mass message
+    output.print_md("# NOVINKY - REVIT")
+    output.print_md("## Na Vašom počítači nie je dostupný server L\\:")
+
+    print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_architectural_floors_v_Revite","Automatické vytvorenie podláh")+" - vytvorí architectural floors podľa obrysu miestnosti. Typ zvolí podľa parametru 'Floor Finish'.")
+    print("- " + linkMaker("https://gfi.miraheze.org/wiki/Power_BI#Zdie.C4.BEan.C3.A9_dashboardy","Nové dashboardy")+" - pridané dashboardy 'Open&syncTimes' a 'Revit Build'")
+    print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_Sheetov_podľa_Excelu","Automatické_vytvorenie_Sheetov_podľa_Excelovskej tabuľky")+" - čiastočná automatizácia tvorby knihy bytov")
+
+    output.print_md("## CustomTools")
+    print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
+    print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools", "CustomTools")+" - článok na wiki")
+
+    output.print_md("## pyRevit")
+    print("- " + linkMaker("https://www.youtube.com/playlist?list=PLc_1PNcpnV55VgYBfrIPrvjZjsvwki8LR","Video návod")+" - playlist na Youtube")
+    print("- " + linkMaker("https://gfi.miraheze.org/wiki/PyRevit","pyRevit")+" - článok na wiki")
+    print("\n\n")
+
+    # imageViewer("<img src='https://images.squarespace-cdn.com/content/v1/5605a932e4b0055d57211846/1579016738840-S4HNYZPL5U05TTOGFZSR/ke17ZwdGBToddI8pDm48kGUB6bvAQyL_fjdXd3nTTDBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpy1qOPYMCUmUox1BUDmVYF_KfvPNJdunqX1yE5UASPGwIGTVuQfUTrbnSl6yicKsPc/image-asset.png?format=750w'>")

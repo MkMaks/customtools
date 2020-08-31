@@ -4,6 +4,9 @@ from hooksScripts import releasedVersion, snapshot
 
 __context__ = 'zero-doc'
 
+output = script.get_output()
+output.set_height(710)
+
 # highlights text using html string with css
 def text_highligter(a):
 		content = str(a)
@@ -43,8 +46,4 @@ print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBb
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Git repository")+" - Bitbucket repo")
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/issues","Issue tracker"))
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags","Download installer"))
-
-
-
-
-
+print("- " + linkMaker("L:\\_i\\CTmassMessage\\mass_message.html","Mass message")+" - view mass message")
