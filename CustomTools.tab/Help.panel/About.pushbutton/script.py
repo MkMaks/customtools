@@ -1,8 +1,8 @@
-"""Version and support information."""
 from pyrevit import script, coreutils
 from hooksScripts import releasedVersion, snapshot
 
 __context__ = 'zero-doc'
+__doc__ = 'Version, support information, mass message, issue tracker, git repo, manual, video help'
 
 output = script.get_output()
 output.set_height(710)
@@ -46,4 +46,4 @@ print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBb
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/src/master/","Git repository")+" - Bitbucket repo")
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/issues","Issue tracker"))
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags","Download installer"))
-print("- " + linkMaker("L:\\_i\\CTmassMessage\\mass_message.html","Mass message")+" - view mass message")
+print("\n- " + linkMaker("L:\\_i\\CTmassMessage\\mass_message.html","Mass message")+" - view mass message")
