@@ -1,0 +1,7 @@
+title: Hide Internal Origin
+tooltip: Turns off Internal origin, Survey Point a Project Base Point in all FloorPlan, CeilingPlan, Elevation, Section, 3D Views a Detail Views
+author: "David Vadkerti"
+references:
+engine:
+  clean: false
+  automate: false

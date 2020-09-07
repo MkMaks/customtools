@@ -1,0 +1,7 @@
+title: DoorFlip Setter
+tooltip: Všetkým dverám v projekte zapise do parametru urcenom v "Parameter Name" značku P resp. L podľa toho či sú ľavé či pravé
+author: "David Vadkerti"
+references:
+engine:
+  clean: false
+  automate: false

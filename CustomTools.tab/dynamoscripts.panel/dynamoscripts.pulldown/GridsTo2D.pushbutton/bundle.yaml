@@ -1,0 +1,7 @@
+title: Grids to 2D
+tooltip: turn all grids in View to 2D
+author: "David Vadkerti"
+references:
+engine:
+  clean: false
+  automate: false

@@ -1,0 +1,7 @@
+title: A4 count
+tooltip: Write count of A4 formats of every Sheet and dimensions of every Sheet to custom Shared parameters. You need to add parameters with name 'Pocet formatov num' a 'Rozmer vykresu'.
+author: "David Vadkerti"
+references:
+engine:
+  clean: false
+  automate: false
