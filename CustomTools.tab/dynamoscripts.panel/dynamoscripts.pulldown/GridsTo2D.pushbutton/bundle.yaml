@@ -1,6 +1,5 @@
 title: Grids to 2D
 tooltip: Turns all grids in View to 2D. Shared Packages need to be set in Dynamo (package Springs). Views need to be uncropped.
-()
 author: "David Vadkerti"
 references:
 engine:
