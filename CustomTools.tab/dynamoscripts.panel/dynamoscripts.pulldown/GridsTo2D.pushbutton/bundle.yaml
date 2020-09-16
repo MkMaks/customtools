@@ -3,5 +3,5 @@ tooltip: Turns all grids in View to 2D. Shared Packages need to be set in Dynamo
 author: "David Vadkerti"
 references:
 engine:
-  clean: false
-  automate: false
+  clean: true
+  automate: true

@@ -107,27 +107,6 @@
       "Description": "Creates a string."
     },
     {
-      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
-      "SelectedIndex": 234,
-      "SelectedString": "OST_Grids",
-      "NodeType": "ExtensionNode",
-      "Id": "18acb2c73120461092a3450a200cc349",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "3d5c730825884e87b367468dc7a6f578",
-          "Name": "Category",
-          "Description": "The selected Category.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "All built-in categories."
-    },
-    {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
       "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\nOUT = doc.ActiveView.ToDSType(True)",
@@ -206,6 +185,56 @@
       ],
       "Replication": "Disabled",
       "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Grids\";",
+      "Id": "608b1ec008734b0792cf9916ece685d5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "32e78ead51e7499b8c98f2ab447a63e2",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "c5bf3c0d371345d4b9c9b40873c12e6a",
+      "Inputs": [
+        {
+          "Id": "6a0953b210934f56a275d9a53481327f",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3b8643ed5a7d408996ecee2e7bcc3b85",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
     }
   ],
   "Connectors": [
@@ -220,11 +249,6 @@
       "Id": "6b1e6e8a46034a3cb11bbfc0f95bf86e"
     },
     {
-      "Start": "3d5c730825884e87b367468dc7a6f578",
-      "End": "a0289a230f6340b18d4e7c2cbfc810ad",
-      "Id": "42357173963140e8a5c300bf2f0b3e1a"
-    },
-    {
       "Start": "86d532292901408493db3791f1c0cc88",
       "End": "130ee61a83a84e1a8b798979721263a1",
       "Id": "101ac9a41bcc4e89ba40be3b3e30cf42"
@@ -233,6 +257,16 @@
       "Start": "6f4099e4bd034a44a429d4628920ba7c",
       "End": "42cc44d6338940649d6092ce3f24947f",
       "Id": "978a4aacecf94941b5c3d55fd6819822"
+    },
+    {
+      "Start": "32e78ead51e7499b8c98f2ab447a63e2",
+      "End": "6a0953b210934f56a275d9a53481327f",
+      "Id": "8935894c546b43b59ff790fca3ad5971"
+    },
+    {
+      "Start": "3b8643ed5a7d408996ecee2e7bcc3b85",
+      "End": "a0289a230f6340b18d4e7c2cbfc810ad",
+      "Id": "aa1c6cbce07a4200b1e44711be3b88e1"
     }
   ],
   "Dependencies": [],
@@ -261,96 +295,89 @@
     },
     "NodeViews": [
       {
+        "ShowGeometry": true,
+        "Name": "Python Script",
         "Id": "c4fca8f5b4af4ba2a65122bd0931c593",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Python Script",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 507.0,
         "Y": 176.0
       },
       {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
         "Id": "2048dee8cfe5462eaab73c29b3f4f39e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "All Elements of Category",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 248.0,
         "Y": 132.0
       },
       {
+        "ShowGeometry": true,
+        "Name": "Návod",
         "Id": "c72985074f704244ab49a5cbf152954f",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
-        "Name": "Návod",
-        "ShowGeometry": true,
         "Excluded": false,
-        "X": -228.617210682493,
-        "Y": 111.955489614243
+        "X": -390.03552424413516,
+        "Y": 72.124996657474171
       },
       {
-        "Id": "18acb2c73120461092a3450a200cc349",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Name": "Categories",
         "ShowGeometry": true,
-        "Excluded": false,
-        "X": 32.1454005934719,
-        "Y": 119.456973293769
-      },
-      {
+        "Name": "Python Script",
         "Id": "884536f672464ba3bb5cfc9e9c8f3d55",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Python Script",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 145.930579826061,
         "Y": 385.396874475794
       },
       {
+        "ShowGeometry": true,
+        "Name": "Code Block",
         "Id": "b3a7453ff6be4107a74e64a5e0194038",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": -79.8338278931749,
         "Y": 389.522255192878
       },
       {
+        "ShowGeometry": true,
+        "Name": "Watch",
         "Id": "b8f0d66e3d3d46a39665b1d69c2b9aad",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Watch",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 741.33580628529558,
         "Y": 98.7903041830423
-      }
-    ],
-    "Annotations": [
+      },
       {
-        "Id": "b8e1dba6e05748bfb25543003ffbe0a7",
-        "Title": "INPUT",
-        "Nodes": [
-          "18acb2c73120461092a3450a200cc349"
-        ],
-        "Left": 22.145400593471898,
-        "Top": 73.456973293769,
-        "Width": 186.0,
-        "Height": 139.0,
-        "FontSize": 30.0,
-        "InitialTop": 119.456973293769,
-        "InitialHeight": 145.0,
-        "TextblockHeight": 36.0,
-        "Background": "#FFC1D676"
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "608b1ec008734b0792cf9916ece685d5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -128.11951816046917,
+        "Y": 143.03658265433222
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "c5bf3c0d371345d4b9c9b40873c12e6a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -0.12141044508149434,
+        "Y": 137.86266831412274
       }
     ],
-    "X": 338.98560363501491,
-    "Y": 101.16144115356082,
-    "Zoom": 0.70823125000000009
+    "Annotations": [],
+    "X": 426.41368453199624,
+    "Y": 60.770950445304663,
+    "Zoom": 0.95404292488281262
   }
 }

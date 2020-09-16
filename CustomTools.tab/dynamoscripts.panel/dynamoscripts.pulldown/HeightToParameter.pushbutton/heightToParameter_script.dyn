@@ -293,27 +293,6 @@
       "Description": "Allows for DesignScript code to be authored directly"
     },
     {
-      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
-      "SelectedIndex": 451,
-      "SelectedString": "OST_Site",
-      "NodeType": "ExtensionNode",
-      "Id": "1d0cbca8084248a68f94bb30895b9c0d",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "9a8a5254d4f5433e8955339fcbec5be3",
-          "Name": "Category",
-          "Description": "The selected Category.",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "All built-in categories."
-    },
-    {
       "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
       "NodeType": "ExtensionNode",
       "Id": "f334ef11548048e1861540cd0749c90a",
@@ -490,6 +469,56 @@
       ],
       "Replication": "Disabled",
       "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Site\";",
+      "Id": "578ecead44b54879bf994aae6e0f1411",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e0389aa22649406aa40cfb247eb58b36",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Id": "f300d5332cb1418497887c9e4d222920",
+      "Inputs": [
+        {
+          "Id": "335cb39810c9461190893defe9005015",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a25badf5c344473896588ac26d3d05f9",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
     }
   ],
   "Connectors": [
@@ -534,11 +563,6 @@
       "Id": "3f9bca255ff942509e987da1bd64ed26"
     },
     {
-      "Start": "9a8a5254d4f5433e8955339fcbec5be3",
-      "End": "17c4f4d5f96641ad88c78a520b9c3717",
-      "Id": "7ebfd1377c0042aea6469aa186c8212a"
-    },
-    {
       "Start": "fa881dd969f04ad3a3869d14ac3efb0d",
       "End": "e62eca169c5f48cd96f4fc22c73fab19",
       "Id": "0dba7256611a4f7bae8e05939cb03ff2"
@@ -567,6 +591,16 @@
       "Start": "112f1d16ae3645ca9db46549499946f6",
       "End": "fa0f6837dada42fda8261dff8bd8d5b2",
       "Id": "2ce4f46b374247369dfcef57143f3524"
+    },
+    {
+      "Start": "e0389aa22649406aa40cfb247eb58b36",
+      "End": "335cb39810c9461190893defe9005015",
+      "Id": "f5de3e62ca8141e7bc60200a79d2229e"
+    },
+    {
+      "Start": "a25badf5c344473896588ac26d3d05f9",
+      "End": "17c4f4d5f96641ad88c78a520b9c3717",
+      "Id": "75640d9e7284413dbd1af423f2524011"
     }
   ],
   "Dependencies": [],
@@ -686,16 +720,6 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "Categories",
-        "Id": "1d0cbca8084248a68f94bb30895b9c0d",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": -106.40038128223114,
-        "Y": 332.62425652807804
-      },
-      {
-        "ShowGeometry": true,
         "Name": "All Elements of Category",
         "Id": "f334ef11548048e1861540cd0749c90a",
         "IsSetAsInput": false,
@@ -753,6 +777,26 @@
         "Excluded": false,
         "X": -175.1652392504709,
         "Y": 170.71852882818553
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "578ecead44b54879bf994aae6e0f1411",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -275.66861170116124,
+        "Y": 350.03650456479272
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
+        "Id": "f300d5332cb1418497887c9e4d222920",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -150.40898646447926,
+        "Y": 342.77820014334964
       }
     ],
     "Annotations": [
@@ -778,8 +822,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 435.9826550987691,
-    "Y": -9.7938052646816232,
-    "Zoom": 1.2450523126925643
+    "X": 227.95027197358377,
+    "Y": 293.30061545911218,
+    "Zoom": 0.49789645434005003
   }
 }

@@ -3,5 +3,5 @@ tooltip: Turns off Internal origin, Survey Point a Project Base Point in all Flo
 author: "David Vadkerti"
 references:
 engine:
-  clean: false
-  automate: false
+  clean: true
+  automate: true

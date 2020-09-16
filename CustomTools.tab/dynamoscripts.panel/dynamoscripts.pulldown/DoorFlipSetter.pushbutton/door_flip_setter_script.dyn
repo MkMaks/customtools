@@ -27,7 +27,7 @@
       "Id": "b66d4301ca1842568cd18b6ed85cb1f7",
       "Name": "Počet upravených dverí",
       "Type": "integer",
-      "InitialValue": "740",
+      "InitialValue": "2",
       "Description": "Visualize the output of node."
     }
   ],
@@ -1146,7 +1146,7 @@
         ],
         "Left": 350.254947451595,
         "Top": -157.27244483963102,
-        "Width": 169.0,
+        "Width": 196.99999999999994,
         "Height": 237.82938614079623,
         "FontSize": 30.0,
         "InitialTop": -111.272444839631,
@@ -1155,8 +1155,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 8.6899828833732045,
-    "Y": 259.65682618064812,
-    "Zoom": 0.9822038850073771
+    "X": 206.72598970868222,
+    "Y": 476.43617728324313,
+    "Zoom": 0.586399341582746
   }
 }

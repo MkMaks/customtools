@@ -3,5 +3,5 @@ tooltip: Všetkým dverám v projekte zapise do parametru urcenom v "Parameter N
 author: "David Vadkerti"
 references:
 engine:
-  clean: false
-  automate: false
+  clean: true
+  automate: true

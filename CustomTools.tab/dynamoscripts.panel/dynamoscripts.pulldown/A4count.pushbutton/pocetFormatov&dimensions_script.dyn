@@ -584,141 +584,141 @@
     },
     "NodeViews": [
       {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
         "Id": "68223fcfe0c14327a0f350257187f532",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "All Elements of Category",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 560.44308251651319,
         "Y": 421.11136730302019
       },
       {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
         "Id": "f0cabfbe9674425588542e1d8e1676f3",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element.SetParameterByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2179.6335730369542,
         "Y": 284.82577837751148
       },
       {
+        "ShowGeometry": true,
+        "Name": "Code Block",
         "Id": "69b3366dd6204d3cae7e6865557bda6e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1767.1285807198883,
         "Y": 566.90353756901459
       },
       {
+        "ShowGeometry": true,
+        "Name": "PY Clockwork Element.OwnerView",
         "Id": "a0adb2bc92a04790b918a8aa4554b2fb",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "PY Clockwork Element.OwnerView",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1120.8909199202064,
         "Y": 261.37740475422345
       },
       {
+        "ShowGeometry": true,
+        "Name": "Návod",
         "Id": "a8d26caeb5cd4f4dbaa4fa5e417e34c1",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
-        "Name": "Návod",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 297.0709340091978,
         "Y": 50.606243965382561
       },
       {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
         "Id": "c1e6d1a7be034bc3bf1ae68921526846",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element.GetParameterValueByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1002.7524206066283,
         "Y": 854.992623843155
       },
       {
+        "ShowGeometry": true,
+        "Name": "Code Block",
         "Id": "10193dd33b184e60b7afc2113c285b07",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 804.31165520856678,
         "Y": 911.14604184984523
       },
       {
+        "ShowGeometry": true,
+        "Name": "Code Block",
         "Id": "55bdbc975def4e0db89cdb8a86cbb190",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 809.21431393392663,
         "Y": 664.14955397495737
       },
       {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
         "Id": "13906c24018a4cecb00038417092093a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element.GetParameterValueByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1011.9514590558036,
         "Y": 597.97124994603041
       },
       {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
         "Id": "956257e12a05498d96ddc4e34fe0dd72",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Element.SetParameterByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 2184.0497821357067,
         "Y": 550.12291542096364
       },
       {
+        "ShowGeometry": true,
+        "Name": "Python Script",
         "Id": "054ed9a401e34e1eb773a64031cb420a",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Python Script",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1467.1907962255543,
         "Y": 985.55307507497514
       },
       {
+        "ShowGeometry": true,
+        "Name": "Python Script",
         "Id": "31487809c92b42518f5ed1e1fbdeca46",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Python Script",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 1430.8083238571244,
         "Y": 567.50393408173943
       },
       {
+        "ShowGeometry": true,
+        "Name": "Category.ByName",
         "Id": "51617748b51345f0ae8ace0b9eb9f109",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Category.ByName",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 303.07417906350906,
         "Y": 417.68246396203403
       },
       {
+        "ShowGeometry": true,
+        "Name": "Code Block",
         "Id": "1502534ce0b74db6b81b13d8d2dd600c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "Code Block",
-        "ShowGeometry": true,
         "Excluded": false,
         "X": 119.41863898750194,
         "Y": 408.41828777202971
@@ -755,7 +755,7 @@
         "Height": 158.69307953099047,
         "FontSize": 36.0,
         "InitialTop": 408.41828777202971,
-        "InitialHeight": 145.05391069877828,
+        "InitialHeight": 157.69307953099047,
         "TextblockHeight": 43.0,
         "Background": "#FFBB87C6"
       },
@@ -811,8 +811,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 292.78125268821782,
-    "Y": 94.54185521713157,
-    "Zoom": 0.44624869885881269
+    "X": -476.60523812247709,
+    "Y": -50.614531823172342,
+    "Zoom": 0.69628852401544084
   }
 }

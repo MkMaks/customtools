@@ -3,5 +3,5 @@ tooltip: Writes height from Survey point of all elements of Category Site to Sha
 author: "David Vadkerti"
 references:
 engine:
-  clean: false
-  automate: false
+  clean: true
+  automate: true

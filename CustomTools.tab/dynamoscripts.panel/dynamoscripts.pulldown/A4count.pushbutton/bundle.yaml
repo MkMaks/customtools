@@ -3,5 +3,5 @@ tooltip: Writes count of A4 formats of every Sheet and dimensions of every Sheet
 author: "David Vadkerti"
 references:
 engine:
-  clean: false
-  automate: false
+  clean: true
+  automate: true
