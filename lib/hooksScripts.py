@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # version of CustomTools
-releasedVersion = "0.6"
-snapshot = "200907"
+releasedVersion = "0.7"
+snapshot = "200916"
 
 # logging to server
 def hooksLogger(log_string, doc):

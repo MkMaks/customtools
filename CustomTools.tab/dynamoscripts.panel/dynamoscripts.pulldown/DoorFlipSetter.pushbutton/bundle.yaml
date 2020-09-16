@@ -1,5 +1,5 @@
 title: DoorFlip Setter
-tooltip: Všetkým dverám v projekte zapise do parametru urcenom v "Parameter Name" značku P resp. L podľa toho či sú ľavé či pravé
+tooltip: Všetkým dverám v projekte zapise do parametru urcenom v "Parameter Name" značku P resp. L podľa toho či sú ľavé či pravé. Je potrebné mať nastavené Shared Packages pre Dynamo (package Archi-lab).
 author: "David Vadkerti"
 references:
 engine:

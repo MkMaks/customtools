@@ -1,5 +1,5 @@
 title: Height to Parameter
-tooltip: Writes height from Survey point of all elements of Category Site to Shared parameter 'nadmorska vyska'
+tooltip: Writes height from Survey point of all elements of Category Site to Shared parameter 'nadmorska vyska'.
 author: "David Vadkerti"
 references:
 engine:
