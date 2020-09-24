@@ -22,6 +22,12 @@ def dialogBox():
                         title="Save List Of Opened Views",
                         footer="CustomTools Hooks")
       if res  == "Uložiť":
+          # try to cancel - if user is closing application we cannot cancel the event
+          try:
+           EXEC_PARAMS.event_args.Cancel()
+          except:
+            pass
+
           # opened views
           from pyrevit import script
           output = script.get_output()
@@ -48,6 +54,7 @@ def dialogBox():
       elif res  == "Preskočiť":
           pass
       elif res  == "Zistiť viac":
+          EXEC_PARAMS.event_args.Cancel()
           from pyrevit import script
           url = 'https://youtu.be/1lANcq6WONI'
           script.open_url(url)
