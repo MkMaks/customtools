@@ -8,3 +8,9 @@ def accents2ascii(text):
     for i, j in dic.iteritems():
         text = text.replace(i, j)
     return text
+
+# alternative function
+# def strip_accents(s):
+#     import unicodedata
+#     return ''.join(c for c in unicodedata.normalize('NFD', s)
+#                   if unicodedata.category(c) != 'Mn')
