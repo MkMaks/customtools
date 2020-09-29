@@ -1,5 +1,5 @@
 layout:
-  - Model checker
+  - ModelChecker
   - Line and materials purge
   - DWG schedule
   - Critical Warning schedule
