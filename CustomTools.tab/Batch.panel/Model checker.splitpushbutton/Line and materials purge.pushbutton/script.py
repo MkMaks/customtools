@@ -31,7 +31,9 @@ for i in material_collector:
 	materialNameString = materialName.AsString()
 	materialId = i.Id
 	allMaterialsCount += 1
-	if materialNameString[0:6] == "Render":
+	# filtering out english and czech render materials from dwg links
+	materialStart = materialNameString[0:6]
+	if materialStart == "Render" or materialStart == "Rendro":
 		deletedMaterials.append(materialNameString)
 		idsToDelete.append(materialId)
 
