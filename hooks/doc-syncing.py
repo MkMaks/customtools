@@ -4,7 +4,12 @@ from datetime import datetime
 doc = __eventargs__.Document
 filePath = doc.PathName
 
-lastBackslash = filePath.rindex("\\")
+# getting local file name for tmp file name
+try:
+    lastBackslash = filePath.rindex("\\")
+# for syncing detached central file
+except:
+    lastBackslash = filePath.rindex("/")
 # just the file name without the extension
 file_name = filePath[lastBackslash:][:-4]
 

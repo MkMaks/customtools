@@ -19,7 +19,11 @@ except:
 central_file_name = central_path[lastBackslash_C:][:-4]
 
 # getting local file name for tmp file name
-lastBackslash_L = filePath.rindex("\\")
+try:
+    lastBackslash_L = filePath.rindex("\\")
+# for syncing detached central file
+except:
+    lastBackslash_L = filePath.rindex("/")
 # just the file name without the extension
 local_file_name = filePath[lastBackslash_L:][:-4]
 
