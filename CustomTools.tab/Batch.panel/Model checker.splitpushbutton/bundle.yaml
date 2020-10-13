@@ -7,10 +7,12 @@ layout:
   - Detail Group Schedule
   - InPlaceFamilySchedule
   - NotPlacedViewsSchedule
-  - OwnerSheet
   - 2DelementsPerView
-  - SharedParametersSchedule
   - AllCapsFinder
+  - ---
+  - OwnerSheet
+  - SharedParametersSchedule
+  - RevisionCloudSchedule
   - ---
   - Import Report
   - Fix Report
