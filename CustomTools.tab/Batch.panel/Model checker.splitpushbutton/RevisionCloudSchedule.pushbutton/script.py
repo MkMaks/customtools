@@ -32,16 +32,19 @@ def revision_schedule(selected_revisions):
       scheduleData = []
       # removing accents
       selected_revision_name = accents2ascii(selected_revision.Name)
+      # get revision ID
+      selected_revision_Id = selected_revision.Id
+
       for revision_cloud in revision_clouds:
         revision_Id = revision_cloud.RevisionId
-        if revision_Id == selected_revision.Id:
+        if revision_Id == selected_revision_Id:
               count += 1
               element_Id = revision_cloud.Id
               comments = revision_cloud.LookupParameter("Comments").AsString()
-              revision_Id = revision_cloud.RevisionId
-              revision_name = doc.GetElement(revision_Id).Name
+              # revision_Id = revision_cloud.RevisionId
+              # revision_name = doc.GetElement(revision_Id).Name
               creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,element_Id).Creator 
-              paramList = [str(count), comments, output.linkify(element_Id), revision_name, creator]
+              paramList = [str(count), comments, output.linkify(element_Id), selected_revision_name, creator]
 
               scheduleData.append(paramList)
       # printing the schedule if there are data
