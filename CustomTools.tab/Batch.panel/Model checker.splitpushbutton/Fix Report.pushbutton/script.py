@@ -3,7 +3,6 @@
 __title__ = 'Fix report visual style'
 __doc__ = 'Fixes visual style of saved report.'
 __context__ = 'zero-doc'
-__highlight__= 'new'
 
 from pyrevit import forms
 import os
