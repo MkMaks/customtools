@@ -9,10 +9,14 @@ from pyrevit.coreutils import pyutils
 
 
 __context__ = 'selection'
-__doc__ = 'Sums up the values of selected numerical parameter on selected elements. ' \
-          'Sum is calculated for every Type and overall.'
+__doc__ = '''Sums up the values of selected numerical parameter on selected elements.
+Sum is calculated for every Type and overall.
+
+NEW:
+Count of elements per type is also available.'''
 __title__ = 'Sum\nParameters'
 __helpurl__ = 'https://youtu.be/aWg-rj8k0Ts'
+__highlight__ = 'updated'
 
 
 selection = revit.get_selection()
@@ -137,6 +141,8 @@ def process_sets(element_list):
 # main -----------------------------------------------------------------------
 # ask user to select an option
 options = process_options(selection.elements)
+# adding option "Count" which is not proper parameter - count of elements
+options["Count"] = "count"
 
 if options:
     selected_switch = \
@@ -148,28 +154,37 @@ if options:
     if selected_switch:
         selected_option = options[selected_switch]
         if selected_option:
-            output.print_md("##{}".format(selected_option.name))
-            md_schedule = "| Family Type | Parameter Value |\n| ----------- | ----------- |"
-            for type_name, element_set in process_sets(selection.elements).items():
-                type_name = type_name.replace('<', '&lt;').replace('>', '&gt;')
-                total_value = calc_param_total(element_set, selected_option.name)
-                # print('Celková hodnota parametru {} je:\n\n'.format(selected_option.name))
-                if type_name == "SPOLU":
-                    strongTag1 = "<span style='color:darkorange'>**"
-                    strongTag2 = "**</span>"  
-                else:
-                    strongTag1 = strongTag2 = ""
-                #     if selected_option.type in formatter_funcs.keys():
-                #         newScheduleLine = " \n| "+type_name+" | "+formatter_funcs[selected_option.type](total_value)+" |"
-                #     else:
-                #         newScheduleLine = " \n| "+type_name+" | "+str(total_value)+" |"
-                #     md_schedule += newScheduleLine
-                # else:
-                if selected_option.type in formatter_funcs.keys():
-                    newScheduleLine = " \n| "+ strongTag1 + type_name + strongTag2 +" | "+ strongTag1 +formatter_funcs[selected_option.type](total_value) + strongTag2 +" |"
-                else:
+            # just if selected "Count" option which is not proper parameter
+            if selected_option == "count":
+                output.print_md("##{}".format("Count"))
+                md_schedule = "| Family Type | Parameter Value |\n| ----------- | ----------- |"
+                for type_name, element_set in process_sets(selection.elements).items():
+                    type_name = type_name.replace('<', '&lt;').replace('>', '&gt;')
+                    total_value = len(element_set)
+                    if type_name == "SPOLU":
+                        strongTag1 = "<span style='color:darkorange'>**"
+                        strongTag2 = "**</span>"  
+                    else:
+                        strongTag1 = strongTag2 = ""
                     newScheduleLine = " \n| "+ strongTag1 + type_name + strongTag2 +" | "+ strongTag1 +str(total_value) + strongTag2 +" |"
-                md_schedule += newScheduleLine
+                    md_schedule += newScheduleLine
+            # if selected option is proper parameter
+            else:
+                output.print_md("##{}".format(selected_option.name))
+                md_schedule = "| Family Type | Parameter Value |\n| ----------- | ----------- |"
+                for type_name, element_set in process_sets(selection.elements).items():
+                    type_name = type_name.replace('<', '&lt;').replace('>', '&gt;')
+                    total_value = calc_param_total(element_set, selected_option.name)
+                    if type_name == "SPOLU":
+                        strongTag1 = "<span style='color:darkorange'>**"
+                        strongTag2 = "**</span>"  
+                    else:
+                        strongTag1 = strongTag2 = ""
+                    if selected_option.type in formatter_funcs.keys():
+                        newScheduleLine = " \n| "+ strongTag1 + type_name + strongTag2 +" | "+ strongTag1 +formatter_funcs[selected_option.type](total_value) + strongTag2 +" |"
+                    else:
+                        newScheduleLine = " \n| "+ strongTag1 + type_name + strongTag2 +" | "+ strongTag1 +str(total_value) + strongTag2 +" |"
+                    md_schedule += newScheduleLine
             # print md_schedule
             output.print_md(md_schedule)
 
