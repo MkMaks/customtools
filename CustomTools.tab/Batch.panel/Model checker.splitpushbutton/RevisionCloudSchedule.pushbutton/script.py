@@ -17,12 +17,10 @@ from custom_output import hmsTimer
 from stringFormating import accents2ascii
 
 doc = __revit__.ActiveUIDocument.Document
-timer = Timer()
-
 output = script.get_output()
 
-
 def revision_schedule(selected_revisions):
+    timer = Timer()
     # heading
     output.print_md("# REVISION CLOUD SCHEDULE")
     revision_clouds = FilteredElementCollector(doc).OfClass(RevisionCloud).WhereElementIsNotElementType().ToElements()
