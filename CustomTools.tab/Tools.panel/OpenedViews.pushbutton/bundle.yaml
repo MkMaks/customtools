@@ -1,0 +1,10 @@
+tooltip: >-
+  Lists all opened views in schedule for easier searching. 
+
+  Save HTML file and use Import Report tool for reopening views.
+title: >-
+  Opened
+
+  Views
+author: 'David Vadkerti'
+help_url: 'https://youtu.be/1lANc'

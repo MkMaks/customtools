@@ -1,0 +1,17 @@
+tooltip: >-
+  Sums up the values of any selected numerical parameter on selected elements.  
+
+  Sum is calculated for every Type and overall.
+
+
+  NEW:
+
+  Count of elements per type is also available.
+title: >-
+  Sum
+
+  Parameters
+author: 'David Vadkerti'
+help_url: 'https://youtu.be/aWg-rj8k0Ts'
+highlight: 'updated'
+context: selection

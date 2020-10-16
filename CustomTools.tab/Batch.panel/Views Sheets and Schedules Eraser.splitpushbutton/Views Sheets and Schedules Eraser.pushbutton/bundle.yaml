@@ -1,0 +1,6 @@
+tooltip: Deletes all Views, Sheets and Schedules in Project and runs Purge Unused afterwards
+title: >-
+  Views, Sheets &
+
+  Schedule Eraser
+author: 'David Vadkerti'

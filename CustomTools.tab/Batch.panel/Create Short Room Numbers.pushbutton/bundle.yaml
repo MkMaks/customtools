@@ -1,0 +1,14 @@
+tooltip: >-
+  Writes everything after last delimiter to parameter Room Number to custom Shared Parameter 'Room Number short'. You need to add parameter manually.
+  
+
+  f.e.:
+
+  Room Number: 201.03.001a
+
+  Room Number short: 001a
+title: >-
+  Create Short
+
+  Room Numbers
+author: 'David Vadkerti'

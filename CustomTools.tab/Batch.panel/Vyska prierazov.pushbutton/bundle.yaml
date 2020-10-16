@@ -1,0 +1,19 @@
+tooltip: >-
+  Sets distance of Sill Height of Windows from Project zero to parameter "SH prierazu".
+
+  Sets Level number to parameter "Poschodie" to Windows and Generic Models
+
+  Sets Level elevation to parameter "ref od 0" to Windows.
+
+ 
+  Sets Mark to Windows and Generic Models in xxx format f.e. 001
+
+  Only Windows and Generic Models with Type Comments == "stavebne upravy" are processed.
+
+  You need to add theese Shared Parameters: Poschodie, SH prierazu, Offset Shared, Priemer, ref od 0.
+title: >-
+  Výška a označenie
+
+  prierazov
+author: 'David Vadkerti'
+help_url: 'https://youtu.be/2LBi9p3gPiY'
