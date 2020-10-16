@@ -19,7 +19,8 @@ from Autodesk.Revit.DB import FilteredElementCollector
 from Autodesk.Revit.DB import FamilyInstance
 
 from pyrevit.coreutils import Timer
-from custom_output import hmsTimer
+from customOutput import hmsTimer
+from customOutput import file_name_getter
 
 doc = __revit__.ActiveUIDocument.Document
 timer = Timer()
@@ -33,6 +34,7 @@ workset_table = revit.doc.GetWorksetTable()
 
 
 output.print_md("# IN PLACE FAMILY SCHEDULE")
+output.print_md("### " + file_name_getter(doc))
 
 md_schedule = "| Number | In Place Family Name | Category | Family ID | Author |\n| ----------- | ----------- | ----------- | ----------- | ----------- |"
 count = 0

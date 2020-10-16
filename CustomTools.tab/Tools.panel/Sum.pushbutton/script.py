@@ -6,6 +6,7 @@ from pyrevit import revit, DB
 from pyrevit import forms
 from pyrevit import script
 from pyrevit.coreutils import pyutils
+from customOutput import file_name_getter
 
 
 __context__ = 'selection'
@@ -157,6 +158,7 @@ if options:
             # just if selected "Count" option which is not proper parameter
             if selected_option == "count":
                 output.print_md("##{}".format("Count"))
+                output.print_md("### " + file_name_getter(revit.doc))
                 md_schedule = "| Family Type | Parameter Value |\n| ----------- | ----------- |"
                 for type_name, element_set in process_sets(selection.elements).items():
                     type_name = type_name.replace('<', '&lt;').replace('>', '&gt;')
@@ -171,6 +173,7 @@ if options:
             # if selected option is proper parameter
             else:
                 output.print_md("##{}".format(selected_option.name))
+                output.print_md("### " + file_name_getter(revit.doc))
                 md_schedule = "| Family Type | Parameter Value |\n| ----------- | ----------- |"
                 for type_name, element_set in process_sets(selection.elements).items():
                     type_name = type_name.replace('<', '&lt;').replace('>', '&gt;')

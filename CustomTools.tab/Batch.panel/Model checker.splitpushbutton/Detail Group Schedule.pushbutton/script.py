@@ -10,7 +10,8 @@ from pyrevit import output, forms
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from Autodesk.Revit.UI import UIApplication
 from pyrevit.coreutils import Timer
-from custom_output import hmsTimer
+from customOutput import hmsTimer
+from customOutput import file_name_getter
 
 doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
@@ -36,6 +37,7 @@ if res:
 
         output = script.get_output()
         output.print_md("# DETAIL GROUP SCHEDULE")
+        output.print_md("### " + file_name_getter(doc))
 
         if groups_count>0:
             scheduleData = []

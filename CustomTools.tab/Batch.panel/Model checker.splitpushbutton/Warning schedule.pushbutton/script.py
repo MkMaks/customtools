@@ -13,6 +13,7 @@ from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
 from custom_output import hmsTimer
 from customOutput import colors
+from customOutput import file_name_getter
 
 # from __future__ import division
 
@@ -37,6 +38,7 @@ if res:
 
     output = script.get_output()
     output.print_md("# WARNINGS SCHEDULE")
+    output.print_md("### " + file_name_getter(doc))
 
     # print markdown code schedule header
     md_schedule = "| Warning No. | Element Id |  Element Category | Warning Description |\n| ----------- | ----------- | ----------- | ----------- |"

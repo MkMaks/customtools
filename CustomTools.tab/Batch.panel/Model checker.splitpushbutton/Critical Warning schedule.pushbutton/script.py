@@ -12,6 +12,7 @@ from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
 from customOutput import criticalWarnings, hmsTimer
+from customOutput import file_name_getter
 
 # from __future__ import division
 
@@ -27,6 +28,7 @@ timer = Timer()
 
 output = script.get_output()
 output.print_md("# CRITICAL WARNINGS SCHEDULE")
+output.print_md("### " + file_name_getter(doc))
 
 # print markdown code schedule header
 md_schedule = "| Warning No. | Element Id |  Element Category | Warning Description |\n| ----------- | ----------- | ----------- | ----------- |"

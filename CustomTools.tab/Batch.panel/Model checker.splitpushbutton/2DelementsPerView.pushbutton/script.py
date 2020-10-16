@@ -11,6 +11,7 @@ from pyrevit import output, forms
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from Autodesk.Revit.DB import View
 from customOutput import colors
+from customOutput import file_name_getter
 
 from stringFormating import accents2ascii
 
@@ -20,6 +21,7 @@ output = script.get_output()
 
 def findDetailItems(Lines,selected_option):
     output.print_md("# "+ selected_option.upper() +" PER VIEW SCHEDULE")
+    output.print_md("### " + file_name_getter(doc))
     scheduleData = []
 
     viewNames = []

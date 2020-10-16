@@ -20,7 +20,8 @@ from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from Autodesk.Revit.DB import View
 
 from pyrevit.coreutils import Timer
-from custom_output import hmsTimer
+from customOutput import hmsTimer
+from customOutput import file_name_getter
 
 doc = __revit__.ActiveUIDocument.Document
 
@@ -28,6 +29,7 @@ def showViewSchedule(sortBy):
     timer = Timer()
     output = script.get_output()
     output.print_md("# NOT PLACED VIEW SCHEDULE")
+    output.print_md("### " + file_name_getter(doc))
 
     sheets_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Sheets) \
     .WhereElementIsNotElementType().ToElements()

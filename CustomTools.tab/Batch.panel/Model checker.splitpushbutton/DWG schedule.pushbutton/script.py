@@ -26,6 +26,7 @@ from pyrevit import revit, DB
 from pyrevit import script
 from pyrevit import forms
 from pyrevit import output
+from customOutput import file_name_getter
 
 
 output = script.get_output()
@@ -41,6 +42,7 @@ def listdwgs(current_view_only=False,):
     
 
     output.print_md("# LINKED AND IMPORTED DWG FILES SCHEDULE")
+    output.print_md("### " + file_name_getter(revit.doc))
 
     for dwg in dwgs:
         if dwg.IsLinked:
@@ -78,6 +80,10 @@ def listdwgs(current_view_only=False,):
         # print md_schedule
         output.print_md(md_schedule)
         # print dwgInst
+    if not dwgInst["LINKED DWGs"]:
+        print("There is no linked DWG in the model.")
+    if not dwgInst["IMPORTED DWGs"]:
+        print("There is no imported DWG in the model.")
 
 selected_option = \
     forms.CommandSwitchWindow.show(

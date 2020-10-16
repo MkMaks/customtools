@@ -44,7 +44,7 @@ def revision_schedule(selected_revisions):
 
               scheduleData.append(paramList)
       # printing the schedule if there are data
-      if len(scheduleData)>0:
+      if scheduleData:
         output.print_table(table_data=scheduleData,
                            title = "Revision Cloud Schedule for Revision '" + selected_revision_name + "'",
                            columns=["Count", "Comments", "Element Id", "Revision Name","Author"],

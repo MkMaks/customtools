@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 __title__ = 'Opened\nViews'
 __author__ = 'David Vadkerti'
-__credits__ = 'http://eirannejad.github.io/pyRevit/credits/'
 __doc__ = 'Lists all opened views in schedule for easier searching.'\
           'Save HTML file and use Import Report tool for reopening views.'
 __helpurl__ = 'https://youtu.be/1lANcq6WONI'
@@ -9,12 +8,14 @@ __helpurl__ = 'https://youtu.be/1lANcq6WONI'
 from Autodesk.Revit.UI import UIDocument
 from Autodesk.Revit.DB.Document import GetElement
 from pyrevit import revit, script
+from customOutput import file_name_getter
 
 doc = __revit__.ActiveUIDocument.Document
 uidoc = UIDocument(doc)
 
 output = script.get_output()
 output.print_md("# LIST OF OPENED VIEWS")
+output.print_md("### " + file_name_getter(doc))
 
 openUIviews = uidoc.GetOpenUIViews()
 

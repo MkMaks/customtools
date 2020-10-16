@@ -44,3 +44,16 @@ def hmsTimer(timerSeconds):
         hms = str(hours)+" h "+str(minutes)+" min "+str(seconds)+" seconds"
     claim = "Transaction took "+hms
     return claim
+
+# gets name of the current document
+def file_name_getter(doc):
+    file_path = doc.PathName
+    # trying all cases, for worshared, not worshared and detached files
+    try:
+        file_name = file_path[file_path.rindex("/"):]
+    except:
+        try:
+            file_name = file_path[file_path.rindex("\\")+1:]
+        except:
+            file_name = file_path
+    return(file_name)
