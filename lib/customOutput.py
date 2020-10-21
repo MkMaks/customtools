@@ -34,14 +34,17 @@ def hmsTimer(timerSeconds):
     if seconds<60:
         hms = str(seconds)+" seconds"
     elif seconds<3600:
-        minutes =  int(floor(seconds/60))
-        minutes =  seconds//60
+        minutes = int(floor(seconds//60))
+        seconds = seconds%60
         hms = str(minutes)+" min "+str(seconds)+" seconds"
     else:
-        hours =  seconds//3600
-        minutes =  seconds//60
+        hours = seconds//3600
+        minutes = int((seconds%3600)//60)
         seconds = seconds%60
-        hms = str(hours)+" h "+str(minutes)+" min "+str(seconds)+" seconds"
+        if minutes ==0:
+            hms = str(hours)+" h "+str(seconds)+" seconds"
+        else:
+            hms = str(hours)+" h "+str(minutes)+" min "+str(seconds)+" seconds"
     claim = "Transaction took "+hms
     return claim
 
