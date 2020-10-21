@@ -4,6 +4,7 @@ Erases trash imported from AutoCAD links (Render Materials & Line Patterns)
 # for timing------
 from pyrevit.coreutils import Timer
 from pyrevit import coreutils, script
+from pyrevit.output import charts
 from custom_output import hmsTimer
 timer = Timer()
 # ----------------
@@ -76,27 +77,11 @@ print(text_highligter(linePatternsOutput))
 # for i in deletedLinePatterns:
 # 	print(i)
 
-
+# CHART
 output = script.get_output()
 
-# step1
-# # Line chart
-# chart = output.make_line_chart()
-# # Bar chart
-chart = output.make_bar_chart()
-# # # Bubble chart
-# chart = output.make_bubble_chart()
-# # # Radar chart
-# chart = output.make_radar_chart()
-# # # Polar chart
-# chart = output.make_polar_chart()
-# # # Pie chart
-# chart = output.make_pie_chart()
-# # Doughnut chart
-# chart = output.make_doughnut_chart()
-
-# step1a
-# chart.set_style('height:300px')
+chart = output.make_chart(version='2.8.0')
+chart.type = charts.BAR_CHART
 
 chart.options.title = {'display': True,
                        'text':'Material & Line Patterns purge',
@@ -104,24 +89,17 @@ chart.options.title = {'display': True,
                        'fontColor': '#000',
                        'fontStyle': 'bold'}
 
-# step2
-# setting the charts x line data labels
+# labels
 chart.data.labels = ['PRESERVED - Native Revit Elements','DELETED  - Elements imported from DWG']
 
-# Let's add the first dataset to the chart object
-# we'll give it a name: set_a
+# datasets
 set_a = chart.data.new_dataset('Materials')
 set_b = chart.data.new_dataset('Line Patterns')
-# And let's add data to it.
-# These are the data for the Y axis of the graph
-# The data length should match the length of data for the X axis
+# data
 set_a.data = [allMaterialsCount-len(deletedMaterials), len(deletedMaterials)]
 set_b.data = [allLinePatternsCount-len(deletedLinePatterns), len(deletedLinePatterns)]
-# Set the color for this graph
+# fixed colors
 set_a.set_color(0xFF, 0x80, 0x00, 0.7)
 set_b.set_color(0x33, 0x66, 0x00, 0.7)
 
-# step3
-# Finally let's draw the chart
-# chart.randomize_colors()
 chart.draw()

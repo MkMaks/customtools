@@ -11,8 +11,9 @@ __doc__ = 'Lists Warnings related to architecural elements in the active model i
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
+from pyrevit.output import charts
 from customOutput import criticalWarnings, hmsTimer
-from customOutput import file_name_getter
+from customOutput import file_name_getter, colors
 
 # from __future__ import division
 
@@ -106,24 +107,20 @@ output.print_md(md_schedule)
 # CHART OUTPUT
 output = script.get_output()
 
-chart = output.make_doughnut_chart()
+# chart = output.make_doughnut_chart()
+chart = output.make_chart(version='2.8.0')
+chart.type = charts.DOUGHNUT_CHART
+
 chart.data.labels = graphHeadings
 set_a = chart.data.new_dataset('Not Standard')
 set_a.data = warnSet
 
-set_a.backgroundColor = ["#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb",
-            "#4d4d4d","#000000","#fff0f2","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#fff0e6","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#fff0e6","#e97800","#a6c844",
-            "#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",
-            "#4d4d4d","#fff0d9","#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb","#4d4d4d","#e97800","#a6c844",]
+set_a.backgroundColor = colors
 chart.set_height(150)
 
 chart.draw()
 # for timing------
 endtime = timer.get_time()
 print(hmsTimer(endtime))
+# import random
+# print([(hmsTimer(n), n) for n in range(1,5000,2) if n%30==random.randint(1, 59)])
