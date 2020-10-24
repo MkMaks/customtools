@@ -1,4 +1,6 @@
 layout:
+  - PickCategory
   - LinkedElementID
   - UIDgetter
   - UIDselect
+highlight: 'new'

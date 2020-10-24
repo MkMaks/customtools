@@ -4,5 +4,5 @@ layout:
   - HeightToParameter
   - ViewsControlInternalOrigin
   - DoorFlipSetter
-highlight: new
+# highlight: new
 tooltip: Older Dynamo scritps now accessible through GUI directly in Revit
