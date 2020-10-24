@@ -1,0 +1,17 @@
+tooltip: >-
+  Moves all selected Room Tags to Room centers.
+
+
+  You need to select Room Tags.
+
+  Use "Pick Category" feature for that purpose.
+
+
+  L-shaped and C-shaped Rooms can cause errors. Click "Move to Room" option if this happens.
+title: >-
+  Center
+
+  Room Tags
+author: 'David Vadkerti'
+highlight: 'new'
+context: Room Tags
