@@ -1,0 +1,12 @@
+tooltip: >-
+  Activates selection tool that picks just elements of specific Category.
+
+
+  You need to select one element at first.
+title: >-
+  Pick
+
+  Catgory
+author: 'Ehsan Iran-Nejad, David Vadkerti'
+highlight: 'new'
+context: selection
