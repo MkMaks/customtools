@@ -6,38 +6,37 @@ from os import path, remove
 doc = __eventargs__.Document
 filePath = doc.PathName
 
-# skipped if file is not workshared (when slash is not in filepath)
-
 # getting central file name for log name
 central_path = revit.query.get_central_path(doc)
-
-# getting local file name for tmp file name
-try:
-    lastBackslash_L = filePath.rindex("\\")
-except:
-    # for opened as dettached file
-    lastBackslash_L = filePath.rindex("/")
-
-# just the file name without the extension
-local_file_name = filePath[lastBackslash_L:][:-4]
-
-# if central_path != None or central_path !="":
-try:
-    try:
-        # for rvt server
-        lastBackslash_C = central_path.rindex("/")
-    except:
-        # for other locations
-        lastBackslash_C = central_path.rindex("\\")
-    # just the file name without the extension
-    central_file_name = central_path[lastBackslash_C:][:-4]
-except:
-    central_file_name = local_file_name
-
-
 fileExtension = filePath[-3:]
 
 if fileExtension == "rvt":
+    # GETTING FILE NAME
+    # getting local file name for tmp file name
+    try:
+        lastBackslash_L = filePath.rindex("\\")
+    except:
+        # for opened as dettached file
+        lastBackslash_L = filePath.rindex("/")
+
+    # just the file name without the extension
+    local_file_name = filePath[lastBackslash_L:][:-4]
+
+    # skipped if file is not workshared (when slash is not in filepath)
+    # if central_path != None or central_path !="":
+    try:
+        try:
+            # for rvt server
+            lastBackslash_C = central_path.rindex("/")
+        except:
+            # for other locations
+            lastBackslash_C = central_path.rindex("\\")
+        # just the file name without the extension
+        central_file_name = central_path[lastBackslash_C:][:-4]
+    except:
+        central_file_name = local_file_name
+
+    # LOGGING
     # tabulator between data to separte columns of the schedule
     separator = "\t" 
     try:
