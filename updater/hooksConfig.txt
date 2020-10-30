@@ -1,18 +1,23 @@
 111111111111
+------------
+index
 123456789012
 
 Help - https://gfi.miraheze.org/wiki/CustomTools_Hooks
-1	In Place Family						NA
-2	Import CAD							Available
-3	Link CAD							Available
-4	Link CAD in 3D						Available
-5	Architectural Column				NA
-6	Ramp								NA
-7	Large Family						Available
-8	Roof by Extrusion					Available
-9	Shared Parameters					Available
-10	Unpin								NA
-11	View, Schedule or Sheet Deletion	Available
-12	Save List Of Opened Views			Available
+
+#	HookName							Cancelable
+---------------------------------------------------
+1	In Place Family						N
+2	Import CAD							Y
+3	Link CAD							Y
+4	Link CAD in 3D						Y
+5	Architectural Column				N
+6	Ramp								N
+7	Large Family						Y
+8	Roof by Extrusion					Y
+9	Shared Parameters					Y
+10	Unpin								Y
+11	View, Schedule or Sheet Deletion	Y
+12	Save List Of Opened Views			Y
 
 File location - C:\pyRevitExtensions\CustomTools\hooksConfig.txt
