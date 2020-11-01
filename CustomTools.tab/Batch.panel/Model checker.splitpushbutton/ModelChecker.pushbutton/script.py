@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+from __future__ import division
 """Model Checker.
 Revit file quality control.
 """
@@ -339,7 +340,6 @@ notParamFamiliesTres = familyCount*0.3
 textnoteWFtres = 0
 textnoteCaps = 0
 rampTres = 0
-archTres = 0
 
 # Text notes width factor != 1
 textNoteType_collector = FilteredElementCollector(doc).OfClass(TextNoteType).ToElements()
@@ -360,17 +360,13 @@ for textN in textNote_collector:
 # Ramps
 ramp_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Ramps).WhereElementIsNotElementType().GetElementCount()
 
-# Architecural columns
-archColumn_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Columns).WhereElementIsNotElementType().GetElementCount()
-
 # dashboard row3
 htmlRow3 = (dashboardRectMaker(familyCount,"Families",familiesTres,wikiArticle+"#Loadable_Families")
 		+ dashboardRectMaker(inPlaceFamilyCount,"In Place <br>Families",inPlaceFamilyTres,wikiArticle+"#In-place_Families")
         + dashboardRectMaker(NotParamFamiliesCount,"Families <br>not parametric",notParamFamiliesTres,wikiArticle+"#Loadable_Families")
         + dashboardRectMaker(textnoteWFcount,"Text - Width <br>Factor changed",textnoteWFtres,wikiArticle+"#Width_Factor")
         + dashboardRectMaker(capsCount,"Text - AllCaps",textnoteCaps,wikiArticle+"#AllCaps_pri_editácii_Textu")
-        + dashboardRectMaker(ramp_collector,"Ramps",rampTres,wikiArticle+"#Rampy")
-        + dashboardRectMaker(archColumn_collector,"Architecural <br>Columns",archTres,wikiArticle+"#Stĺpy"))
+        + dashboardRectMaker(ramp_collector,"Ramps",rampTres,wikiArticle+"#Rampy"))
 dashboardCenterMaker(htmlRow3)
 
 # CHART INPLACE FAMILIES OUTPUT
@@ -398,6 +394,9 @@ dashboardCenterMaker(htmlRow3)
 # chartParamFam.set_height(80)
 
 # chartParamFam.draw()
+
+# Architecural columns
+archColumn_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Columns).WhereElementIsNotElementType().GetElementCount()
 
 # detail groups
 detailGroupCount = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_IOSDetailGroups).WhereElementIsNotElementType().GetElementCount()
@@ -447,26 +446,70 @@ for refPlane in refPlaneCollector:
 
 # Element Count
 elementCount = FilteredElementCollector(doc).WhereElementIsNotElementType().GetElementCount()
-# _2DelementCount = FilteredElementCollector(doc).OwnedByView().GetElementCount()
 
 # print(str(elementCount)+" Elements")
 
+# View Dependent element count
+all_elements = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()
+
+_2d_elements = 0
+_3d_elements = 0
+other_elements = 0
+
+for element in all_elements:
+    # filtering just element with location
+    if element.Location:
+        # 2D elements
+        if element.ViewSpecific:
+            _2d_elements += 1
+        # 3D elements
+        else:
+            _3d_elements += 1
+    # other elements
+    else:
+        other_elements += 1
+
+# print("_3d_elements " + str(_3d_elements))
+# print("_2d_elements " + str(_2d_elements))
+# print("other_elements " + str(other_elements))
+
+# calculating percentage
+if _2d_elements > 0:
+    # _2d_elements_perc = round(_2d_elements/elementCount*100)
+    _2d_elements_perc = int(round(_2d_elements/elementCount*100,0))
+else:
+    _2d_elements_perc = 0
+# print("_2D_elements_perc " + str(_2d_elements_perc))
+
 # tresholds
+archTres = 0
 detailGroupTypeTres = 30
 detailGroupTres = 500
 modelGroupTypeTres = 30
 modelGroupTres = 200
 noNameRefPTres = 0
 elementsTres = 1000000
+_2d_elementsTres = elementCount*0.5
+_3d_elementsTres = elementCount*0.5
+_2d_elements_percTres = 50
+other_elementsTres = elementCount*0.5
+
 
 # dashboard
-htmlRow4 = (dashboardRectMaker(detailGroupTypeCount,"Detail Group <br>Types",detailGroupTypeTres,wikiArticle)
+htmlRow4 = (dashboardRectMaker(archColumn_collector,"Architecural <br>Columns",archTres,wikiArticle+"#Stĺpy")
+    + dashboardRectMaker(detailGroupTypeCount,"Detail Group <br>Types",detailGroupTypeTres,wikiArticle)
     + dashboardRectMaker(detailGroupCount,"Detail Groups",detailGroupTres,wikiArticle) 
     + dashboardRectMaker(modelGroupTypeCount,"Model Group <br>Types",modelGroupTypeTres,wikiArticle)
-    +dashboardRectMaker(modelGroupCount,"Model Groups",modelGroupTres,wikiArticle) 
-    + dashboardRectMaker(noNameRefPCount,"NoName <br>Reference Planes",noNameRefPTres,wikiArticle+"#Reference Planes")
-    + dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
+    + dashboardRectMaker(modelGroupCount,"Model Groups",modelGroupTres,wikiArticle) 
+    + dashboardRectMaker(noNameRefPCount,"NoName <br>Reference Planes",noNameRefPTres,wikiArticle+"#Reference Planes"))
 dashboardCenterMaker(htmlRow4)
+
+htmlRow5 = (dashboardRectMaker(_2d_elements,"2D elements",_2d_elementsTres,wikiArticle)
+    + dashboardRectMaker(_3d_elements,"3D elements",_3d_elementsTres,wikiArticle)
+    + dashboardRectMaker(_2d_elements_perc,"percent of<br>2D elements",_2d_elements_percTres,wikiArticle)
+    + dashboardRectMaker(other_elements,"Other elements",other_elementsTres,wikiArticle)
+    + dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
+dashboardCenterMaker(htmlRow5)
 
 
 # divider
@@ -611,6 +654,16 @@ from datetime import datetime
 # tabulator between data to easy import to excel schedule
 separator = "\t"
 
+
+
+htmlRow5 = (dashboardRectMaker(_2d_elements,"2D elements",_2d_elementsTres,wikiArticle)
+    + dashboardRectMaker(_3d_elements,"3D elements",_3d_elementsTres,wikiArticle)
+    + dashboardRectMaker(_2d_elements_perc,"percent of<br>2D elements",_2d_elements_percTres,wikiArticle)
+    + dashboardRectMaker(other_elements,"Other elements",other_elementsTres,wikiArticle)
+    + dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
+dashboardCenterMaker(htmlRow5)
+
+
 datestamp = str(datetime.now())
 table_header = ("fileName" + separator
     + "datestamp" + separator
@@ -639,7 +692,11 @@ table_header = ("fileName" + separator
     + "modelGroupTypeCount" + separator
     + "modelGroupCount" + separator
     + "noNameRefPCount" + separator
-    + "elementCount" + separator)
+    + "elementCount" + separator
+    + "_2d_elements" + separator
+    + "_3d_elements" + separator
+    + "_2d_elements_perc" + separator
+    + "other_elements" + separator)
 
 table_content = (printedName + separator
     + datestamp[0:16] + separator
@@ -668,7 +725,11 @@ table_content = (printedName + separator
     + str(modelGroupTypeCount) + separator
     + str(modelGroupCount) + separator
     + str(noNameRefPCount) + separator
-    + str(elementCount) + separator)
+    + str(elementCount) + separator
+    + str(_2d_elements) + separator
+    + str(_3d_elements) + separator
+    + str(_2d_elements_perc) + separator
+    + str(other_elements) + separator)
 
 # if file exists
 try:

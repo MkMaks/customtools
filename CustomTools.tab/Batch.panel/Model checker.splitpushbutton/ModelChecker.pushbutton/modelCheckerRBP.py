@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+from __future__ import division
 import clr
 import System
 clr.AddReference("System.Core")
@@ -319,6 +320,40 @@ elementCount = FilteredElementCollector(doc).WhereElementIsNotElementType().GetE
 
 # print(str(elementCount)+" Elements")
 
+# View Dependent element count
+all_elements = FilteredElementCollector(doc).WhereElementIsNotElementType().ToElements()
+
+_2d_elements = 0
+_3d_elements = 0
+other_elements = 0
+
+for element in all_elements:
+    # filtering just element with location
+    if element.Location:
+        # 2D elements
+        if element.ViewSpecific:
+            _2d_elements += 1
+        # 3D elements
+        else:
+            _3d_elements += 1
+    # other elements
+    else:
+        other_elements += 1
+
+# print("_3d_elements " + str(_3d_elements))
+# print("_2d_elements " + str(_2d_elements))
+# print("other_elements " + str(other_elements))
+
+# calculating percentage
+if _2d_elements > 0:
+    # _2d_elements_perc = round(_2d_elements/elementCount*100)
+    _2d_elements_perc = int(round(_2d_elements/elementCount*100,0))
+else:
+    _2d_elements_perc = 0
+# print("_2D_elements_perc " + str(_2d_elements_perc))
+
+
+
 # tabulator between data to easy import to excel schedule
 separator = "\t"
 
@@ -350,9 +385,12 @@ table_header = ("fileName" + separator
     + "modelGroupTypeCount" + separator
     + "modelGroupCount" + separator
     + "noNameRefPCount" + separator
-    + "elementCount" + separator)
+    + "elementCount" + separator
+    + "_2d_elements" + separator
+    + "_3d_elements" + separator
+    + "_2d_elements_perc" + separator
+    + "other_elements" + separator)
 
-# datestamp - date + hours + minutes
 table_content = (printedName + separator
     + datestamp[0:16] + separator
     + str(viewCount) + separator
@@ -380,7 +418,11 @@ table_content = (printedName + separator
     + str(modelGroupTypeCount) + separator
     + str(modelGroupCount) + separator
     + str(noNameRefPCount) + separator
-    + str(elementCount) + separator)
+    + str(elementCount) + separator
+    + str(_2d_elements) + separator
+    + str(_3d_elements) + separator
+    + str(_2d_elements_perc) + separator
+    + str(other_elements) + separator)
 
 
 def model_checker_logger(printedName):
