@@ -655,15 +655,6 @@ from datetime import datetime
 separator = "\t"
 
 
-
-htmlRow5 = (dashboardRectMaker(_2d_elements,"2D elements",_2d_elementsTres,wikiArticle)
-    + dashboardRectMaker(_3d_elements,"3D elements",_3d_elementsTres,wikiArticle)
-    + dashboardRectMaker(_2d_elements_perc,"percent of<br>2D elements",_2d_elements_percTres,wikiArticle)
-    + dashboardRectMaker(other_elements,"Other elements",other_elementsTres,wikiArticle)
-    + dashboardRectMaker(elementCount,"Elements",elementsTres,wikiArticle))
-dashboardCenterMaker(htmlRow5)
-
-
 datestamp = str(datetime.now())
 table_header = ("fileName" + separator
     + "datestamp" + separator
