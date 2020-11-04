@@ -1,0 +1,17 @@
+tooltip: >-
+  Moves all selected Area Tags to Room centers.
+
+
+  You need to select Area Tags.
+
+  Use "Pick Category" feature for that purpose.
+
+
+  L-shaped and C-shaped Areas can cause errors. Click "Move to Area" option if this happens.
+title: >-
+  Center
+
+  Area Tags
+author: 'David Vadkerti'
+highlight: 'new'
+context: Area Tags
