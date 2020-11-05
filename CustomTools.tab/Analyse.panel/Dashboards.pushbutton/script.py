@@ -14,5 +14,8 @@ from pyrevit import script
 
 output = script.get_output()
 
-url = 'L:\\powerBI\\'
+# url = 'L:\\powerBI\\'
+url = '\\\\Srv2\\Z\\powerBI\\'
+
+
 output.open_page(url)

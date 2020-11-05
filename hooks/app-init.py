@@ -25,6 +25,7 @@ output.set_height(700)
 
 # server version of massmessage
 url = "L:\\_i\\CTmassMessage\\mass_message.html"
+# url = "\\\\Srv2\\Z\\_i\\CTmassMessage\\mass_message.html"
 if path.exists(url):
     # output.open_url(url)
     output.open_page(url)
@@ -56,10 +57,7 @@ else:
     # offline content of mass message
     output.print_md("# NOVINKY - REVIT")
     output.print_md("## Na Vašom počítači nie je dostupný server L\\:")
-
-    print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_architectural_floors_v_Revite","Automatické vytvorenie podláh")+" - vytvorí architectural floors podľa obrysu miestnosti. Typ zvolí podľa parametru 'Floor Finish'.")
-    print("- " + linkMaker("https://gfi.miraheze.org/wiki/Power_BI#Zdie.C4.BEan.C3.A9_dashboardy","Nové dashboardy")+" - pridané dashboardy 'Open&syncTimes' a 'Revit Build'")
-    print("- " + linkMaker("https://gfi.miraheze.org/wiki/Automatické_vytvorenie_Sheetov_podľa_Excelu","Automatické_vytvorenie_Sheetov_podľa_Excelovskej tabuľky")+" - čiastočná automatizácia tvorby knihy bytov")
+    output.print_md("## Kontaktujte prosím administrátora.")
 
     output.print_md("## CustomTools")
     print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
