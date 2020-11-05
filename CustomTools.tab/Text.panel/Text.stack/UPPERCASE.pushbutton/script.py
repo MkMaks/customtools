@@ -1,6 +1,6 @@
 """Changes all characters in text box to Uppercase"""
 
-__context__ = 'Text Notes'
+__context__ = 'OST_TextNotes'
 
 from pyrevit import revit, coreutils
 

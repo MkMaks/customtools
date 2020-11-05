@@ -1,7 +1,7 @@
 """Changes all characters in text box to Sentencecase"""
 
 
-__context__ = 'Text Notes'
+__context__ = 'OST_TextNotes'
 
 from pyrevit import revit, coreutils
 

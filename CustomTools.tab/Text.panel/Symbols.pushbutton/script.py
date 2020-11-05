@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__context__ = 'Text Notes'
+__context__ = 'OST_TextNotes'
 __doc__ = 'Vloží vybraný symbol na začiatok vybraných Text Notes.'
 __title__ = 'Symbols'
 

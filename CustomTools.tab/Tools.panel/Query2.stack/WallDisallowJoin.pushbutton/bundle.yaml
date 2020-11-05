@@ -1,4 +1,4 @@
 title: Wall Disallow Join
 tooltip: Changes Wall ends to Disallow join or Allow join of all selected Walls.
-context: Walls
+context: OST_Walls
 help_url: https://youtu.be/GUoFDXKbKgk
