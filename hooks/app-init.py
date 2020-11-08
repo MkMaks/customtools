@@ -55,9 +55,9 @@ else:
             return coreutils.prepare_html_str(html_code)
 
     # offline content of mass message
-    output.print_md("# NOVINKY - REVIT")
+    output.print_md("# Hromadné správy neboli načítané")
     output.print_md("## Na Vašom počítači nie je dostupný server L\\:")
-    output.print_md("## Kontaktujte prosím administrátora.")
+    output.print_md("## Kontaktujte prosím administrátora. Správy sa šíria len prostredníctvom tohto kanálu.")
 
     output.print_md("## CustomTools")
     print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
