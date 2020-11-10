@@ -19,8 +19,11 @@ if fileExtension == "rvt":
     # getting timestamp string now in seconds
     start_time_string_seconds = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    try: 
-        f = open("L:\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")
+    try:
+        try:
+            f = open("L:\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")
+        except:
+            f = open("\\\\Srv\\Z\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")
         f.write(start_time_string_seconds + "\n")
         f.close()
     except:

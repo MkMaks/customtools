@@ -15,8 +15,12 @@ try:
         # getting timestamp string now in seconds
         start_time_string_seconds = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
-        try: 
-            f = open("L:\\customToolslogs\\openingTimeLogs\\"+ file_name + "_Open.tmp", "w")
+        try:
+            try:
+                f = open("L:\\customToolslogs\\openingTimeLogs\\"+ file_name + "_Open.tmp", "w")
+            except:
+                f = open("\\\\Srv\\Z\\customToolslogs\\openingTimeLogs\\"+ file_name + "_Open.tmp", "w")
+                
             f.write(start_time_string_seconds + "\n")
             f.close()
         except:

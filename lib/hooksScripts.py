@@ -34,9 +34,13 @@ def hooksLogger(log_string, doc):
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
   try:
-     f = open("L:\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
-     f.write(datestamp + separator + log_string + separator + user_name + "\n")
-     f.close()
+    try:
+      f = open("L:\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
+    except:
+      f = open("\\\\Srv2\\Z\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
+
+    f.write(datestamp + separator + log_string + separator + user_name + "\n")
+    f.close()
   except:
          pass
 
@@ -54,9 +58,12 @@ def versionLogger(releasedVersion,snapshot):
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
   try:
-     f = open("L:\\customToolslogs\\versions.log", "a")
-     f.write(datestamp + separator + releasedVersion + "_" + snapshot + separator + user_name + separator + build + "\n")
-     f.close()
+    try:
+      f = open("L:\\customToolslogs\\versions.log", "a")
+    except:
+      f = open("\\\\Srv\\Z\\customToolslogs\\versions.log", "a")  
+    f.write(datestamp + separator + releasedVersion + "_" + snapshot + separator + user_name + separator + build + "\n")
+    f.close()
   except:
          pass
 

@@ -25,10 +25,12 @@ output.set_height(700)
 
 # server version of massmessage
 url = "L:\\_i\\CTmassMessage\\mass_message.html"
-# url = "\\\\Srv2\\Z\\_i\\CTmassMessage\\mass_message.html"
+url_unc = "\\\\Srv\\Z\\_i\\CTmassMessage\\mass_message.html"
 if path.exists(url):
     # output.open_url(url)
     output.open_page(url)
+elif path.exists(url_unc):
+    output.open_page(url_unc)
 
 # offline hardcoded version of massmessage
 else:

@@ -35,7 +35,10 @@ if fileExtension == "rvt":
     separator = "\t" 
     try:
         # reading timestamp from tmp file
-        tmp_file_path = "L:\\customToolslogs\\syncTimeLogs\\"+ local_file_name + "_Sync.tmp"
+        try:
+            tmp_file_path = "L:\\customToolslogs\\syncTimeLogs\\"+ local_file_name + "_Sync.tmp"
+        except:
+            tmp_file_path = "\\\\Srv\\Z\\customToolslogs\\syncTimeLogs\\"+ local_file_name + "_Sync.tmp"
         tmp_file = open(tmp_file_path, "r")
         start_time_string = tmp_file.read()
         # converting string to datetime
@@ -57,7 +60,10 @@ if fileExtension == "rvt":
         user_name = doc.Application.Username
 
         # writing time to log file
-        log_file = open("L:\\customToolslogs\\syncTimeLogs\\"+ central_file_name + "_Sync.log", "a")
+        try:
+            log_file = open("L:\\customToolslogs\\syncTimeLogs\\"+ central_file_name + "_Sync.log", "a")
+        except:
+            log_file = open("\\\\Srv\\Z\\customToolslogs\\syncTimeLogs\\"+ central_file_name + "_Sync.log", "a")         
         log_file.write(end_time_string_seconds + separator + str(timeDelta) + separator + user_name + "\n")
         log_file.close()
     except:
