@@ -1,0 +1,9 @@
+title: Update Now!
+tooltip: >-
+  Manual instant update of CustomTools without system restart.
+
+  Click "pyRevit>>>Reload" button after installation.
+
+  CustomTools checks for updates on system startup.
+author: David Vadkerti
+help_url: https://gfi.miraheze.org/wiki/CustomTools#Update
