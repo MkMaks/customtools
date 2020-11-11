@@ -52,8 +52,33 @@ def versionLogger(releasedVersion,snapshot):
   user_name = getpass.getuser()
   datestamp = str(datetime.now())
 
+  # from pyrevit import EXEC_PARAMS
+  from pyrevit import forms, script
+  # from hooksScripts import hookTurnOff
+
+  # showing of dialog box with warning if wrong revit build
+  def dialogBox(build):
+     res = forms.alert("POZOR!\n\n"
+                       "Používaš zlý Revit Build! To môže poškodiť model.\n"
+                       "\n"
+                       "Správny Revit Build je " + build,
+                       title="Revit Build",
+                       footer="CustomTools Hooks",
+                       options=["Chcem len otvoriť súbor bez synchronizácie",
+                                "Ako môžem tento problém opraviť?"])
+     if res  == "Chcem len otvoriť súbor bez synchronizácie":
+        pass
+     if res  == "Ako môžem tento problém opraviť?":
+        url = 'https://gfi.miraheze.org/wiki/Aktualizácia_Revitu'
+        script.open_url(url)
+     else:
+      pass
+
   hostapp = _HostApplication()
   build = hostapp.build
+  # checking if revit build is inline with company standard
+  if build != "20200826_1250(x64)":
+    dialogBox(build)
 
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
