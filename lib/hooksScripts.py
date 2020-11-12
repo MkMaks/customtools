@@ -2,7 +2,7 @@
 
 # version of CustomTools
 releasedVersion = "0.8"
-snapshot = "201111"
+snapshot = "201112"
 
 # logging to server
 def hooksLogger(log_string, doc):
@@ -61,7 +61,7 @@ def versionLogger(releasedVersion,snapshot):
      res = forms.alert("POZOR!\n\n"
                        "Používaš zlý Revit Build! To môže poškodiť model.\n"
                        "\n"
-                       "Správny Revit Build je " + build,
+                       "Správny Revit Build je " + company_build,
                        title="Revit Build",
                        footer="CustomTools Hooks",
                        options=["Chcem len otvoriť súbor bez synchronizácie",
@@ -76,8 +76,10 @@ def versionLogger(releasedVersion,snapshot):
 
   hostapp = _HostApplication()
   build = hostapp.build
+  # company standard build
+  company_build = "20200826_1250(x64)"
   # checking if revit build is inline with company standard
-  if build != "20200826_1250(x64)":
+  if build != company_build:
     dialogBox(build)
 
   # tabulator between data to easy import to excel schedule
