@@ -11,8 +11,11 @@ __context__ = 'zero-doc'
 # import subprocess
 # subprocess.Popen(r'explorer /select,"L:\powerBI\doNotErase-pointer"')
 from pyrevit import script
+from customOutput import ct_icon
 
 output = script.get_output()
+# seting CustomTools icon
+ct_icon(output)
 
 # url = 'L:\\powerBI\\'
 url = '\\\\Srv2\\Z\\powerBI\\'

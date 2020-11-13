@@ -13,7 +13,7 @@ from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
 from pyrevit.output import charts
 from customOutput import criticalWarnings, hmsTimer
-from customOutput import file_name_getter, colors
+from customOutput import file_name_getter, colors, ct_icon
 
 # from __future__ import division
 
@@ -28,6 +28,8 @@ estDuration=len(allWarnings)/140
 timer = Timer()
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 output.print_md("# CRITICAL WARNINGS SCHEDULE")
 output.print_md("### " + file_name_getter(doc))
 

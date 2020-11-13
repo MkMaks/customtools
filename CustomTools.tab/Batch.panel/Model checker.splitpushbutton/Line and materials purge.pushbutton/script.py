@@ -5,7 +5,7 @@ Erases trash imported from AutoCAD links (Render Materials & Line Patterns)
 from pyrevit.coreutils import Timer
 from pyrevit import coreutils, script
 from pyrevit.output import charts
-from custom_output import hmsTimer
+from customOutput import hmsTimer, ct_icon
 timer = Timer()
 # ----------------
 
@@ -79,6 +79,8 @@ print(text_highligter(linePatternsOutput))
 
 # CHART
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 chart = output.make_chart(version='2.8.0')
 chart.type = charts.BAR_CHART

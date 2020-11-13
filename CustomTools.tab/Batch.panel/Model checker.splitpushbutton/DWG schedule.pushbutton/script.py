@@ -26,10 +26,12 @@ from pyrevit import revit, DB
 from pyrevit import script
 from pyrevit import forms
 from pyrevit import output
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 def listdwgs(current_view_only=False,):
     dwgs = DB.FilteredElementCollector(revit.doc)\

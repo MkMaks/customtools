@@ -60,3 +60,10 @@ def file_name_getter(doc):
         except:
             file_name = file_path
     return(file_name)
+
+# setting icon for output window
+def ct_icon(output):
+    import os
+    appdataPath = os.getenv('APPDATA')
+    iconPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\CustomToolsLogo.PNG'
+    output.set_icon(iconPath)

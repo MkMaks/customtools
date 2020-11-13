@@ -6,7 +6,7 @@ from pyrevit import revit, DB
 from pyrevit import forms
 from pyrevit import script
 from pyrevit.coreutils import pyutils
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 
 __context__ = 'selection'
@@ -24,6 +24,8 @@ selection = revit.get_selection()
 
 logger = script.get_logger()
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 ParamDef = namedtuple('ParamDef', ['name', 'type'])
 

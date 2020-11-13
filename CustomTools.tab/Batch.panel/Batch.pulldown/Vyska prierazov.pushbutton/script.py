@@ -15,7 +15,7 @@ __helpurl__ = "https://youtu.be/2LBi9p3gPiY"
 # for timing------
 from pyrevit.coreutils import Timer
 from pyrevit import coreutils, forms
-from custom_output import hmsTimer
+from customOutput import hmsTimer, ct_icon
 timer = Timer()
 # ----------------
 
@@ -43,6 +43,8 @@ if dialog:
         .ToElements()
 
     output = script.get_output()
+    # changing icon
+    ct_icon(output)
 
     # /////// FUNCTIONS /////////
     #converts milimeters to feets

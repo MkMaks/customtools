@@ -24,7 +24,7 @@ from custom_output import hmsTimer
 from Autodesk.Revit.DB import LinePatternElement, Family, TextNoteType, ScheduleSheetInstance, WorksetTable, TextNote, ReferencePlane
 
 from stringFormating import accents2ascii
-from customOutput import colors, criticalWarnings
+from customOutput import colors, criticalWarnings, ct_icon
 
 doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
@@ -69,6 +69,8 @@ def path2fileName(file_path,divider):
 
 output = script.get_output()
 output.set_height(1000)
+# changing icon
+ct_icon(output)
 
 # printing file name and heading
 name = doc.PathName

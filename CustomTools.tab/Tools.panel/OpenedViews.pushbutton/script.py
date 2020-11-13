@@ -8,12 +8,14 @@ __helpurl__ = 'https://youtu.be/1lANcq6WONI'
 from Autodesk.Revit.UI import UIDocument
 from Autodesk.Revit.DB.Document import GetElement
 from pyrevit import revit, script
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 doc = __revit__.ActiveUIDocument.Document
 uidoc = UIDocument(doc)
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 output.print_md("# LIST OF OPENED VIEWS")
 output.print_md("### " + file_name_getter(doc))
 
