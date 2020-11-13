@@ -1,11 +1,14 @@
 from pyrevit import script, coreutils
 from hooksScripts import releasedVersion, snapshot
+from customOutput import ct_icon
 
 __context__ = 'zero-doc'
 __doc__ = 'Version, support information, mass message, issue tracker, git repo, manual, video help'
 
 output = script.get_output()
 output.set_height(710)
+# changing icon
+ct_icon(output)
 
 # highlights text using html string with css
 def text_highligter(a):
@@ -28,6 +31,13 @@ def linkMaker(a,title):
 		content = str(a)
 		html_code = '<a href="'+content+'">'+ title +'</a>'
 		return coreutils.prepare_html_str(html_code)
+
+# printing icon
+import os
+appdataPath = os.getenv('APPDATA')
+iconPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\CustomToolsLogo.PNG'
+iconPath_code = '<img src="' + iconPath + '" height="250">'
+imageViewer(iconPath_code)
 
 print("CustomTools is extension for pyRevit Add-In")
 print(text_highligter("version " + releasedVersion) + text_highligter("snapshot " + snapshot))
