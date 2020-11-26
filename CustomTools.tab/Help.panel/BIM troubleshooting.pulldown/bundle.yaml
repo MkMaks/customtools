@@ -1,0 +1,9 @@
+title: >-
+  BIM
+
+  troubleshooting
+tooltip: Posting and viewing issues, questions, proposals or bugs related to BIM.
+layout:
+  - PostIssue
+  - ViewIssues
+highlight: new
