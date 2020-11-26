@@ -37,6 +37,7 @@ if res:
     timer = Timer()
 
     output = script.get_output()
+    output.set_width(700)
     output.print_md("# WARNINGS SCHEDULE")
     output.print_md("### " + file_name_getter(doc))
 
