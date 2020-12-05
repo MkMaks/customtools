@@ -6,5 +6,14 @@ __doc__ = '''Opens the GFI BIM troubleshooting form for posting BIM related issu
 __author__ = 'David Vadkerti'
 __context__ = 'zero-doc'
 
-url = 'https://airtable.com/shrTPnWkptt5zkBts'
+
+# revit user name
+# doc = __revit__.ActiveUIDocument.Document
+# user_name = doc.Application.Username
+# user name in os
+import getpass
+user_name = getpass.getuser()
+
+# prefilled name in airtable form
+url = 'https://airtable.com/shrTPnWkptt5zkBts' + '?prefill_Meno=' + user_name
 script.open_url(url)
