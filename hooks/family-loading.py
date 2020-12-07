@@ -26,7 +26,7 @@ def dialogBox():
                            footer="CustomTools Hooks",
                            options=["Zrušiť",
                                     "Naloadovať",
-                                    "Viac info o Families"])
+                                    "Viac info o veľkosti Families"])
          if res  == "Naloadovať":
             pass
             # logging to server - cannot access active document
@@ -34,8 +34,8 @@ def dialogBox():
             hooksLogger("Family loading over 1 MB", doc)
          elif res  == "Zrušiť":
             EXEC_PARAMS.event_args.Cancel()
-         elif res  == "Viac info o Families":
-            url = 'https://gfi.miraheze.org/wiki/Loadable_Families#Ve.C4.BEkos.C5.A5_Family'
+         elif res  == "Viac info o veľkosti Families":
+            url = 'https://gfi.miraheze.org/wiki/Chyby_vo_families_Revitu#Ve.C4.BEkos.C5.A5_Family'
             script.open_url(url)
             EXEC_PARAMS.event_args.Cancel()
          else:
