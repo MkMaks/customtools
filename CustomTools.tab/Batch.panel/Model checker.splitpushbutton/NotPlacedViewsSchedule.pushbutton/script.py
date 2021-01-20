@@ -21,13 +21,15 @@ from Autodesk.Revit.DB import View
 
 from pyrevit.coreutils import Timer
 from customOutput import hmsTimer
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 doc = __revit__.ActiveUIDocument.Document
 
 def showViewSchedule(sortBy):
     timer = Timer()
     output = script.get_output()
+    # changing icon
+    ct_icon(output)
     output.print_md("# NOT PLACED VIEW SCHEDULE")
     output.print_md("### " + file_name_getter(doc))
 

@@ -2,7 +2,7 @@
 __title__ = 'Revision Cloud Schedule\nschedule'
 __author__ = 'David Vadkerti'
 __doc__ = 'Lists all Revision Clouds with Comments filtered by selected Revisions'
-__highlight__= 'new'
+__highlight__= 'updated'
 
 
 from pyrevit import revit, DB
@@ -14,10 +14,13 @@ from Autodesk.Revit.DB import FilteredElementCollector #, BuiltInCategory
 from Autodesk.Revit.DB import RevisionCloud, Revision
 
 from pyrevit.coreutils import Timer
-from custom_output import hmsTimer
+from customOutput import hmsTimer, ct_icon
 
 doc = __revit__.ActiveUIDocument.Document
 output = script.get_output()
+
+# changing icon
+ct_icon(output)
 
 def revision_schedule(selected_revisions):
     timer = Timer()

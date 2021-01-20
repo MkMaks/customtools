@@ -20,12 +20,14 @@ from Autodesk.Revit.DB import FamilyInstance
 
 from pyrevit.coreutils import Timer
 from customOutput import hmsTimer
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 doc = __revit__.ActiveUIDocument.Document
 timer = Timer()
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 families = FilteredElementCollector(doc).OfClass(FamilyInstance).WhereElementIsNotElementType().ToElements()
 

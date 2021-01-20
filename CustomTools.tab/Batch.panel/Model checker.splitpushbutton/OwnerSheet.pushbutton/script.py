@@ -5,13 +5,15 @@ __helpurl__ = 'https://youtu.be/bdR_gaLdbW0'
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Viewport
 from pyrevit import revit, DB, coreutils, forms, script
-# from pyrevit import revit, coreutils, forms
+from customOutput import ct_icon
 
 
 doc = __revit__.ActiveUIDocument.Document
 curview = revit.active_view
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 output.print_md("# OWNER SHEET FOR ACTIVE VIEW")
 md_schedule = "| Number | Sheet Name | Owner Sheet |\n| ----------- | ----------- | ----------- |"  

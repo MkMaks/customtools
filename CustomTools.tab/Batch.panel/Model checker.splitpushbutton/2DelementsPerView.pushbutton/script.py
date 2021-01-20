@@ -11,13 +11,15 @@ from pyrevit import output, forms
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from Autodesk.Revit.DB import View
 from customOutput import colors
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 from stringFormating import accents2ascii
 
 doc = __revit__.ActiveUIDocument.Document
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 def findDetailItems(Lines,selected_option):
     output.print_md("# "+ selected_option.upper() +" PER VIEW SCHEDULE")

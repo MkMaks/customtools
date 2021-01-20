@@ -11,7 +11,7 @@ from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory
 from Autodesk.Revit.UI import UIApplication
 from pyrevit.coreutils import Timer
 from customOutput import hmsTimer
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 doc = __revit__.ActiveUIDocument.Document
 uiapp = UIApplication(doc.Application)
@@ -36,6 +36,8 @@ if res:
         timer = Timer()
 
         output = script.get_output()
+        # changing icon
+        ct_icon(output)
         output.print_md("# DETAIL GROUP SCHEDULE")
         output.print_md("### " + file_name_getter(doc))
 

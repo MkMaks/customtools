@@ -6,12 +6,14 @@ __doc__ = 'Lists all Shared Parameters from text config file.You can sort parame
 from pyrevit import script
 from pyrevit import output, forms
 from pyrevit.coreutils import Timer
-from customOutput import hmsTimer
+from customOutput import hmsTimer, ct_icon
 import io
 
 timer = Timer()
 
 output = script.get_output()
+# changing icon
+ct_icon(output)
 
 def showParamSchedule(sortByParamName):
     output.print_md("# SHARED PARAMETERS SCHEDULE")

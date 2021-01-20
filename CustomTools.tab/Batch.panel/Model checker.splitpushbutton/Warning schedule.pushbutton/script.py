@@ -13,7 +13,7 @@ from pyrevit import revit, DB, coreutils, script, output, forms
 from pyrevit.coreutils import Timer
 from custom_output import hmsTimer
 from customOutput import colors
-from customOutput import file_name_getter
+from customOutput import file_name_getter, ct_icon
 
 # from __future__ import division
 
@@ -37,6 +37,8 @@ if res:
     timer = Timer()
 
     output = script.get_output()
+    # changing icon
+    ct_icon(output)
     output.set_width(700)
     output.print_md("# WARNINGS SCHEDULE")
     output.print_md("### " + file_name_getter(doc))
