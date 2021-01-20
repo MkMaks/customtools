@@ -3,10 +3,6 @@
 
 """
 
-__title__ = 'In Place Family\nschedule'
-__author__ = 'David Vadkerti'
-__doc__ = 'Lists all In Place Families'
-
 import clr
 from collections import defaultdict
 

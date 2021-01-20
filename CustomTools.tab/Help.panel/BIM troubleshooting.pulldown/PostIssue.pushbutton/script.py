@@ -5,6 +5,7 @@ __title__ = 'Post Issue'
 __doc__ = '''Opens the GFI BIM troubleshooting form for posting BIM related issues.'''
 __author__ = 'David Vadkerti'
 __context__ = 'zero-doc'
+__helpurl__ = 'https://gfi.miraheze.org/wiki/BIM_troubleshooting'
 
 
 # revit user name
