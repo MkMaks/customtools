@@ -2,7 +2,6 @@ title: Line Color
 tooltip: >-
   Quicker override Projection Line Color of Elements.
 
-  NEW: SHIFT + Click to open color picker window.
+  SHIFT + Click to open color picker window.
 author: David Vadkerti
 help_url: https://youtu.be/klQwqQQkTAI
-highlight: 'updated'

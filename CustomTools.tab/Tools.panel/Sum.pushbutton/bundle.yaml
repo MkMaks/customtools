@@ -3,15 +3,11 @@ tooltip: >-
 
   Sum is calculated for every Type and overall.
 
-
-  NEW:
-
   Count of elements per type is also available.
 title: >-
   Sum
 
   Parameters
 author: 'David Vadkerti'
-help_url: 'https://youtu.be/aWg-rj8k0Ts'
-highlight: 'updated'
+help_url: 'https://youtu.be/HEZCTrXiEsM'
 context: selection
