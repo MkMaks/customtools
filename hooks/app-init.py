@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 from hooksScripts import versionLogger, releasedVersion, snapshot
+from customOutput import ct_icon
 
 versionLogger(releasedVersion,snapshot)
 
@@ -22,6 +23,8 @@ from pyrevit import script, coreutils
 from os import path
 output = script.get_output()
 output.set_height(700)
+# changing icon
+ct_icon(output)
 
 # server version of massmessage
 url = "L:\\_i\\CTmassMessage\\mass_message.html"
