@@ -40,15 +40,16 @@ def revision_schedule(selected_revisions):
               element_Id = revision_cloud.Id
               comments = revision_cloud.LookupParameter("Comments").AsString()
               creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,element_Id).Creator 
-              paramList = [str(count), comments, output.linkify(element_Id), selected_revision_name, creator]
+              mark = revision_cloud.LookupParameter("Mark").AsString()
+              paramList = [str(count), mark, comments, output.linkify(element_Id), selected_revision_name, creator]
 
               scheduleData.append(paramList)
       # printing the schedule if there are data
       if scheduleData:
         output.print_table(table_data=scheduleData,
                            title = "Revision Cloud Schedule for Revision '" + selected_revision_name + "'",
-                           columns=["Count", "Comments", "Element Id", "Revision Name","Author"],
-                           formats=['', '', '', '', ''])
+                           columns=["Count", "Mark", "Comments", "Element Id", "Revision Name","Author"],
+                           formats=['', '', '', '', '', ''])
       # if there are no data print status claim
       else:
         print("There is no Revision Cloud in Revision '"+ selected_revision_name + "'")
