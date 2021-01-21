@@ -41,9 +41,9 @@ def revision_schedule(selected_revisions):
         if revision_Id == selected_revision_Id:
               count += 1
               element_Id = revision_cloud.Id
-              comments = revision_cloud.LookupParameter("Comments").AsString()
+              comments = revision_cloud.get_Parameter(DB.BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS).AsString()
               creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,element_Id).Creator 
-              mark = revision_cloud.LookupParameter("Mark").AsString()
+              mark = revision_cloud.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK).AsString()
               paramList = [str(count), mark, comments, output.linkify(element_Id), selected_revision_name, creator]
 
               scheduleData.append(paramList)
