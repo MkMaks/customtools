@@ -71,15 +71,21 @@ def calc_param_total(element_list, param_name):
 
 
 def format_length(total):
-    return ('{} m'.format(total/3.28084))
+    # return ('{} m'.format(total/3.28084))
+    # always 3 decimal places coverted to meters
+    return ("{:.3f} m".format(total/3.28084))
 
 
 def format_area(total):
-    return ('{} m2'.format(total/10.7639))
+    # return ('{} m2'.format(total/10.7639))
+    # always 3 decimal places coverted to square meters
+    return ("{:.3f} m2".format(total/10.7639))
 
 
 def format_volume(total):
-    return ('{} m3'.format(total/35.3147))
+    # return ('{} m3'.format(total/35.3147))
+    # always 3 decimal places coverted to cubic meters
+    return ("{:.3f} m3".format(total/35.3147))
 
 formatter_funcs = {DB.ParameterType.Length: format_length,
                    DB.ParameterType.Area: format_area,
