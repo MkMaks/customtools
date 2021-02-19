@@ -5,6 +5,5 @@
 from pyrevit import script
 
 output = script.get_output()
-
-url = 'L:\\customToolslogs\\hooksLogs\\'
+url = '\\\\Srv2\\Z\\_customToolsReports\\'
 output.open_page(url)
