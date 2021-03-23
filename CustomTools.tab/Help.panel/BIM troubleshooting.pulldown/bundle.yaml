@@ -6,5 +6,4 @@ tooltip: Posting and viewing issues, questions, proposals or bugs related to BIM
 layout:
   - PostIssue
   - ViewIssues
-highlight: new
 help_url: https://gfi.miraheze.org/wiki/BIM_troubleshooting
