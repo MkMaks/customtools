@@ -1,5 +1,6 @@
 #installing pyRevit
-Write-Output "pyRevit is being cloned. Do not close this window please."
+Write-Output "pyRevit is being cloned."
+Write-Output "Do NOT close this window."
 pyrevit clone ct base
 Write-Output "pyRevit has been installed successfuly."
 pyrevit attach ct default --installed
