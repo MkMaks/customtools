@@ -2,20 +2,25 @@
 from hooksScripts import versionLogger, releasedVersion, snapshot
 from customOutput import ct_icon
 
+# CustomTools update at revit startup
+import os
+import subprocess
+try:
+    appdataPath = os.getenv('APPDATA')
+	# replacing CustomToolsUpdater.cmd file for new one
+	# running InitUpdate.cmd script at:
+    # %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\hooks\\InitUpdate.cmd
+    newCTupdatePath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\hooks\\InitUpdate.cmd'
+    u = subprocess.Popen([newCTupdatePath])
+
+    # running CustomToolsUpdater.cmd script at:
+    # %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd
+    updaterPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd'
+    p = subprocess.Popen([updaterPath])
+except:
+    pass
+
 versionLogger(releasedVersion,snapshot)
-
-# update at revit startup
-# import os
-# import subprocess
-# try:
-#     # running CustomToolsUpdater.cmd script at:
-#     # %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd
-#     appdataPath = os.getenv('APPDATA')
-#     updaterPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd'
-#     p = subprocess.Popen([updaterPath])
-# except:
-#     pass
-
 
 """TEASER."""
 #prints heading and links offline version of mass message

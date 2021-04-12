@@ -17,8 +17,8 @@ output = script.get_output()
 # seting CustomTools icon
 ct_icon(output)
 
-# url = 'L:\\powerBI\\'
-url = '\\\\Srv2\\Z\\powerBI\\'
+url = 'L:\\powerBI\\'
+# url = '\\\\Srv2\\Z\\powerBI\\'
 
 
 output.open_page(url)
