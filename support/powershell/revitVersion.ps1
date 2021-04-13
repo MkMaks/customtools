@@ -1,0 +1,1 @@
+pyrevit revits --installed > revitVersionList.txt

@@ -12,5 +12,5 @@ try:
     test = open(supportPath,"r")
 # path for developer using git clone
 except:
-    supportPath = homepath + "\Documents\pyRevitExtensions\CustomTools.extension\support\doNotErase-pointer"
+    supportPath = homepath + "\Documents\gitRepos\pyRevit extensions\CustomTools.extension\support\doNotErase-pointer"
 subprocess.Popen(r'explorer /select, '+supportPath)
