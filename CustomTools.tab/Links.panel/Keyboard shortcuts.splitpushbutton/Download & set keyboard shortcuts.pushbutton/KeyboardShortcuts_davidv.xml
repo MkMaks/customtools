@@ -163,6 +163,20 @@
   <ShortcutItem CommandName="Log Out" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Log out" Paths="Dalux&gt;BIM" />
   <ShortcutItem CommandName="Upload" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Upload" Paths="Dalux&gt;BIM" />
   <ShortcutItem CommandName="Comments" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Comments" Paths="Dalux&gt;BIM" />
+  <ShortcutItem CommandName="Translate &amp;  Reorder" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_ParameterTranslationCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Shared Parameter  Manager" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_SharedParameterCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Parameter  Manager" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_FamilyParameterCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Reload  Families" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_ReloadFamilies_ReloadFamiliesCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Manage  Calculated Parameters" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_CalculatedParameterDefinitionCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Update  Calculated Parameter" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_CalculatedParameterCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Execute Calculated Parameter" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_CalculatedParameterContextCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
+  <ShortcutItem CommandName="Family Report" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Families%Kobi_RevitXT_CAK_FamilyReportCommand" Paths="Content Admin Kit&gt;Families" />
+  <ShortcutItem CommandName="Update Category" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Families%Kobi_RevitXT_CAK_UpdateFamlyCategory" Paths="Content Admin Kit&gt;Families" />
+  <ShortcutItem CommandName="BIM Properties" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Families%Kobi_RevitXT_CAK_OnlineEditorCommand" Paths="Content Admin Kit&gt;Families" />
+  <ShortcutItem CommandName="BIM Content" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_CustomContentCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
+  <ShortcutItem CommandName="Settings" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_SettingsCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
+  <ShortcutItem CommandName="Manage Families" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_ManageContentCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
+  <ShortcutItem CommandName="Help" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_HelpCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
   <ShortcutItem CommandName="Search" CommandId="CustomCtrl_%CustomCtrl_%pyRevit%pyRevit%Search" Shortcuts="Shift+F#PS" Paths="pyRevit&gt;pyRevit" />
   <ShortcutItem CommandName="Spy:Find All Loaded Assemblies" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%pyRevit%Spy%Find All Loaded Assemblies" Paths="pyRevit&gt;pyRevit" />
   <ShortcutItem CommandName="Spy:List Elements" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%pyRevit%Spy%List Elements" Paths="pyRevit&gt;pyRevit" />
@@ -377,7 +391,7 @@
   <ShortcutItem CommandName="Batch:Create ShortRoom Numbers" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%Create Short Room Numbers" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Batch:CenterRoom Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%CenterRoomTags" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Batch:CenterArea Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%CenterAreaTags" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="UID:PickCategory" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%PickCategory" Paths="CustomTools&gt;Tools" />
+  <ShortcutItem CommandName="UID:PickCategory" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%PickCategory" Shortcuts="Shift+C" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="UID:ID Of ElementIn Linked File" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%LinkedElementID" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="UID:UID getter" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%UIDgetter" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="UID:UID select" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%UIDselect" Paths="CustomTools&gt;Tools" />
