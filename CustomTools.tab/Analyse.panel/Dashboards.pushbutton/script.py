@@ -3,7 +3,9 @@
 __title__ = 'Dashboards'
 __doc__ = '''Power BI Dashboards for analysing RVT model quality, CustomTools Hooks logs, opening and sync times, revit builds and more.
 
-You need to install Power BI Desktop application first.'''
+You need to install Power BI Desktop application first.
+
+SHIFT+Click - open folder with templates of Power BI dashboards'''
 __author__ = 'David Vadkerti'
 __helpurl__ = 'https://gfi.miraheze.org/wiki/Power_BI'
 __context__ = 'zero-doc'
