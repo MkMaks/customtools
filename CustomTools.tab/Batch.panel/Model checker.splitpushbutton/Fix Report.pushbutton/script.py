@@ -19,7 +19,7 @@ def copyFile(fileName,pathTo,folderPath):
         copyfile(copyFromPath, folderPath+fileName)
     # path for developer using git clone
     except:
-        copyFromPath = homepath + "\Documents\pyRevitExtensions\CustomTools.extension" + pathTo
+        copyFromPath = homepath + "\Documents\gitRepos\pyRevit extensions\CustomTools.extension" + pathTo
         copyfile(copyFromPath, folderPath+fileName)
 
 if filePath:
