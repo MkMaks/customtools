@@ -76,21 +76,21 @@ class getToleranceWindow(forms.WPFWindow):
 	t = Transaction(doc, "Same Place")
 	t.Start()
 	for element in element_collector:
-		try:
-			# for loadable families
-			location = element.Location
-			locPoint = location.Point.ToString()
-			# locPoint = location.ToString()
-			#removing brackets
-			locPointlist = locPoint[1:-1]
-			locPointlist = toList(locPointlist)
-			for i in locList:
-				redundant = deltaCheck(listCompare(locPointlist,i), tolerance)
-				if redundant == 1:
-					redundantList.append(element.Id)
-			locList.append(locPointlist)
+		# try:
+		# 	# for loadable families
+		# 	location = element.Location
+		# 	locPoint = location.Point.ToString()
+		# 	# locPoint = location.ToString()
+		# 	#removing brackets
+		# 	locPointlist = locPoint[1:-1]
+		# 	locPointlist = toList(locPointlist)
+		# 	for i in locList:
+		# 		redundant = deltaCheck(listCompare(locPointlist,i), tolerance)
+		# 		if redundant == 1:
+		# 			redundantList.append(element.Id)
+		# 	locList.append(locPointlist)
 
-		except:
+		# except:
 			# for system families there is need to make groups
 			elid = []
 			elid.append(element.Id)
