@@ -54,18 +54,20 @@ def showViewSchedule(sortBy):
     count = 0
     scheduleData = []
     for view in views:
-        if view.Id not in viewsOnSheet: 
-            viewType = str(view.ViewType)
-            # https://www.revitapidocs.com/2020/bf04dabc-05a3-baf0-3564-f96c0bde3400.htm
-            viewName = view.Name
-            if viewType != "DrawingSheet" and viewType != "Schedule":
-                count += 1
-                view_id = view.Id
-                # viewType = view.GetType().Name
-                view_creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,view_id).Creator 
+    	# filtering out view templates
+    	if not view.IsTemplate:
+	        if view.Id not in viewsOnSheet: 
+	            viewType = str(view.ViewType)
+	            # https://www.revitapidocs.com/2020/bf04dabc-05a3-baf0-3564-f96c0bde3400.htm
+	            viewName = view.Name
+	            if viewType != "DrawingSheet" and viewType != "Schedule":
+	                count += 1
+	                view_id = view.Id
+	                # viewType = view.GetType().Name
+	                view_creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,view_id).Creator 
 
-                paramList = [viewName, output.linkify(view_id), str(view_creator), viewType]
-                scheduleData.append(paramList)
+	                paramList = [viewName, output.linkify(view_id), str(view_creator), viewType]
+	                scheduleData.append(paramList)
 
     # sort by view name
     if sortBy == "View Name":
