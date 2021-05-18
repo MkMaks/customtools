@@ -44,12 +44,17 @@ def revision_schedule(selected_revisions):
               comments = revision_cloud.get_Parameter(DB.BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS).AsString()
               creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,element_Id).Creator 
               mark = revision_cloud.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK).AsString()
+              if not mark:
+              	# changing None to text string to avoid errors when sorting the list
+              	mark = "_None"
               paramList = [str(count), mark, comments, output.linkify(element_Id), selected_revision_name, creator]
 
               scheduleData.append(paramList)
       # printing the schedule if there are data
       if scheduleData:
-        output.print_table(table_data=scheduleData,
+      	# sort by mark
+      	sortedScheduleData = sorted(scheduleData, key=lambda x: x[2].lower())
+        output.print_table(table_data=sortedScheduleData,
                            title = "Revision Cloud Schedule for Revision '" + selected_revision_name + "'",
                            columns=["Count", "Mark", "Comments", "Element Id", "Revision Name","Author"],
                            formats=['', '', '', '', '', ''])

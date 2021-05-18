@@ -160,6 +160,17 @@
   <ShortcutItem CommandName="Convert Files:Import FormItto RVT" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%FormIt Converter%Convert Files%Import FormIt to RVT" Paths="Add-Ins&gt;FormIt Converter" />
   <ShortcutItem CommandName="Convert Files:Reload Families" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%FormIt Converter%Convert Files%Reload Families" Paths="Add-Ins&gt;FormIt Converter" />
   <ShortcutItem CommandName="About FormIt" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%FormIt Converter%About FormIt" Paths="Add-Ins&gt;FormIt Converter" />
+  <ShortcutItem CommandName="Revit Lookup:Hello World..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%HelloWorld" Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop DB..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Db.." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Current Selection..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Current Selection..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Pick Face..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Pick Face..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Pick Edge..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Pick Edge..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Linked Element..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Pick Linked Element..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Dependent Elements..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Dependent Elements..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Active View..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Active View..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Snoop Application..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Application..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Search and Snoop..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Search and Snoop..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Lookup:Test Framework..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Test Framework..." Paths="Add-Ins&gt;Revit Lookup" />
   <ShortcutItem CommandName="Log Out" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Log out" Paths="Dalux&gt;BIM" />
   <ShortcutItem CommandName="Upload" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Upload" Paths="Dalux&gt;BIM" />
   <ShortcutItem CommandName="Comments" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Comments" Paths="Dalux&gt;BIM" />
@@ -177,6 +188,139 @@
   <ShortcutItem CommandName="Settings" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_SettingsCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
   <ShortcutItem CommandName="Manage Families" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_ManageContentCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
   <ShortcutItem CommandName="Help" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_HelpCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
+  <ShortcutItem CommandName="Folder" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_Analysis_ProjectFolderCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="Export" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_Family_ExportCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="Import" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_Family_ImportCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="BIM:Multi Type Editor" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_Family_ManageFamilyCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="BIM:Match Instance Parameters" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_Tools_MatchParametersCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="BIM:Upgrade Families" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_UpgradeFamilies_UpgradeFamiliesCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="BIM:Copy Standards" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_WPF_CopyStandards_CopyStandardsCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="BIM:Reload Paths" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_WPF_ReloadPathsTool_ReloadPathsCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="BIM Query" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_Family_BIMQLCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
+  <ShortcutItem CommandName="Project  Cleanup:Material Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Visualization_EditCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Unplaced Room Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_RoomCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Unplaced Area Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_AeraCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Unplaced Space Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_SpaceCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:View Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_ProjectCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Line Style Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_LineStlyeCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Line Pattern Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_LinePatternCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Fill Pattern Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_FillPatternCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Dimension Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_DimensionCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Text Note Type Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_TextNoteTypeCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Project  Cleanup:Subcategories Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_OStCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="QA - Model Review:QA/QC Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_QAQC_TOOLS%Kobi_RevitXT_WPF_TagQa_TagQaQcCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="QA - Model Review:Create Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_QAQC_TOOLS%Kobi_RevitXT_Create_Tags_TagCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="QA - Model Review:Toggle Transparency" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_QAQC_TOOLS%Kobi_RevitXT_View_ToggleTransparencyCommand" Paths="Kobi Toolkit&gt;QA/QC" />
+  <ShortcutItem CommandName="Analyze:Insertion" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_Analysis_ElementInsertionPointCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Length" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_Analysis_ElementLengthCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Thickness" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_Analysis_ElementThicknessCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Room Lighting" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_Analysis_RoomLightingReportCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Swing Direction" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_Analysis_DoorSwingManagerCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Draw Bounding Box" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_Geometry_DrawBoundingBoxCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Path Manager" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_WPF_PathAnalyzerTool_PathAnalyzerCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Analyze:Room Report" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_Pulldown%Kobi_RevitXT_WPF_RoomUtil_RoomUtilCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Update" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_Analysis_AnalysisUpdateCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Power BI Export" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Analysis%Kobi_RevitXT_WPF_PbiExportTool_PbiExportCommand" Paths="Kobi Toolkit&gt;Analysis" />
+  <ShortcutItem CommandName="Visibility:Make Obscured" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Reinforcement%Kobi_RevitXT_Structure_Visibility_Pulldown%Kobi_RevitXT_Structure_1_MakeObscuredCommand" Paths="Kobi Toolkit&gt;Reinforcement" />
+  <ShortcutItem CommandName="Visibility:Make Unobscured" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Reinforcement%Kobi_RevitXT_Structure_Visibility_Pulldown%Kobi_RevitXT_Structure_2_MakeUnobscuredCommand" Paths="Kobi Toolkit&gt;Reinforcement" />
+  <ShortcutItem CommandName="Visibility:Make Wireframe in 3D" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Reinforcement%Kobi_RevitXT_Structure_Visibility_Pulldown%Kobi_RevitXT_Structure_3_MakeWireframeCommand" Paths="Kobi Toolkit&gt;Reinforcement" />
+  <ShortcutItem CommandName="Visibility:Make Solid in 3D" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Reinforcement%Kobi_RevitXT_Structure_Visibility_Pulldown%Kobi_RevitXT_Structure_4_MakeSolidCommand" Paths="Kobi Toolkit&gt;Reinforcement" />
+  <ShortcutItem CommandName="Import:Import Spreadsheet" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Annotate_Import_Pulldown%Kobi_RevitXT_Annotation_ImportSpreadsheetCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Align Orthogonally" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_WPF_RearrangeTool_RearrangeCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Simple Align" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_SimpleAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Align Text" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_AlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Left" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_InteractiveLeftAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Right" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_InteractiveRightAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Top" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_InteractiveTopAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Bottom" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_InteractiveBottomAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Center" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_InteractiveCenterAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Align:Middle" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Align%Kobi_RevitXT_Annotation_InteractiveMiddleAlignCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Text:To Upper Case" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Text%Kobi_RevitXT_Annotation_ToUpperCaseCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Text:To Lower Case" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Interactive_Text%Kobi_RevitXT_Annotation_ToLowerCaseCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Bubbles" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Bubbles_BubblesCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Renumber:Renumber by Room" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Annotation_Mark%Kobi_RevitXT_Annotation_MarkByRoomCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Renumber:Renumber Mark Parameter" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Annotation_Mark%Kobi_RevitXT_Annotation_MarkByPickCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Renumber:Renumber Grid" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Annotation_Mark%Kobi_RevitXT_Annotation_NumberGridByPickCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Renumber:Renumber Room, Space or Area" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Annotation_Mark%Kobi_RevitXT_Annotation_NumberByPickCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Renumber:Renumber Views on Sheets" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Annotation_Mark%Kobi_RevitXT_Annotation_NumberViewportByPickCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Legend:Material  Legend" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Legends_Pulldown%Kobi_RevitXT_Annotation_MaterialLegendCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Legend:Legend by  Category" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Annotate%Kobi_RevitXT_Legends_Pulldown%Kobi_RevitXT_Annotation_WindowLegendCommand" Paths="Kobi Toolkit&gt;Annotate" />
+  <ShortcutItem CommandName="Room To Floor" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Geometry_RoomToFloorCommand" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Edit Grid Name" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Geometry_GridEditorCommand" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Multi  Join" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Geometry_MultiJoinCommand" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Assembly:Create Assemblies" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Assemblies%Kobi_RevitXT_View_AssemblyCreateCommand" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Assembly:Create  Assembly Views" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Assemblies%Kobi_RevitXT_View_AssemblyViewCreateCommand" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Assembly:Create Assemblies Utility" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Assemblies%Kobi_RevitXT_View_AssemblyCreateCommand2" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Assembly:Create Assembly Views Utility" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Modify%Kobi_RevitXT_Assemblies%Kobi_RevitXT_View_AssemblyViewCreateCommand2" Paths="Kobi Toolkit&gt;Modify" />
+  <ShortcutItem CommandName="Resize  Section Box" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_View_SectionBoxEditorCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Toggle:Category Toggle" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Toggle%Kobi_RevitXT_View_CategoryToggleCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Toggle:Instance Toggle" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Toggle%Kobi_RevitXT_View_InstanceToggleCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Component" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_ComponentOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Curtain Panel" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_CurtainPanelOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Curtain Wall Mullion" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_CurtainWallMullionOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Door" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_DoorOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Elevation" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_ElevationOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Floor" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_FloorOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Grid" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_GridOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Level" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_LevelOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Reference Plane" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_ReferencePlaneOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Room Separator" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_RoomSeparatorOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Scope Box" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_ScopeBoxOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Section" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_SectionOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Structural Column" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_StructuralColumnOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Structural Framing" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_StructuralFramingOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Tag" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_TagOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Wall" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_WallOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="OFF:Window" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_OFF%Kobi_RevitXT_View_WindowOffCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Component" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_ComponentOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Curtain Panel" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_CurtainPanelOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Curtain Wall Mullion" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_CurtainWallMullionOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Door" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_DoorOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Elevation" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_ElevationOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Floor" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_FloorOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Grid" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_GridOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Level" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_LevelOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Reference Plane" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_ReferencePlaneOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Room Separator" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_RoomSeparatorOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Scope Box" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_ScopeBoxOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Section" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_SectionOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Structural Column" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_StructuralColumnOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Structural Framing" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_StructuralFramingOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Tag" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_TagOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Wall" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_WallOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="ON:Window" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_ON%Kobi_RevitXT_View_WindowOnCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Zoom To:Zoom To Room or Space" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Geometry_ZoomToCategoryCommand%Kobi_RevitXT_View_ZoomToRoomsCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Zoom To:Zoom To Selection" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Geometry_ZoomToCategoryCommand%Kobi_RevitXT_View_ZoomToSelectionCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="View Utils:View Lookup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%View Utils%Kobi_RevitXT_WPF_ActivateView_ActivateViewCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="View Utils:Copy Legend" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%View Utils%Kobi_RevitXT_WPF_CopyLegend_CopyLegendCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Crop Region:2D View Crop Region" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_CropRegion%Kobi_RevitXT_View_DefineCropRegion2DCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Crop Region:Crop Region from Selection" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_CropRegion%Kobi_RevitXT_View_BoundingBoxCropRegionCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Crop Region:Match Crop Region" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_CropRegion%Kobi_RevitXT_View_MatchCropRegionCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Crop Region:Camera View Crop Region" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_CropRegion%Kobi_RevitXT_View_DefineCropRegion3DCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Sheet:View/Sheet Manager" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Sheet%Kobi_RevitXT_View_SheetManagerCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Sheet:Align Viewport on Sheet" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Sheet%Kobi_RevitXT_View_AlignViewPortOnSheetCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Sheet:Duplicate Sheet" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Sheet%Kobi_RevitXT_View_DuplicateSheetCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Sheet:Orient View to Face" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Sheet%Kobi_RevitXT_View_OrientViewToFaceCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Sheet:Sheetset Manager" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Sheet%Kobi_RevitXT_Tools_SheetSetManager_SheetSetManagerCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Sheet:Pin Sheets" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_Sheet%Kobi_RevitXT_PinSheetsTool_PinSheetsCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Room Views" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_View_RoomViewsCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="View Depth  Override" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%View%Kobi_RevitXT_View_ViewDepthGrayscaleCommand" Paths="Kobi Toolkit&gt;View" />
+  <ShortcutItem CommandName="Select:Category" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectSimilarCategoryCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Select:Family" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectSimilarFamilyCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Select:Type" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectSimilarTypeCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Select:Bounding" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectBoundingCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Select:Host" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectHostCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Select:Hosted" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectHostedCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Select:Workset" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectCommand%Kobi_RevitXT_Geometry_SelectWorksetCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Filter" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_Geometry_SelectionFilterCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="Modeless" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Selection%Kobi_RevitXT_WPF_ModelessFilter_ModelessFilterCommand" Paths="Kobi Toolkit&gt;Selection" />
+  <ShortcutItem CommandName="About" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_AboutKobiCommand" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
+  <ShortcutItem CommandName="Settings" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_SettingsCommand" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
+  <ShortcutItem CommandName="License" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_LicenseManagerCommand" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
+  <ShortcutItem CommandName="Help" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_HelpCommand" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
+  <ShortcutItem CommandName="Email" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_SendCommentCommand_1" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
+  <ShortcutItem CommandName="Phone" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_SupportPhoneCommand" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
+  <ShortcutItem CommandName="YouTube" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%Kobi Toolkit%Kobi_RevitXT_Loader_YouTubeCommand" Paths="Kobi Toolkit&gt;Kobi Toolkit" />
   <ShortcutItem CommandName="Search" CommandId="CustomCtrl_%CustomCtrl_%pyRevit%pyRevit%Search" Shortcuts="Shift+F#PS" Paths="pyRevit&gt;pyRevit" />
   <ShortcutItem CommandName="Spy:Find All Loaded Assemblies" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%pyRevit%Spy%Find All Loaded Assemblies" Paths="pyRevit&gt;pyRevit" />
   <ShortcutItem CommandName="Spy:List Elements" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%pyRevit%Spy%List Elements" Paths="pyRevit&gt;pyRevit" />
@@ -283,8 +427,8 @@
   <ShortcutItem CommandName="Groups:Find All Groups With Text Notes" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%Groups%Find All Groups With Text Notes" Paths="pyRevit&gt;Modify" />
   <ShortcutItem CommandName="Groups:Select Topmost Groups" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%Groups%Select Topmost Groups" Paths="pyRevit&gt;Modify" />
   <ShortcutItem CommandName="Groups:Show Nested Group Structure" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%Groups%Show Nested Group Structure" Paths="pyRevit&gt;Modify" />
-  <ShortcutItem CommandName="3D:Orient Section Box To Face" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%3D%Orient Section Box To Face" Paths="pyRevit&gt;Modify" />
-  <ShortcutItem CommandName="3D:Orient View To Face" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%3D%Orient View To Face" Paths="pyRevit&gt;Modify" />
+  <ShortcutItem CommandName="3D:Orient Section Box To Face" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%3D%Orient Section Box To Face" Shortcuts="RB" Paths="pyRevit&gt;Modify" />
+  <ShortcutItem CommandName="3D:Orient View To Face" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Modify%3D%Orient View To Face" Shortcuts="RV" Paths="pyRevit&gt;Modify" />
   <ShortcutItem CommandName="Sheets:Copy Viewports (Legends) To Other Sheets" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Drawing Set%Sheets%Copy Views" Paths="pyRevit&gt;Drawing Set" />
   <ShortcutItem CommandName="Sheets:Move Viewports (Model, Detail) To Other Sheets" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Drawing Set%Sheets%Move Views" Paths="pyRevit&gt;Drawing Set" />
   <ShortcutItem CommandName="Sheets:Pin All Viewports" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Drawing Set%Sheets%Pin All Viewports" Paths="pyRevit&gt;Drawing Set" />
@@ -431,7 +575,7 @@
   <ShortcutItem CommandName="Normy:Materiály" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Links%Normy%Materialy" Paths="CustomTools&gt;Links" />
   <ShortcutItem CommandName="Keyboard shortcuts:Keyboardshortuts" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Links%Keyboard shortcuts%Keyboard shortcuts" Paths="CustomTools&gt;Links" />
   <ShortcutItem CommandName="Keyboard shortcuts:Download &amp; set keyboard shortcuts" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Links%Keyboard shortcuts%Download &amp; set keyboard shortcuts" Paths="CustomTools&gt;Links" />
-  <ShortcutItem CommandName="Dashboards" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Analyse%Dashboards" Paths="CustomTools&gt;Analyse" />
+  <ShortcutItem CommandName="Dashboards ●" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Analyse%Dashboards" Paths="CustomTools&gt;Analyse" />
   <ShortcutItem CommandName="dynamoscripts:A4 count" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%dynamoscripts%dynamoscripts%A4count" Paths="CustomTools&gt;dynamoscripts" />
   <ShortcutItem CommandName="dynamoscripts:Grids to 2D" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%dynamoscripts%dynamoscripts%GridsTo2D" Paths="CustomTools&gt;dynamoscripts" />
   <ShortcutItem CommandName="dynamoscripts:Height to Parameter" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%dynamoscripts%dynamoscripts%HeightToParameter" Paths="CustomTools&gt;dynamoscripts" />
@@ -1715,7 +1859,7 @@
   <ShortcutItem CommandName="Default:Start-End-Radius Arc" CommandId="IDC_RADIO_ARC_3_PNT" Paths="Contextual Tabs&gt;Draw" />
   <ShortcutItem CommandName="Graphic Display Options" CommandId="ID_GRAPHIC_DISPLAY_OPTIONS" Shortcuts="GD" Paths="View Control Bar" />
   <ShortcutItem CommandName="Toggle Fly Mode On/Off" CommandId="ID_FIRST_PERSON_NAV" Paths="Navigation Bar" />
-  <ShortcutItem CommandName="Restore Excluded Member" CommandId="ID_ELEM_GROUP_EXCLUDED_MEMBER" Shortcuts="RB" Paths="Context Menu" />
+  <ShortcutItem CommandName="Restore Excluded Member" CommandId="ID_ELEM_GROUP_EXCLUDED_MEMBER" Paths="Context Menu" />
   <ShortcutItem CommandName="Structural Wall:Tangent End Arc" CommandId="ID_WALL_STRUCT_ARC_TAN" Paths="Contextual Tabs&gt;Draw" />
   <ShortcutItem CommandName="Orient to Other View" CommandId="ID_ORIENT_TO_OTHER_VIEW" Paths="Steering Wheel" />
   <ShortcutItem CommandName="Schedule View Zoom Restore" CommandId="ID_SCHEDULE_VIEW_ZOOM_RESTORE" />
