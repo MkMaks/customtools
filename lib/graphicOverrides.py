@@ -12,6 +12,9 @@ def setProjLines(r,g,b):
                 # color = DB.Color(255,0,0)
                 color = DB.Color(r,g,b)
                 src_style.SetProjectionLineColor(color)
+                src_style.SetCutLineColor(color)
+                src_style.SetCutForegroundPatternColor(color)
+                src_style.SetCutBackgroundPatternColor(color)
                 for element in selection:
                     revit.active_view.SetElementOverrides(element.Id, src_style)
         else:

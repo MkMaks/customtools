@@ -1,7 +1,10 @@
 title: Line Color
 tooltip: >-
-  Quicker override Projection Line Color of Elements.
+  Quicker override of Projection and Cut Line Color of Elements.
 
   SHIFT + Click to open color picker window.
+
+  NEW: Cut Lines & Cut Pattern override added.
 author: David Vadkerti
 help_url: https://youtu.be/G3FZieJGfvc
+highlight: updated

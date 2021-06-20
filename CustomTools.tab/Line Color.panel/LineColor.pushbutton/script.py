@@ -30,6 +30,9 @@ try:
         # setting graphic override
         with revit.Transaction('Line Color'):
             src_style.SetProjectionLineColor(new_color)
+            src_style.SetCutLineColor(new_color)
+            src_style.SetCutForegroundPatternColor(new_color)
+            src_style.SetCutBackgroundPatternColor(new_color)
             for element in selection:
                 revit.active_view.SetElementOverrides(element.Id, src_style)
     else:
