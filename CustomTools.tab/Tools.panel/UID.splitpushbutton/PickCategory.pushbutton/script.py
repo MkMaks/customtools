@@ -1,54 +1,39 @@
-"""Activates selection tool that picks a specific type of element.
-
-Shift-Click:
-Pick favorites from all available categories
-"""
-# pylint: disable=E0401,W0703,C0103
-from collections import namedtuple
-
 from pyrevit import revit, UI
-from pyrevit import forms
 from pyrevit import script
 
-# import this script's configurator
-# import pick_config
-
-
 logger = script.get_logger()
-# my_config = script.get_config()
 
 __context__ = 'selection'
 
 selection = revit.get_selection()
-# first element's category
-selected_category = selection[0].Category
-
+selected_cat_ids = []
+for element in selection:
+    # list of unique category IDs
+    if element.Category.Id not in selected_cat_ids:
+        selected_cat_ids.append(element.Category.Id.ToString())
 
 class PickByCategorySelectionFilter(UI.Selection.ISelectionFilter):
     """Selection filter implementation"""
-    def __init__(self, category_opt):
-        self.category_opt = category_opt
+    def __init__(self, cat_options):
+        self.cat_options = cat_options
 
     def AllowElement(self, element):
-        """Is element allowed to be selected?"""
-        # if element.Category \
-        #         and self.category_opt.revit_cat.Id == element.Category.Id:
-        if element.Category \
-                and self.category_opt.Id == element.Category.Id:
+        """is element in category list (is it listed to be selected)?"""
+        if element.Category and element.Category.Id.ToString() in self.cat_options:
             return True
         else:
             return False
 
-    def AllowReference(self, refer, point):  # pylint: disable=W0613
+    def AllowReference(self, refer, point):
         """Not used for selection"""
         return False
 
 
-def pick_by_category(category_opt):
+def pick_by_category(cat_options):
     """Handle selection by category"""
     try:
         new_selection = revit.get_selection()
-        msfilter = PickByCategorySelectionFilter(category_opt)
+        msfilter = PickByCategorySelectionFilter(cat_options)
         selection_list = revit.pick_rectangle(pick_filter=msfilter)
         filtered_list = []
         for element in selection_list:
@@ -57,5 +42,4 @@ def pick_by_category(category_opt):
     except Exception as err:
         logger.debug(err)
 
-
-pick_by_category(selected_category)
+pick_by_category(selected_cat_ids)

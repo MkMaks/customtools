@@ -1,11 +1,15 @@
 tooltip: >-
-  Activates selection tool that picks just elements of specific Category.
+  Activates selection tool that picks just elements of specific Categories.
 
 
-  You need to select one element at first.
+  You need to select one or more elements at first.
+
+
+  NEW: you can select more elements to pick more categories at once.
 title: >-
   Pick
 
   Category
 author: 'Ehsan Iran-Nejad, David Vadkerti'
 context: selection
+highlight: updated
