@@ -1,3 +1,9 @@
 title: Import Report
-tooltip: Drag and drop interactive HTML file saved from pyRevit script output. Makes element links active.
+tooltip: >-
+  Open interactive HTML file saved from pyRevit script output. Makes element links active.
+
+  
+  NEW: Merged with Fix Report tool for easier usage.
+
+  SHIFT Click: Open default location for CustomTools reports
 help_url: https://youtu.be/0lXwqbIrDiY
