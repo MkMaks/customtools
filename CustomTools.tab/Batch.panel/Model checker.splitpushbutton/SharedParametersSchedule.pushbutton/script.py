@@ -15,7 +15,7 @@ output = script.get_output()
 # changing icon
 ct_icon(output)
 
-def showParamSchedule(sortByParamName):
+def showParamSchedule(sortByParamName,filePath):
     output.print_md("# SHARED PARAMETERS SCHEDULE")
 
     def parseSharedParamFile(filePath,encodingType):
@@ -68,7 +68,7 @@ def showParamSchedule(sortByParamName):
         endtime = timer.get_time()
         print(hmsTimer(endtime))
 
-    filePath = "U:\\REVIT\\Kniznica_REVIT\\4_Parametre\\GFI-shared-parametre.txt"
+    # filePath = "U:\\REVIT\\Kniznica_REVIT\\4_Parametre\\GFI-shared-parametre.txt"
 
     try:
         parseSharedParamFile(filePath,"utf-16")
@@ -78,6 +78,7 @@ def showParamSchedule(sortByParamName):
         except:
             print("Source file should be saved with unicode UTF-16 encoding.")
 
+my_config = script.get_config()
 
 selected_option = \
     forms.CommandSwitchWindow.show(
@@ -88,4 +89,12 @@ selected_option = \
         )
 
 if selected_option:
-    showParamSchedule(selected_option)
+    # read the path of the file from config
+    try:
+        shared_param_path = getattr(my_config, "shared_param_path")
+    except:
+        setattr(my_config, "shared_param_path", "U:\\REVIT\\Kniznica_REVIT\\4_Parametre\\GFI-shared-parametre.txt")
+        shared_param_path = getattr(my_config, "shared_param_path")
+        script.save_config()
+    # parsing the shared param file
+    showParamSchedule(selected_option,shared_param_path)
