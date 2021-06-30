@@ -6,12 +6,11 @@ __helpurl__ = 'https://youtu.be/0lXwqbIrDiY'
 __context__ = 'zero-doc'
 
 from pyrevit import forms
+from pyrevit import script, coreutils
 import os
 from shutil import copyfile
 from customOutput import ct_icon
-
-# pick source html file to edit
-filePath = forms.pick_file(file_ext='html')
+# from os import path
 
 # copy file to correct location for all users of the extension
 def copyFile(fileName,pathTo,folderPath):
@@ -23,6 +22,9 @@ def copyFile(fileName,pathTo,folderPath):
     except:
         copyFromPath = homepath + "\Documents\gitRepos\pyRevit extensions\CustomTools.extension" + pathTo
         copyfile(copyFromPath, folderPath+fileName)
+
+# pick source html file to edit
+filePath = forms.pick_file(file_ext='html', title='Select HTML report')
 
 if filePath:
     # fixing CSS path in HTML - copying CSS file into path subfolder
@@ -63,12 +65,9 @@ if filePath:
 
 
     # view the HTML file
-    from pyrevit import script, coreutils
-    from os import path
     output = script.get_output()
     output.set_height(700)
     # changing icon
     ct_icon(output)
     # output.open_url(filePath)
     output.open_page(filePath)
-
