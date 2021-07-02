@@ -99,7 +99,9 @@ class ctSettingsWindow(forms.WPFWindow):
         self.hookLogs_tb.Text = forms.pick_folder(title='Select folder')
 
     def revitBuildLogs(self, sender, args):
-        self.revitBuildLogs_tb.Text = forms.pick_file(file_ext='log', title='Select log report')
+        self.revitBuildLogs_tb.Text = forms.save_file(file_ext='log', default_name='versions.log')
+        # correct of_dlf in pyrevit forms and add title
+        # self.revitBuildLogs_tb.Text = forms.save_file(file_ext='log', default_name='versions.log', title='Select log report')
 
     def mass_message(self, sender, args):
         self.massMessagePath_tb.Text = forms.pick_file(file_ext='html', title='Select HTML file')
