@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*- 
+from pyrevit import coreutils
 
 # colors for chart.js graphs
 colors = 10*["#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb",
@@ -75,3 +76,63 @@ def ct_icon(output):
     appdataPath = os.getenv('APPDATA')
     iconPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\CustomToolsLogo.PNG'
     output.set_icon(iconPath)
+
+# creating mass message url
+def mass_message_url():
+    from customOutput import def_massMessagePath
+    from pyrevit.userconfig import user_config
+    from os import path
+    # server version of massmessage
+    # if parameter exists in config file
+    try:
+        url = user_config.CustomToolsSettings.massMessagePath
+    # if parameter doesnt exist in config file
+    except:
+        url = def_massMessagePath
+
+    # url = "L:\\_i\\CTmassMessage\\mass_message.html"
+    url_unc = "\\\\Srv\\Z\\_i\\CTmassMessage\\mass_message.html"
+    if path.exists(url):
+        # output.open_url(url)
+        return url
+    elif path.exists(url_unc):
+        return url_unc
+    # offline hardcoded version of massmessage
+    else:
+        # offline content of mass message
+        output.print_md("# Hromadné správy neboli načítané")
+        output.print_md("## Na Vašom počítači nie je dostupný server L\\:")
+        output.print_md("## Kontaktujte prosím administrátora. Správy sa šíria len prostredníctvom tohto kanálu.")
+
+        output.print_md("## CustomTools")
+        print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
+        print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools", "CustomTools")+" - článok na wiki")
+
+        output.print_md("## pyRevit")
+        print("- " + linkMaker("https://www.youtube.com/playlist?list=PLc_1PNcpnV55VgYBfrIPrvjZjsvwki8LR","Video návod")+" - playlist na Youtube")
+        print("- " + linkMaker("https://gfi.miraheze.org/wiki/PyRevit","pyRevit")+" - článok na wiki")
+        print("\n\n")
+
+# highlights text using html string with css
+def text_highligter(a):
+    content = str(a)
+    html_code = "<p class='elementlink'>"+content+"</p>"
+    return coreutils.prepare_html_str(html_code)
+
+# makes mailto link in output window
+def mailto(a):
+    content = str(a)
+    html_code = '<a href=mailto:"'+ content +'" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">'+ content +'</a>'
+    # html_code = '<a href=mailto:"'+ content +'" target="_blank">'+ content +'</a>'
+    return coreutils.prepare_html_str(html_code)
+
+# makes html link tag
+def linkMaker(a,title):
+    content = str(a)
+    html_code = '<a href="'+content+'">'+ title +'</a>'
+    return coreutils.prepare_html_str(html_code)
+
+# views image in output window
+def imageViewer(html_code):
+    # sample_code = "<img src='https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg' width=50%>"
+    print(coreutils.prepare_html_str(html_code))
