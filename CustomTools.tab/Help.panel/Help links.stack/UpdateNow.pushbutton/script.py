@@ -12,11 +12,11 @@ from pyrevit import script
 from pyrevit.loader import sessionmgr
 from pyrevit.loader import sessioninfo
 try:
-	# running CustomToolsUpdater.cmd script at:
-	# %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd
-	appdataPath = os.getenv('APPDATA')
-	updaterPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd'
-	p = subprocess.Popen([updaterPath])
+    # running CustomToolsUpdater.cmd script at:
+    # %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd
+    appdataPath = os.getenv('APPDATA')
+    updaterPath = appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd'
+    p = subprocess.Popen([updaterPath])
 
     # reload pyRevit
     logger = script.get_logger()
@@ -27,4 +27,4 @@ try:
 
     results.newsession = sessioninfo.get_session_uuid()
 except:
-	print("Something went wrong. Install manualy at %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd")
+    print("Something went wrong. Install manualy at %AppData%\\Roaming\\pyRevit\\Extensions\\CustomTools.extension\\updater\\CustomToolsUpdater.cmd")
