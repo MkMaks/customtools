@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
+from pyrevit.userconfig import user_config
+from customOutput import def_hookLogs, def_revitBuildLogs, def_revitBuilds
+from customOutput import def_massMessagePath, def_syncLogPath, def_openingLogPath, def_dashboardsPath
 
 # version of CustomTools
-releasedVersion = "0.8"
-snapshot = "210630"
+releasedVersion = "0.9"
+snapshot = "210702"
 
 # logging to server
 def hooksLogger(log_string, doc):
@@ -32,10 +35,17 @@ def hooksLogger(log_string, doc):
 
   datestamp = str(datetime.now())
   # tabulator between data to easy import to excel schedule
-  separator = "\t" 
+  separator = "\t"
   try:
     try:
-      f = open("L:\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
+      # if parameter exists in config file
+      try:
+        hookLogs = user_config.CustomToolsSettings.hookLogs
+      # if parameter doesnt exist in config file
+      except:
+        hookLogs = def_hookLogs
+      f = open(hookLogs + "\\" + file_name + ".log", "a")
+      # f = open("L:\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
     except:
       f = open("\\\\Srv2\\Z\\customToolslogs\\hooksLogs\\"+ file_name + ".log", "a")
 
@@ -47,13 +57,14 @@ def hooksLogger(log_string, doc):
 # logging currentVersion and snapshot with username to server
 def versionLogger(releasedVersion,snapshot):
   from datetime import datetime
-  from pyrevit import revit, _HostApplication
   import getpass
+  from pyrevit import revit, _HostApplication
+  from pyrevit import forms, script
+  from stringFormating import listFromString
   user_name = getpass.getuser()
   datestamp = str(datetime.now())
 
   # from pyrevit import EXEC_PARAMS
-  from pyrevit import forms, script
   # from hooksScripts import hookTurnOff
 
   # showing of dialog box with warning if wrong revit build
@@ -61,7 +72,7 @@ def versionLogger(releasedVersion,snapshot):
      res = forms.alert("POZOR!\n\n"
                        "Používaš zlý Revit Build! To môže poškodiť model.\n"
                        "\n"
-                       "Správny Revit Build je " + company_build,
+                       "Správne Revit Buildy sú " + " alebo ".join(company_build),
                        title="Revit Build",
                        footer="CustomTools Hooks",
                        options=["Chcem len otvoriť súbor bez synchronizácie",
@@ -77,16 +88,29 @@ def versionLogger(releasedVersion,snapshot):
   hostapp = _HostApplication()
   build = hostapp.build
   # company standard build
-  company_build = "20200826_1250(x64)"
+  # if parameter exists in config file
+  try:
+    company_build = listFromString(user_config.CustomToolsSettings.revitBuilds)
+  # if parameter doesnt exist in config file
+  except:
+    company_build = listFromString(def_revitBuilds)
+
   # checking if revit build is inline with company standard
-  if build != company_build:
+  if build not in company_build:
     dialogBox(build)
 
   # tabulator between data to easy import to excel schedule
   separator = "\t" 
   try:
     try:
-      f = open("L:\\customToolslogs\\versions.log", "a")
+      # if parameter exists in config file
+      try:
+        revitBuildLogs = user_config.CustomToolsSettings.revitBuildLogs
+        # f = open("L:\\customToolslogs\\versions.log", "a")
+       # if parameter doesnt exist in config file
+      except:
+        revitBuildLogs = def_revitBuildLogs
+      f = open(revitBuildLogs, "a")
     except:
       f = open("\\\\Srv\\Z\\customToolslogs\\versions.log", "a")  
     f.write(datestamp + separator + releasedVersion + "_" + snapshot + separator + user_name + separator + build + "\n")

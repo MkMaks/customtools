@@ -1,0 +1,133 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False"
+        Title="CustomTools Settings" Width="700" Height="700" ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        HorizontalContentAlignment="Center">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+			<RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" MinHeight="20"/>
+            <RowDefinition Height="auto" MinHeight="20"/>
+            <RowDefinition Height="auto" MinHeight="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label01" Content="Path for Hooks logs" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="hookLogs_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+            <Button 
+                Content="Select folder"
+                Click="hookLogs"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label02" Content="Path for logging Revit build logs" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="revitBuildLogs_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+            <Button 
+                Content="Select log file"
+                Click="revitBuildLogs"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label03" Content="Company approved Revit builds (comma separated)" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="revitBuilds_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label04" Content="Path for mass message" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="massMessagePath_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Margin="0 0 0 0"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+            <Button 
+                Content="Select HTML file"
+                Click="mass_message"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label05" Content="Path for Sync logs" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="syncLogPath_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+            <Button 
+                Content="Select folder"
+                Click="syncLogPath"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label06" Content="Path for Opening logs" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="openingLogPath_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+            <Button 
+                Content="Select folder"
+                Click="openingLogPath"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="1" Margin="0,0,0,0">
+            <Label x:Name="label07" Content="Path for Dashboards" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontWeight="bold" Margin="-5, 0, 0, 0"/>
+            <TextBox x:Name="dashboardsPath_tb"
+                     AcceptsReturn="False"
+                     AcceptsTab="True"
+                     Text=""
+                     Height="20"
+                     FontFamily="Courier New" FontSize="12"
+                     ScrollViewer.CanContentScroll="False"/>
+            <Button 
+                Content="Select folder"
+                Click="dashboardsPath"/>
+        </StackPanel>
+
+        <Button Grid.Row="7"
+                Grid.ColumnSpan="1"
+                Content="Reset To Default"
+                Margin="0,10,0,0"             
+                Click="reset"/>
+        <Button Grid.Row="8"
+                Grid.ColumnSpan="1"
+                Content="Save Settings"
+                Margin="0,10,0,0"             
+                Click="process_text"/>
+    </Grid>
+
+</Window>

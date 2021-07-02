@@ -13,13 +13,19 @@ __context__ = 'zero-doc'
 # import subprocess
 # subprocess.Popen(r'explorer /select,"L:\powerBI\doNotErase-pointer"')
 from pyrevit import script
-from customOutput import ct_icon
+from pyrevit.userconfig import user_config
+from customOutput import ct_icon, def_dashboardsPath
 
 output = script.get_output()
 # seting CustomTools icon
 ct_icon(output)
 
-url = 'L:\\powerBI\\'
+# if parameter exists in config file
+try:
+	url = user_config.CustomToolsSettings.dashboardsPath
+# if parameter doesnt exist in config file
+except:	
+	url = def_dashboardsPath
 # url = '\\\\Srv2\\Z\\powerBI\\'
 
 

@@ -14,3 +14,29 @@ def accents2ascii(text):
 #     import unicodedata
 #     return ''.join(c for c in unicodedata.normalize('NFD', s)
 #                   if unicodedata.category(c) != 'Mn')
+
+
+def listFromString(string):
+    letter=1
+    spaceLessString=""
+    for i in string:
+        try:
+            # treating double space
+            if i==" " and string[letter]==" ":
+                i=""
+            # treating space + comma
+            if i==" " and string[letter]==",":
+                i=""
+            # treating comma + spaces
+            try:
+                if i==" " and spaceLessString[-1]==",":
+                    i=""
+            except:
+                pass
+            letter+=1
+            spaceLessString+=i
+        except:
+            pass
+
+    splitValues = spaceLessString.split(",")
+    return splitValues
