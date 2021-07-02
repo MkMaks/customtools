@@ -16,7 +16,7 @@ Popis funkcií a návod na inštaláciu nájdete v helpe na [GFI wiki](https://g
 * CustomTools kontroluje aktualizácie pri štarte systému. Ak je dostupná aktualizácia, automaticky sa nainštaluje.
 * Ak by ste mali problémy s inštaláciou vytvorte pridajte si nové pravidlá do firewallu prípadne skontrolujte nastavenie antivírusového systému.
 ## Po inštalácii
-Nastavte si cesty v nastaveniach Extension:
+###### Nastavte si cesty v nastaveniach Extension
 * Použite pyRevit Search (CTRL+F), zadajte customToolsSettings a stlačte enter
 * nastavte si všetky funkcie, ktoré chcete používať
 * Nastavte si Power BI reporty pre prehliadanie logov. Šablóny otvoríte kliknutím na ikonku Dashboards pričom budete zároveň držať klávesu Shift

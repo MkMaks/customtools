@@ -16,7 +16,7 @@ Brief description of added features is available as tooltips. You need to hold y
 * CustomTools checks for updates on system startup. If there is update available it will be automatically installed.
 * If you are experiencing any issues try to add new firewall rules or check your anti-virus settings.
 ## After installation
-Set all paths in the extension settings:
+###### Set all paths in the extension settings:
 * Use pyRevit Search (CTRL+F), write customToolsSettings and press Enter
 * Set all features which are you going to use
 * Set Power BI reports to view logs. Templates are available via Shift + Click on the Dashboards icon.
