@@ -1,7 +1,9 @@
 # -*- coding: UTF-8 -*-
 from datetime import datetime
-from pyrevit import revit
 from os import path, remove
+from pyrevit import revit
+from pyrevit.userconfig import user_config
+from customOutput import def_openingLogPath
 
 doc = __eventargs__.Document
 filePath = doc.PathName
@@ -42,9 +44,16 @@ if fileExtension == "rvt":
     try:
         # reading timestamp from tmp file
         try:
-            tmp_file_path = "L:\\customToolslogs\\openingTimeLogs\\"+ local_file_name + "_Open.tmp"
+            # if parameter exists in config file
+            try:
+                openingLogPath = user_config.CustomToolsSettings.openingLogPath
+            # if parameter doesnt exist in config file 
+            except:
+                openingLogPath = def_openingLogPath
+            tmp_file_path = openingLogPath + "\\"+ local_file_name + "_Open.tmp"
+            # tmp_file_path = "L:\\customToolslogs\\openingTimeLogs\\"+ local_file_name + "_Open.tmp"
         except:
-            tmp_file_path = " \\\\Srv\\Z\\customToolslogs\\openingTimeLogs\\"+ local_file_name + "_Open.tmp"
+            tmp_file_path = " \\\\Srv2\\Z\\customToolslogs\\openingTimeLogs\\"+ local_file_name + "_Open.tmp"
         tmp_file = open(tmp_file_path, "r")
         start_time_string = tmp_file.read()
         # converting string to datetime
@@ -66,10 +75,12 @@ if fileExtension == "rvt":
         user_name = doc.Application.Username
 
         # writing time to log file
+        # if openingLogPath exist
         try:
-            log_file = open("L:\\customToolslogs\\openingTimeLogs\\"+ central_file_name + "_Open.log", "a")
+            log_file = open(openingLogPath + "\\"+ central_file_name + "_Open.log", "a")
+            # log_file = open("L:\\customToolslogs\\openingTimeLogs\\"+ central_file_name + "_Open.log", "a")
         except:
-            log_file = open("\\\\Srv\\Z\\customToolslogs\\openingTimeLogs\\"+ central_file_name + "_Open.log", "a")
+            log_file = open("\\\\Srv2\\Z\\customToolslogs\\openingTimeLogs\\"+ central_file_name + "_Open.log", "a")
         log_file.write(end_time_string_seconds + separator + str(timeDelta)+ separator + user_name + "\n")
         log_file.close()
     except:

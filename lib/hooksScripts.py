@@ -5,7 +5,7 @@ from customOutput import def_massMessagePath, def_syncLogPath, def_openingLogPat
 
 # version of CustomTools
 releasedVersion = "0.9"
-snapshot = "210702"
+snapshot = "210708"
 
 # logging to server
 def hooksLogger(log_string, doc):
@@ -132,3 +132,16 @@ def hookTurnOff(func, number, *args, **kwargs):
       func(*args, **kwargs)
   except:
     func(*args, **kwargs)
+
+
+# HOOKS GUI VALUES
+# ct_footer="CustomTools Hooks"
+
+# # CAD file import
+# cfi_hook_name = "CAD file import"
+# cfi_main_message = "POZOR!\n\nImportovať CAD súbory by si mal len výnimočne.\nNikdy neimportuj CAD priamo do modelu, ale do čistého RVT súboru.\n\n si si istý, že vieš, čo robíš?"
+# cfi_title="Import CAD file"
+# cfi_options=["Importovať",
+#          "Zrušiť",
+#          "Viac info o Importovaní CAD súborov"]
+# cfi_url = 'https://gfi.miraheze.org/wiki/Postupy,_ktor%C3%BDm_je_potrebn%C3%A9_sa_vyhn%C3%BA%C5%A5_-_Revit#Importovanie_DWG'

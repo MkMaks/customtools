@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
 from datetime import datetime
+from pyrevit.userconfig import user_config
+from customOutput import def_syncLogPath
 
 doc = __eventargs__.Document
 filePath = doc.PathName
@@ -21,9 +23,16 @@ if fileExtension == "rvt":
     
     try:
         try:
-            f = open("L:\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")
+            # if parameter exists in config file
+            try:
+                syncLogPath = user_config.CustomToolsSettings.syncLogPath
+            # if parameter doesnt exist in config file
+            except:
+                syncLogPath = def_syncLogPath
+            f = open(syncLogPath + "\\" +  file_name + "_Sync.tmp", "w")
+            # f = open("L:\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")                
         except:
-            f = open("\\\\Srv\\Z\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")
+            f = open("\\\\Srv2\\Z\\customToolslogs\\syncTimeLogs\\"+ file_name + "_Sync.tmp", "w")
         f.write(start_time_string_seconds + "\n")
         f.close()
     except:
