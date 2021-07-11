@@ -30,4 +30,4 @@ print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/issues",
 print("- " + linkMaker("https://bitbucket.org/davidvadkerti/customtools/downloads/?tab=tags","Download installer"))
 # print("\n- " + linkMaker("L:\\_i\\CTmassMessage\\mass_message.html","Mass message")+" - view mass message")
 # print("\n- " + linkMaker("\\\\Srv2\\Z\\_i\\CTmassMessage\\mass_message.html","Mass message")+" - view mass message")
-print("\n- " + linkMaker(mass_message_url(),"Mass message")+" - view mass message")
+print("\n- " + linkMaker(mass_message_url(output),"Mass message")+" - view mass message")

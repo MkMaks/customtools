@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*- 
 from pyrevit import coreutils
+from pyrevit import output
 
 # colors for chart.js graphs
 colors = 10*["#ffc299","#ff751a","#cc5200","#ff6666","#ffd480","#b33c00","#ff884d","#d9d9d9","#9988bb",
@@ -78,10 +79,12 @@ def ct_icon(output):
     output.set_icon(iconPath)
 
 # creating mass message url
-def mass_message_url():
+def mass_message_url(output):
     from customOutput import def_massMessagePath
     from pyrevit.userconfig import user_config
     from os import path
+    import os
+    appdataPath = os.getenv('APPDATA')
     # server version of massmessage
     # if parameter exists in config file
     try:
@@ -100,18 +103,7 @@ def mass_message_url():
     # offline hardcoded version of massmessage
     else:
         # offline content of mass message
-        output.print_md("# Hromadné správy neboli načítané")
-        output.print_md("## Na Vašom počítači nie je dostupný server L\\:")
-        output.print_md("## Kontaktujte prosím administrátora. Správy sa šíria len prostredníctvom tohto kanálu.")
-
-        output.print_md("## CustomTools")
-        print("- " + linkMaker("https://www.youtube.com/watch?v=WhEJ_YVtSM8&list=PL7jLBbBNDaKk8iQjLTBasAntRjiu4W2G2","Video návod")+" - playlist s krátkymi návodmi a ukážkami na Youtube")
-        print("- " + linkMaker("https://gfi.miraheze.org/wiki/CustomTools", "CustomTools")+" - článok na wiki")
-
-        output.print_md("## pyRevit")
-        print("- " + linkMaker("https://www.youtube.com/playlist?list=PLc_1PNcpnV55VgYBfrIPrvjZjsvwki8LR","Video návod")+" - playlist na Youtube")
-        print("- " + linkMaker("https://gfi.miraheze.org/wiki/PyRevit","pyRevit")+" - článok na wiki")
-        print("\n\n")
+        return appdataPath + '\\pyRevit\\Extensions\\CustomTools.extension\\mass_message\\mass_message.html'
 
 # highlights text using html string with css
 def text_highligter(a):

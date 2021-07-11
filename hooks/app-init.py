@@ -50,4 +50,4 @@ ct_icon(output)
 #     output.open_page(url_unc)
 
 # server version of massmessage
-output.open_page(mass_message_url())
+output.open_page(mass_message_url(output))
