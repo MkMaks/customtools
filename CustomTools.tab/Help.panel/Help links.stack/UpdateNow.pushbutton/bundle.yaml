@@ -5,4 +5,5 @@ tooltip: >-
 
   CustomTools checks for updates on system startup.
 author: David Vadkerti
+context: zero-doc
 help_url: https://gfi.miraheze.org/wiki/CustomTools#Update
