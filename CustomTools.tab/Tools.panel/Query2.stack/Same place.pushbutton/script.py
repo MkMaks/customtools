@@ -8,6 +8,7 @@ from pyrevit import revit, DB, forms
 from Autodesk.Revit.DB import ElementId, Transaction
 from System.Collections.Generic import List
 from Autodesk.Revit.UI import UIApplication
+from Autodesk.Revit.DB.Document import GetElement
 
 # change context for proper category - check in revit for category
 __context__ = 'Selection'
@@ -107,8 +108,11 @@ class getToleranceWindow(forms.WPFWindow):
 				if redundant == 1:
 					redundantList.append(element.Id)
 			locList.append(locPointlist)
-
+			
+			# getting rid off the groups
 			group.UngroupMembers()
+			group_type_id = group.GetTypeId()
+			doc.Delete(group_type_id)
 
 	t.Commit()
 
