@@ -5,7 +5,7 @@ from customOutput import def_massMessagePath, def_syncLogPath, def_openingLogPat
 
 # version of CustomTools
 releasedVersion = "0.9"
-snapshot = "210720"
+snapshot = "210726"
 
 # logging to server
 def hooksLogger(log_string, doc):

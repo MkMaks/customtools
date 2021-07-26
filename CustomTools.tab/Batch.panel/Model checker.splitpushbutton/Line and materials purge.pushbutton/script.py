@@ -10,7 +10,7 @@ timer = Timer()
 # ----------------
 
 from Autodesk.Revit.DB import FilteredElementCollector, BuiltInCategory, Transaction
-from Autodesk.Revit.DB import LinePatternElement
+from Autodesk.Revit.DB import LinePatternElement, BuiltInParameter
 
 __title__ = 'Material &\nLine purge'
 doc = __revit__.ActiveUIDocument.Document
@@ -29,6 +29,7 @@ deletedMaterials = []
 material_collector = FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Materials)
 for i in material_collector:
 	materialName=i.LookupParameter('Name')
+	materialName=i.get_Parameter(BuiltInParameter.MATERIAL_NAME)
 	materialNameString = materialName.AsString()
 	materialId = i.Id
 	allMaterialsCount += 1

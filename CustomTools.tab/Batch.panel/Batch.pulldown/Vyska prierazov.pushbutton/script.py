@@ -114,11 +114,13 @@ if dialog:
         elementTypeId = element.GetTypeId()
         elementType = Document.GetElement(doc,elementTypeId)
         # filtering elements
-        filterp = elementType.LookupParameter('Type Comments')
-        if filterp and filterp.AsString() == "stavebne upravy":    
+        # filterp = elementType.LookupParameter('Type Comments')
+        filterp = elementType.get_Parameter(DB.BuiltInParameter.ALL_MODEL_TYPE_COMMENTS)
+        if filterp and filterp.AsString() == "stavebne upravy":
             try:
                 # setting parameters
                 levelName = levelElement.LookupParameter('Name').AsString()
+                # levelName = levelElement.get_Parameter(DB.BuiltInParameter.LEVEL_NAME).AsString()
                 # getting Number string from Level Name
                 levelNumber = levelNameExtraction(levelName)
                 # adding 0 to one digit numbers
@@ -140,7 +142,8 @@ if dialog:
     # # filter by Type Comments == stavebne upravy
         elementTypeId = element.GetTypeId()
         elementType = Document.GetElement(doc,elementTypeId)
-        filterp = elementType.LookupParameter('Type Comments')
+        # filterp = elementType.LookupParameter('Type Comments')
+        filterp = elementType.get_Parameter(DB.BuiltInParameter.ALL_MODEL_TYPE_COMMENTS)
 
         if filterp and filterp.AsString() == "stavebne upravy":
             # setting Mark values
@@ -169,7 +172,8 @@ if dialog:
                 else:
                     elementTypes.append(dimensionsList)
                     a = len(elementTypes)
-                mark_param = element.LookupParameter('Mark')
+                # mark_param = element.LookupParameter('Mark')
+                mark_param = element.get_Parameter(DB.BuiltInParameter.ALL_MODEL_MARK)
                 # adding zeros 001, 015, 156 etc
                 a=zerosNum(a)
                 mark_param.Set(a)
@@ -210,14 +214,16 @@ if dialog:
         # filter by Type Comments == stavebne upravy
         elementTypeId = window.GetTypeId()
         elementType = Document.GetElement(doc,elementTypeId)
-        filterp = elementType.LookupParameter('Type Comments')
+        # filterp = elementType.LookupParameter('Type Comments')
+        filterp = elementType.get_Parameter(DB.BuiltInParameter.ALL_MODEL_TYPE_COMMENTS)
 
         if filterp and filterp.AsString() == "stavebne upravy":
             try:
                 try:
                     # hosted elements with Sill Height
                     # geting Sill Height from windows
-                    sillHeightFt = window.LookupParameter('Sill Height')
+                    # sillHeightFt = window.LookupParameter('Sill Height')
+                    sillHeightFt = window.get_Parameter(DB.BuiltInParameter.INSTANCE_SILL_HEIGHT_PARAM)
                     sill_height_value = sillHeightFt.AsDouble()
                     # sill_height_values_list.append(feet2mm(sill_height_value))
 

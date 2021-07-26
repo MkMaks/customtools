@@ -33,21 +33,21 @@ timer = Timer()
 
 wikiArticle = "Postupy, ktorým je potrebné sa vyhnúť - Revit"
 # dashboard HTMl maker - rectangle with large number
-def dashboardRectMaker(value,description,treshold,wikiArticle):
+def dashboardRectMaker(value,description,threshold,wikiArticle):
         content = str(value)
         # normal button
-        if value <= treshold:
-            html_code = "<a class='dashboardLink' title='OK - maximum value "+str(int(treshold)) \
+        if value <= threshold:
+            html_code = "<a class='dashboardLink' title='OK - maximum value "+str(int(threshold)) \
             +"'><p class='dashboardRectNormal'>"+content+"<br><span class='dashboardSmall'>"+description+"</span>""</p></a>"
             return coreutils.prepare_html_str(html_code)
         # mediocre button
-        elif value < treshold*2:
-            html_code = "<a class='dashboardLink' href='https://gfi.miraheze.org/wiki/"+wikiArticle+"' title='Mediocre - goal value "+str(int(treshold)) \
+        elif value < threshold*2:
+            html_code = "<a class='dashboardLink' href='https://gfi.miraheze.org/wiki/"+wikiArticle+"' title='Mediocre - goal value "+str(int(threshold)) \
                 +"'><p class='dashboardRectMediocre'>" + content + "<br><span class='dashboardSmall'>"+description+"</span>""</p></a>"
             return coreutils.prepare_html_str(html_code)
         # critical button
         else:
-            html_code = "<a class='dashboardLink' href='https://gfi.miraheze.org/wiki/"+wikiArticle+"' title='Critical - goal value "+str(int(treshold)) \
+            html_code = "<a class='dashboardLink' href='https://gfi.miraheze.org/wiki/"+wikiArticle+"' title='Critical - goal value "+str(int(threshold)) \
                 +"'><p class='dashboardRectCritical'>" + content + "<br><span class='dashboardSmall'>"+description+"</span>""</p></a>"
             return coreutils.prepare_html_str(html_code)
 
@@ -137,7 +137,9 @@ viewCount = len(view_elements)
 
 copiedView = 0
 for view in view_elements:
-    viewName = view.LookupParameter('View Name')
+    # viewName = view.LookupParameter('View Name')
+    viewName = view.get_Parameter(DB.BuiltInParameter.VIEW_NAME)
+    # widthFactor = textnote.get_Parameter(DB.BuiltInParameter.TEXT_WIDTH_SCALE).AsDouble()
     try:
         viewNameString = viewName.AsString()
         # print(viewNameString)
@@ -190,7 +192,7 @@ for schedule in scheduleCollector1:
                 schedulesOnSheet.append(schedName)
 scheduleNotOnSheet = scheduleCount-len(schedulesOnSheet)
 
-# tresholds
+# thresholds
 viewTres = 500
 viewNotOnSheetTres = viewCount*0.2
 copiedViewTres = viewCount*0.2
@@ -274,7 +276,7 @@ for dwg in dwg_collector:
 dwgCount = len(dwg_collector)
 linkedDwg = (dwgCount-importedDwg)
 
-# tresholds
+# thresholds
 warningsTres = 500
 criticalWarningsTres = 0
 materialsTres = 150
@@ -332,7 +334,7 @@ familyCount = families.GetElementCount()
 
 # print(str(NotParamFamiliesCount)+" Families are not parametric")
 
-# tresholds
+# thresholds
 familiesTres = 500
 if familyCount < 500:
     inPlaceFamilyTres = familyCount*0.2
@@ -347,7 +349,7 @@ rampTres = 0
 textNoteType_collector = FilteredElementCollector(doc).OfClass(TextNoteType).ToElements()
 textnoteWFcount = 0
 for textnote in textNoteType_collector:
-    widthFactor = textnote.LookupParameter('Width Factor').AsDouble()
+    widthFactor = textnote.get_Parameter(DB.BuiltInParameter.TEXT_WIDTH_SCALE).AsDouble()
     if widthFactor != 1:
         textnoteWFcount += 1
 
@@ -483,7 +485,7 @@ else:
     _2d_elements_perc = 0
 # print("_2D_elements_perc " + str(_2d_elements_perc))
 
-# tresholds
+# thresholds
 archTres = 0
 detailGroupTypeTres = 30
 detailGroupTres = 500
