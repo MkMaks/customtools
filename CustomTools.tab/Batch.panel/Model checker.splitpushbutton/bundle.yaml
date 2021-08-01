@@ -10,6 +10,7 @@ layout:
   - 2DelementsPerView
   - AllCapsFinder
   - ViewFilterSchedule
+  - NoNameReferencePlaneSchedule
   - ---
   - OwnerSheet
   - SharedParametersSchedule
