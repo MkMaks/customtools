@@ -137,9 +137,7 @@ viewCount = len(view_elements)
 
 copiedView = 0
 for view in view_elements:
-    # viewName = view.LookupParameter('View Name')
     viewName = view.get_Parameter(DB.BuiltInParameter.VIEW_NAME)
-    # widthFactor = textnote.get_Parameter(DB.BuiltInParameter.TEXT_WIDTH_SCALE).AsDouble()
     try:
         viewNameString = viewName.AsString()
         # print(viewNameString)

@@ -44,7 +44,6 @@ class getDelimiterWindow(forms.WPFWindow):
 
         for room in room_collector:
             # getting the parameter
-            # roomNumber = room.LookupParameter('Number').AsString()
             roomNumber = room.get_Parameter(DB.BuiltInParameter.ROOM_NUMBER).AsString()
             
             # shortening the room number
