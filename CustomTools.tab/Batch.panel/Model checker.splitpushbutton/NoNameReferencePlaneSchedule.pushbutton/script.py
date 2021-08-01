@@ -26,24 +26,31 @@ output.print_md("### " + file_name_getter(doc))
 # reference plane without name
 refPlaneCollector = FilteredElementCollector(doc).OfClass(ReferencePlane).WhereElementIsNotElementType().ToElements()
 scheduleData = []
-for refPlane in refPlaneCollector:
-    if refPlane.Name == "Reference Plane":
-        refPlane_id = refPlane.Id
-        refPlane_creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,refPlane_id).Creator
-        paramList = [output.linkify(refPlane_id), str(refPlane_creator)]
-        scheduleData.append(paramList)
+if refPlaneCollector:
+    for refPlane in refPlaneCollector:
+        if refPlane.Name == "Reference Plane":
+            refPlane_id = refPlane.Id
+            refPlane_creator = DB.WorksharingUtils.GetWorksharingTooltipInfo(revit.doc,refPlane_id).Creator
+            paramList = [output.linkify(refPlane_id), str(refPlane_creator)]
+            scheduleData.append(paramList)
+    # if there are some no name RefPlanes
+    if scheduleData:
+        # sort by view name
+        sortedScheduleData = sorted(scheduleData, key=lambda x: x[0].lower())
 
+        # output.print_md(md_schedule)
+        output.print_table(table_data=sortedScheduleData,
+                           title = "Sorted by ID",
+                           columns=["RefPlane ID","Author"],
+                           formats=['', ''])
 
-# sort by view name
-sortedScheduleData = sorted(scheduleData, key=lambda x: x[0].lower())
-
-# output.print_md(md_schedule)
-output.print_table(table_data=sortedScheduleData,
-                   title = "Sorted by ID",
-                   columns=["RefPlane ID","Author"],
-                   formats=['', ''])
-
-print("Total Number of Noname Reference Planes: " + str(len(refPlaneCollector)))
+        print("Total Number of no-name Reference Planes: " + str(len(refPlaneCollector)))
+    # if there are no no-name RefPlanes
+    else:
+        print("There are no no-name Reference Planes in the Project.")
+# If there are no ref planes at all
+else:
+    print("There are no Reference Planes in the Project.")
 # for timing------
 endtime = timer.get_time()
 print(hmsTimer(endtime))
