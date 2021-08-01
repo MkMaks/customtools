@@ -14,9 +14,9 @@ def dialogBox():
 					title="Project Parameters",
 					footer="CustomTools Hooks",
 	                options=["Zobraziť zoznam Shared Parametrov na Wiki",
-	                         "Pridať Parameter",
+	                         "Upraviť Parametre",
 	                         "Zrušiť"])
-	if res  == "Pridať Parameter":
+	if res  == "Upraviť Parametre":
 		EXEC_PARAMS.event_args.Cancel = False
 		# logging to server
 		from hooksScripts import hooksLogger
