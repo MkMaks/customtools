@@ -29,6 +29,7 @@ from pyrevit import script, coreutils
 from os import path
 output = script.get_output()
 output.set_height(700)
+output.set_title("Mass Message")
 # changing icon
 ct_icon(output)
 
