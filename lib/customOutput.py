@@ -30,11 +30,12 @@ criticalWarnings = ['Elements have duplicate "Type Mark" values',
 # default paths for settings
 def_hookLogs = "L:\\customToolslogs\\hooksLogs"
 def_revitBuildLogs = "L:\\customToolslogs\\versions.log"
-def_revitBuilds = "20200826_1250(x64)"
+def_revitBuilds = "20210420_1515(x64)"
 def_massMessagePath = "L:\\_i\\CTmassMessage\\mass_message.html"
 def_syncLogPath = "L:\\customToolslogs\\syncTimeLogs"
 def_openingLogPath = "L:\\customToolslogs\\openingTimeLogs"
 def_dashboardsPath = "L:\\powerBI"
+def_language = "Slovak/SK"
 
 # formating time in seconts to HHMMSS format
 def hmsTimer(timerSeconds):
