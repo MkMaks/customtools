@@ -8,6 +8,7 @@ layout:
   - InPlaceFamilySchedule
   - NotPlacedViewsSchedule
   - 2DelementsPerView
+  - TextNoteTypesShedule
   - AllCapsFinder
   - ViewFilterSchedule
   - NoNameReferencePlaneSchedule
