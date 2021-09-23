@@ -20,6 +20,7 @@ Popis funkcií a návod na inštaláciu nájdete v helpe na [GFI wiki](https://g
 * Použite pyRevit Search (CTRL+F), zadajte customToolsSettings a stlačte enter
 * Nastavte si všetky funkcie, ktoré chcete používať
 * Nastavte si Power BI reporty pre prehliadanie logov. Šablóny otvoríte kliknutím na ikonku Dashboards pričom budete zároveň držať klávesu Shift
-* V prípade otázok som zastihnuteľný na<br>![alt text](https://static.miraheze.org/gfiwiki/a/a3/EmailAddress.png "not clickable")
+* V prípade otázok som zastihnuteľný na
+* ![alt text](https://static.miraheze.org/gfiwiki/a/a3/EmailAddress.png)
 
 ![alt text](https://static.miraheze.org/gfiwiki/1/11/CustomToolsSettings.PNG "CustomToolsSettings")
