@@ -20,5 +20,6 @@ Brief description of added features is available as tooltips. You need to hold y
 * Use pyRevit Search (CTRL+F), write customToolsSettings and press Enter
 * Set all features which are you going to use
 * Set Power BI reports to view logs. Templates are available via Shift + Click on the Dashboards icon.
+* Feel free to ask questions at ![alt text](https://bitbucket.org/davidvadkerti/customtools/src/master/emailAddress.png).
 
 ![alt text](https://static.miraheze.org/gfiwiki/1/11/CustomToolsSettings.PNG "CustomToolsSettigs")
