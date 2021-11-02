@@ -160,6 +160,12 @@
   <ShortcutItem CommandName="Convert Files:Import FormItto RVT" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%FormIt Converter%Convert Files%Import FormIt to RVT" Paths="Add-Ins&gt;FormIt Converter" />
   <ShortcutItem CommandName="Convert Files:Reload Families" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%FormIt Converter%Convert Files%Reload Families" Paths="Add-Ins&gt;FormIt Converter" />
   <ShortcutItem CommandName="About FormIt" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%FormIt Converter%About FormIt" Paths="Add-Ins&gt;FormIt Converter" />
+  <ShortcutItem CommandName="StartHyparHub" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Hypar%StartHub" Paths="Add-Ins&gt;Hypar" />
+  <ShortcutItem CommandName="StopHyparHub" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Hypar%StopHub" Paths="Add-Ins&gt;Hypar" />
+  <ShortcutItem CommandName="Allto Hypar" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Hypar%HyparConvertAll" Paths="Add-Ins&gt;Hypar" />
+  <ShortcutItem CommandName="Selectionto Hypar" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Hypar%HyparConvertSelection" Paths="Add-Ins&gt;Hypar" />
+  <ShortcutItem CommandName="Open Viewsto Hypar" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Hypar%HyparConvertView" Paths="Add-Ins&gt;Hypar" />
+  <ShortcutItem CommandName="Load Model" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Hypar%HyparLoadModel" Paths="Add-Ins&gt;Hypar" />
   <ShortcutItem CommandName="Revit Lookup:Hello World..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%HelloWorld" Paths="Add-Ins&gt;Revit Lookup" />
   <ShortcutItem CommandName="Revit Lookup:Snoop DB..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Db.." Paths="Add-Ins&gt;Revit Lookup" />
   <ShortcutItem CommandName="Revit Lookup:Snoop Current Selection..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Current Selection..." Paths="Add-Ins&gt;Revit Lookup" />
@@ -171,6 +177,11 @@
   <ShortcutItem CommandName="Revit Lookup:Snoop Application..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Snoop Application..." Paths="Add-Ins&gt;Revit Lookup" />
   <ShortcutItem CommandName="Revit Lookup:Search and Snoop..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Search and Snoop..." Paths="Add-Ins&gt;Revit Lookup" />
   <ShortcutItem CommandName="Revit Lookup:Test Framework..." CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Revit Lookup%Options%Test Framework..." Paths="Add-Ins&gt;Revit Lookup" />
+  <ShortcutItem CommandName="Revit Connector" CommandId="CustomCtrl_%CustomCtrl_%Add-Ins%Speckle 2%Speckle 2" Paths="Add-Ins&gt;Speckle 2" />
+  <ShortcutItem CommandName="Help &amp; Resources:Community Forum" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Speckle 2%Help&amp;Resources%forum" Paths="Add-Ins&gt;Speckle 2" />
+  <ShortcutItem CommandName="Help &amp; Resources:Tutorials" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Speckle 2%Help&amp;Resources%tutorials" Paths="Add-Ins&gt;Speckle 2" />
+  <ShortcutItem CommandName="Help &amp; Resources:Docs" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Speckle 2%Help&amp;Resources%docs" Paths="Add-Ins&gt;Speckle 2" />
+  <ShortcutItem CommandName="Help &amp; Resources:Manager" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Add-Ins%Speckle 2%Help&amp;Resources%manager" Paths="Add-Ins&gt;Speckle 2" />
   <ShortcutItem CommandName="Log Out" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Log out" Paths="Dalux&gt;BIM" />
   <ShortcutItem CommandName="Upload" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Upload" Paths="Dalux&gt;BIM" />
   <ShortcutItem CommandName="Comments" CommandId="CustomCtrl_%CustomCtrl_%Dalux%BIM%Comments" Paths="Dalux&gt;BIM" />
@@ -183,7 +194,6 @@
   <ShortcutItem CommandName="Execute Calculated Parameter" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Parameter Administration Kit%Kobi_RevitXT_CAK_CalculatedParameterContextCommand" Paths="Content Admin Kit&gt;Parameter Administration Kit" />
   <ShortcutItem CommandName="Family Report" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Families%Kobi_RevitXT_CAK_FamilyReportCommand" Paths="Content Admin Kit&gt;Families" />
   <ShortcutItem CommandName="Update Category" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Families%Kobi_RevitXT_CAK_UpdateFamlyCategory" Paths="Content Admin Kit&gt;Families" />
-  <ShortcutItem CommandName="BIM Properties" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Families%Kobi_RevitXT_CAK_OnlineEditorCommand" Paths="Content Admin Kit&gt;Families" />
   <ShortcutItem CommandName="BIM Content" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_CustomContentCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
   <ShortcutItem CommandName="Settings" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_SettingsCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
   <ShortcutItem CommandName="Manage Families" CommandId="CustomCtrl_%CustomCtrl_%Content Admin Kit%Content Administration Kit%Kobi_RevitXT_CAK_ManageContentCommand" Paths="Content Admin Kit&gt;Content Administration Kit" />
@@ -195,7 +205,6 @@
   <ShortcutItem CommandName="BIM:Match Instance Parameters" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_Tools_MatchParametersCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
   <ShortcutItem CommandName="BIM:Upgrade Families" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_UpgradeFamilies_UpgradeFamiliesCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
   <ShortcutItem CommandName="BIM:Copy Standards" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_WPF_CopyStandards_CopyStandardsCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
-  <ShortcutItem CommandName="BIM:Reload Paths" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_BIM_Tools%Kobi_RevitXT_WPF_ReloadPathsTool_ReloadPathsCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
   <ShortcutItem CommandName="BIM Query" CommandId="CustomCtrl_%CustomCtrl_%Kobi Toolkit%BIM Manager%Kobi_RevitXT_Family_BIMQLCommand" Paths="Kobi Toolkit&gt;BIM Manager" />
   <ShortcutItem CommandName="Project  Cleanup:Material Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Visualization_EditCommand" Paths="Kobi Toolkit&gt;QA/QC" />
   <ShortcutItem CommandName="Project  Cleanup:Unplaced Room Cleanup" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%Kobi Toolkit%QA/QC%Kobi_RevitXT_Family_CleanupCommand%Kobi_RevitXT_Family_RoomCleanupCommand" Paths="Kobi Toolkit&gt;QA/QC" />
@@ -361,7 +370,7 @@
   <ShortcutItem CommandName="Select:Find And Select Entities Without Dimensions" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%Find And Select Entities Without Dimensions" Paths="pyRevit&gt;Selection" />
   <ShortcutItem CommandName="Select:Find And Select Entities Without Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%Find And Select Entities Without Tags" Paths="pyRevit&gt;Selection" />
   <ShortcutItem CommandName="Select:Invert Selection" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%Invert Selection" Paths="pyRevit&gt;Selection" />
-  <ShortcutItem CommandName="Select:List Selection as Clickable Links" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%List Selection as Clickable Links" Paths="pyRevit&gt;Selection" />
+  <ShortcutItem CommandName="Select:List Selection as Clickable Links" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%List Selection as Clickable Links" Shortcuts="CL" Paths="pyRevit&gt;Selection" />
   <ShortcutItem CommandName="Select:Select All Clouds Of Specific Revision" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%Select All Clouds Of Specific Revision" Paths="pyRevit&gt;Selection" />
   <ShortcutItem CommandName="Select:Select All Clouds with Same Comment" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%Select All Clouds with Same Comment" Paths="pyRevit&gt;Selection" />
   <ShortcutItem CommandName="Select:Select All Elements Of Same Family" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%pyRevit%Selection%Select%Select All Elements Of Same Family" Paths="pyRevit&gt;Selection" />
@@ -520,28 +529,29 @@
   <ShortcutItem CommandName="Model checker:DWG schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%DWG schedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:Critical Warning schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Critical Warning schedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:All Warningsschedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Warning schedule" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="Model checker:Detail Groupschedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Detail Group Schedule" Paths="CustomTools&gt;Batch" />
+  <ShortcutItem CommandName="Model checker:Detail Group schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Detail Group Schedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:In Place Family schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%InPlaceFamilySchedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:Not Placed Views schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%NotPlacedViewsSchedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:2D Elements per View" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%2DelementsPerView" Paths="CustomTools&gt;Batch" />
+  <ShortcutItem CommandName="Model checker:Text Note Types schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%TextNoteTypesShedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:AllCaps finder" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%AllCapsFinder" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:View Filter Schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%ViewFilterSchedule" Paths="CustomTools&gt;Batch" />
+  <ShortcutItem CommandName="Model checker:Noname Reference Plane schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%NoNameReferencePlaneSchedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:OwnerSheet" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%OwnerSheet" Shortcuts="OS" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="Model checker:Shared Parameter Schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%SharedParametersSchedule" Paths="CustomTools&gt;Batch" />
+  <ShortcutItem CommandName="Model checker:Shared Parameter Schedule ●" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%SharedParametersSchedule" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Model checker:Revision Cloud Schedule schedule" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%RevisionCloudSchedule" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="Model checker:Import Report" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Import Report" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="Model checker:Fix report visual style" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Fix Report" Paths="CustomTools&gt;Batch" />
+  <ShortcutItem CommandName="Model checker:Import Report ●" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Model checker%Import Report" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Batch:Výška a označenieprierazov" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%Vyska prierazov" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Batch:Create ShortRoom Numbers" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%Create Short Room Numbers" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="Batch:CenterRoom Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%CenterRoomTags" Paths="CustomTools&gt;Batch" />
+  <ShortcutItem CommandName="Batch:CenterRoom Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%CenterRoomTags" Shortcuts="CE" Paths="CustomTools&gt;Batch" />
   <ShortcutItem CommandName="Batch:CenterArea Tags" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Batch%Batch%CenterAreaTags" Paths="CustomTools&gt;Batch" />
-  <ShortcutItem CommandName="UID:PickCategory" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%PickCategory" Shortcuts="Shift+C" Paths="CustomTools&gt;Tools" />
-  <ShortcutItem CommandName="UID:ID Of ElementIn Linked File" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%LinkedElementID" Paths="CustomTools&gt;Tools" />
-  <ShortcutItem CommandName="UID:UID getter" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%UIDgetter" Paths="CustomTools&gt;Tools" />
-  <ShortcutItem CommandName="UID:UID select" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%UID%UIDselect" Paths="CustomTools&gt;Tools" />
+  <ShortcutItem CommandName="PickCategory:PickCategory" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%PickCategory%PickCategory" Shortcuts="Shift+C" Paths="CustomTools&gt;Tools" />
+  <ShortcutItem CommandName="PickCategory:ID Of ElementIn Linked File" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%PickCategory%LinkedElementID" Paths="CustomTools&gt;Tools" />
+  <ShortcutItem CommandName="PickCategory:UID getter" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%PickCategory%UIDgetter" Paths="CustomTools&gt;Tools" />
+  <ShortcutItem CommandName="PickCategory:UID select" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Tools%PickCategory%UIDselect" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="Spády" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%Spady" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="TopoPoints" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%TopoPoints" Paths="CustomTools&gt;Tools" />
-  <ShortcutItem CommandName="Place View On Sheet" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%Place View on Sheet" Paths="CustomTools&gt;Tools" />
+  <ShortcutItem CommandName="Place View On Sheet" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%Place View on Sheet" Shortcuts="PV" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="DeleteActiveView" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%DeleteActiveView" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="ExportSchedule" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%ExportSchedule" Paths="CustomTools&gt;Tools" />
   <ShortcutItem CommandName="Same place" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Tools%Same place" Paths="CustomTools&gt;Tools" />
@@ -587,6 +597,27 @@
   <ShortcutItem CommandName="BIMtroubleshooting:Post Issue" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Help%BIM&#xA;troubleshooting%PostIssue" Paths="CustomTools&gt;Help" />
   <ShortcutItem CommandName="BIMtroubleshooting:View Issues" CommandId="CustomCtrl_%CustomCtrl_%CustomCtrl_%CustomTools%Help%BIM&#xA;troubleshooting%ViewIssues" Paths="CustomTools&gt;Help" />
   <ShortcutItem CommandName="About ●" CommandId="CustomCtrl_%CustomCtrl_%CustomTools%Help%About" Paths="CustomTools&gt;Help" />
+  <ShortcutItem CommandName="Create Schedule from CSV" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%Create Schedule from CSV" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Dynamo BIM GUI ●" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%DynamoGUI" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Import CAD" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%Import CAD" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Reload CAD" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%Reload CAD" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Sort and enumerate" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%SortAndEnumerate" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Text" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%Text" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="uniqueTypes" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%uniqueTypes" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="sharedParameterAdder" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%sharedParameterAdder" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Not Placed Schedules" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%NotPlacedSchedules" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="No Parameter" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%NoParameter" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="skladby" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%skladby" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Reset Overrides" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%ResetOverrides" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Reset Overrides KLG" CommandId="CustomCtrl_%CustomCtrl_%WIPscripts%NEW%ResetOverridesKLG" Paths="WIPscripts&gt;NEW" />
+  <ShortcutItem CommandName="Start" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandStart" Shortcuts="R#Ctrl+R" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="About" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandAbout" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="Guides" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandGuides" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="Forums" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandForums" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="Revit API Docs" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandAPIDocs" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="TheBuildingCoder" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandTheBuildingCoder" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="Rhino Dev Docs" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandRhinoDevDocs" Paths="Rhino.Inside&gt;More" />
+  <ShortcutItem CommandName="Options" CommandId="CustomCtrl_%CustomCtrl_%Rhino.Inside%More%CommandAddinOptions" Paths="Rhino.Inside&gt;More" />
   <ShortcutItem CommandName="Paste; Paste from Clipboard" CommandId="ID_EDIT_PASTE" Paths="Modify&gt;Clipboard" />
   <ShortcutItem CommandName="Paste:Aligned to Selected Levels" CommandId="ID_EDIT_PASTE_ALIGNED_LEVEL_BY_NAME" Shortcuts="PA" Paths="Modify&gt;Clipboard" />
   <ShortcutItem CommandName="Paste:Aligned to Selected Views" CommandId="ID_EDIT_PASTE_ALIGNED_VIEWS_BY_NAME" Paths="Modify&gt;Clipboard" />
@@ -1810,7 +1841,7 @@
   <ShortcutItem CommandName="Autodesk.com/revit" CommandId="ID_HELP_PRODUCTURL" Paths="Help" />
   <ShortcutItem CommandName="Autodesk Building Solutions" CommandId="ID_HELP_AUTODESK_BUILDING_SOLUTIONS" Paths="Help" />
   <ShortcutItem CommandName="Desktop Analytics" CommandId="ID_HELP_DESKTOP_ANALYTICS" Paths="Help" />
-  <ShortcutItem CommandName="About Autodesk Revit 2020.2" CommandId="ID_APP_ABOUT" Paths="Help" />
+  <ShortcutItem CommandName="About Autodesk Revit 2020.2.4" CommandId="ID_APP_ABOUT" Paths="Help" />
   <ShortcutItem CommandName="Line:Tangent End Arc" CommandId="ID_OBJECTS_CURVE_ARC_TAN" Paths="Contextual Tabs&gt;Draw" />
   <ShortcutItem CommandName="Create Contour - Line" CommandId="ID_EXT_ENTITY_CONTOUR_LINE" />
   <ShortcutItem CommandName="Architectural Wall:Start-End-Radius Arc" CommandId="ID_WALL_ARC_THREE_PNT" Paths="Contextual Tabs&gt;Draw" />
