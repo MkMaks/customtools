@@ -30,7 +30,7 @@ criticalWarnings = ['Elements have duplicate "Type Mark" values',
 # default paths for settings
 def_hookLogs = "L:\\customToolslogs\\hooksLogs"
 def_revitBuildLogs = "L:\\customToolslogs\\versions.log"
-def_revitBuilds = "20210420_1515(x64), 20210921_1515(x64)"
+def_revitBuilds = "20210420_1515(x64), 20210921_1515(x64), 20211103_1515(x64)"
 def_massMessagePath = "L:\\_i\\CTmassMessage\\mass_message.html"
 def_syncLogPath = "L:\\customToolslogs\\syncTimeLogs"
 def_openingLogPath = "L:\\customToolslogs\\openingTimeLogs"
