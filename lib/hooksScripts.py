@@ -92,8 +92,8 @@ def versionLogger(releasedVersion,snapshot):
   try:
     company_build = listFromString(user_config.CustomToolsSettings.revitBuilds)
     # just temporary for changing company build
-    if "20210420_1515(x64)" in company_build or "20210921_1515(x64)" in company_build:
-      user_config.CustomToolsSettings.revitBuilds = "20210420_1515(x64), 20210921_1515(x64), 20211103_1515(x64)"
+    if "20210420_1515(x64)" in company_build or "20211103_1515(x64)" in company_build:
+      user_config.CustomToolsSettings.revitBuilds = "20210420_1515(x64), 20210804_1515(x64), 20211103_1515(x64)"
       company_build = listFromString(user_config.CustomToolsSettings.revitBuilds)
   # if parameter doesnt exist in config file
   except:
